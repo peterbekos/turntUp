@@ -1,15 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class BeatManager : MonoBehaviour {
+/*
+ * This class is used to manage music and fire off beats
+ */
+public static class BeatManager {
 
-	// Use this for initialization
-	void Start () {
-	
+	static BeatManager() {
+		init ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	//variables
+
+
+	//initalization function
+	private static void init() {
+
 	}
+
+	public static void callBeat(GD type) {
+		List<BeatObject> beatObjects = new List<BeatObject>();// = (BeatObject) GameObject.FindGameObjectsWithTag("beatObject");
+		foreach (BeatObject beatobject in beatObjects) {
+			beatobject.onBeat(type);
+		}
+	}
+
 }

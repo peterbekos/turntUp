@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StageManager : MonoBehaviour {
+/*
+ * This class is used to manage game screens and stages
+ */
+public static class StageManager {
 
-	// Use this for initialization
-	void Start () {
-	
+	static StageManager() {
+		init ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	//variables
 	
+	
+	//initalization function
+	private static void init() {
+		
 	}
 }

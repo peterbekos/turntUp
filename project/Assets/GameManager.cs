@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameManager : MonoBehaviour {
+/*
+ * This class is used to manage gameplay and keep track of data
+ */
+public static class GameManager {
 
-	// Use this for initialization
-	void Start () {
-	
+	static GameManager() {
+		init ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	//variables
 	
+	
+	//initalization function
+	private static void init() {
+		
 	}
 }

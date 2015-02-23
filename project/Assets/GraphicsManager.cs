@@ -1,15 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GraphicsManager : MonoBehaviour {
+/*
+ * This class is used to manage graphics including ship parts, enemies, and background
+ */
+public static class GraphicsManager {
 
-	// Use this for initialization
-	void Start () {
-	
+	static GraphicsManager() {
+		init ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
+	private static BeatGraphic shipPart;
+	//TODO - Delete this ^ line and replace it with the actual ship parts we're gonna use
+	private static BeatGraphic bg;
+
+
+	private static void init() {
+
 	}
 }
