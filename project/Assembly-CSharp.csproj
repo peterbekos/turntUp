@@ -46,25 +46,43 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ScriptsAndCode\BeatGraphic.cs" />
-     <Compile Include="Assets\ScriptsAndCode\BeatManager.cs" />
-     <Compile Include="Assets\ScriptsAndCode\BeatObject.cs" />
-     <Compile Include="Assets\ScriptsAndCode\EnemyObject.cs" />
-     <Compile Include="Assets\ScriptsAndCode\GD.cs" />
-     <Compile Include="Assets\ScriptsAndCode\GameManager.cs" />
-     <Compile Include="Assets\ScriptsAndCode\GraphicsManager.cs" />
-     <Compile Include="Assets\ScriptsAndCode\MidiTranslationCode\Channel.cs" />
-     <Compile Include="Assets\ScriptsAndCode\MidiTranslationCode\MidiFileInspector.cs" />
-     <Compile Include="Assets\ScriptsAndCode\MidiTranslationCode\Note.cs" />
-     <Compile Include="Assets\ScriptsAndCode\PlayObject.cs" />
-     <Compile Include="Assets\ScriptsAndCode\PlayShip.cs" />
-     <Compile Include="Assets\ScriptsAndCode\ShotObject.cs" />
-     <Compile Include="Assets\ScriptsAndCode\StageManager.cs" />
+     <Compile Include="Assets\Code\Gameplay\Bullets\Bass\BlueBass.cs" />
+     <Compile Include="Assets\Code\Gameplay\Bullets\DamageEnemy.cs" />
+     <Compile Include="Assets\Code\Gameplay\Bullets\DamagePlayer.cs" />
+     <Compile Include="Assets\Code\Gameplay\Bullets\Enemy\EnemyTestBullet.cs" />
+     <Compile Include="Assets\Code\Gameplay\Bullets\Enemy\PlayerShooter.cs" />
+     <Compile Include="Assets\Code\Gameplay\Bullets\Kit\BlueWave.cs" />
+     <Compile Include="Assets\Code\Gameplay\Bullets\Melody\BlueDash.cs" />
+     <Compile Include="Assets\Code\Gameplay\Bullets\Melody\BlueSideBullets.cs" />
+     <Compile Include="Assets\Code\Gameplay\Bullets\Melody\RedBomb.cs" />
+     <Compile Include="Assets\Code\Gameplay\Bullets\ShotOrigin.cs" />
+     <Compile Include="Assets\Code\Gameplay\Enemy\TestEnemy.cs" />
+     <Compile Include="Assets\Code\Gameplay\General Gameplay\BasicEnemySpawner.cs" />
+     <Compile Include="Assets\Code\Gameplay\General Gameplay\DamageScript.cs" />
+     <Compile Include="Assets\Code\Gameplay\General Gameplay\DeathTimer.cs" />
+     <Compile Include="Assets\Code\Gameplay\General Gameplay\HealthScript.cs" />
+     <Compile Include="Assets\Code\Gameplay\Player\PlayerShipControl.cs" />
+     <Compile Include="Assets\Code\Gameplay\Player\ShipPartsAdder.cs" />
+     <Compile Include="Assets\Code\General\BeatGraphic.cs" />
+     <Compile Include="Assets\Code\General\BeatManager.cs" />
+     <Compile Include="Assets\Code\General\BeatObject.cs" />
+     <Compile Include="Assets\Code\General\EnemyObject.cs" />
+     <Compile Include="Assets\Code\General\GD.cs" />
+     <Compile Include="Assets\Code\General\GameManager.cs" />
+     <Compile Include="Assets\Code\General\GraphicsManager.cs" />
+     <Compile Include="Assets\Code\General\PlayObject.cs" />
+     <Compile Include="Assets\Code\General\PlayShip.cs" />
+     <Compile Include="Assets\Code\General\SelfKiller.cs" />
+     <Compile Include="Assets\Code\General\ShotObject.cs" />
+     <Compile Include="Assets\Code\General\StageManager.cs" />
+     <Compile Include="Assets\Code\MidiTranslationCode\Channel.cs" />
+     <Compile Include="Assets\Code\MidiTranslationCode\MidiFileInspector.cs" />
+     <Compile Include="Assets\Code\MidiTranslationCode\Note.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="NAudio">
- <HintPath>C:/Users/Lukasz/Desktop/CS426Repo/turntUp/project/Assets/ScriptsAndCode/NAudio.dll</HintPath>
+ <HintPath>C:/Users/Lukasz/Desktop/CS426Repo/turntUp/project/Assets/Code/General/NAudio.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
