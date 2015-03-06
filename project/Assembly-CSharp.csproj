@@ -56,6 +56,7 @@
      <Compile Include="Assets\Code\Foundation\PlayObject.cs" />
      <Compile Include="Assets\Code\Foundation\ShotObject.cs" />
      <Compile Include="Assets\Code\Foundation\StageManager.cs" />
+     <Compile Include="Assets\Code\Foundation\loadingSong.cs" />
      <Compile Include="Assets\Code\Gameplay\Enemy\Liner.cs" />
      <Compile Include="Assets\Code\Gameplay\General\EnemySpawner.cs" />
      <Compile Include="Assets\Code\Gameplay\General\ShotOrigin.cs" />

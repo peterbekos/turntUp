@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitpoints: 0
   strength: 0
-  speed: 0
+  speed: 10
   target: {x: 0, y: 0, z: 0}
 --- !u!212 &21258798
 SpriteRenderer:

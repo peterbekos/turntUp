@@ -54,8 +54,14 @@ public class PlayShip : PlayObject {
 		temp.transform.SetParent(this.gameObject.transform);
 		
 		//move the part's collider
+#pragma warning disable 0169
+//disable "unused" warnings
+
 		PolygonCollider2D coll = gameObject.GetComponent<PolygonCollider2D>();
 		PolygonCollider2D old = temp.GetComponent<PolygonCollider2D>();
+		
+#pragma warning restore 0169
+//re-enable "unused" warnings
 		
 		
 		//TODO: re-create the collider to fit the new shape

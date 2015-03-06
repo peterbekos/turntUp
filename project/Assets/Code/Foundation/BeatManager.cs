@@ -7,7 +7,11 @@ using System.Collections.Generic;
  */
 public static class BeatManager {
 
+    private static List<Note> NotesToPlay;
+    public static string fileName;
+
 	static BeatManager() {
+        fileName = "";
 		init ();
 	}
 
@@ -16,7 +20,13 @@ public static class BeatManager {
 
 	//initalization function
 	private static void init() {
+        MidiAccess myAccess = new MidiAccess();
+        NotesToPlay = myAccess.getNotes(fileName);
+        //foreach(Note nt in NotesToPlay)
+        //{
 
+//33        }
+        
 	}
 
 	public static void callBeat(GD type) {

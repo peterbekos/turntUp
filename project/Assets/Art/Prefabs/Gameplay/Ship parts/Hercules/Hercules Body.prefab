@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 467118}
   - 60: {fileID: 6082440}
   m_Layer: 0
-  m_Name: Blue Body
+  m_Name: Hercules Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

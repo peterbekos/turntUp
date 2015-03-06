@@ -2,42 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MidiAccess : MonoBehaviour {
+public class MidiAccess{
 
-    public string fileName;
+
     private List<Channel> mChannels;
     private List<Note> NotesToPlay = new List<Note>();
 
-    public GameObject gun;
-    private ShotOrigin gunScript;
-
-    float milliseconds = 0;
-    int i = 0;
-
-	// Use this for initialization
-	void Start () {
-        fileName = "NumbMidi.mid"; //Default for now
-        MidiFileInspector mInspector = new MidiFileInspector();
-        mInspector.Describe(fileName); //sets the channels
-
-        //My Processed version of it stored in "channels"
-        mChannels = mInspector.Channels;
-
-        foreach(Channel currentCh in mChannels)
-        {
-            foreach(Note currentNt in currentCh.Notes)
-            {
-                NotesToPlay.Add(currentNt);
-            }
-        }
-
-        sortTheNotes(); //Long time to calculate!
-
-        gunScript = (ShotOrigin)gun.GetComponent(typeof(ShotOrigin));
-        //displayTheNotes(); //Lot of displaying
-        gunScript.onMelody();
-
-	}
 
     void sortTheNotes()
     {
@@ -64,13 +34,29 @@ public class MidiAccess : MonoBehaviour {
         }
     }
 	
-	// Update is called once per frame
-	void Update () {
-        milliseconds += Time.deltaTime * 1000;
-        i++;
-        if(i % 100 == 0)
+	// Creates a nice stream of notes
+	public List<Note> getNotes(string _filename)
+    {
+        MidiFileInspector mInspector = new MidiFileInspector();
+        mInspector.Describe(_filename); //sets the channels
+
+        //My Processed version of it stored in "channels"
+        mChannels = mInspector.Channels;
+
+        //Make all the notes into one stream
+        foreach (Channel currentCh in mChannels)
         {
-            gunScript.onMelody();
+            string intstrument = currentCh.ChannelName.Trim();
+            foreach (Note currentNt in currentCh.Notes)
+            {
+                currentNt.InstrumentName = intstrument;
+                NotesToPlay.Add(currentNt);
+            }
         }
-	}
+
+        sortTheNotes(); //Long time to calculate!
+
+        //displayTheNotes(); //Lot of displaying
+        return NotesToPlay;
+    }
 }

@@ -123,7 +123,7 @@
             }
             catch(Exception ex)
             {
-                Debug.Log(ex.ToString());
+                //Debug.Log(ex.ToString());
                 return 0;
             }
         }
