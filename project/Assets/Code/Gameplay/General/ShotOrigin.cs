@@ -12,7 +12,7 @@ public class ShotOrigin : BeatObject {
 	
 	//Fire a bullet.  What else?
 	public void fireBullet(GameObject shot, double mod){
-		GameObject.Instantiate(shot, this.transform.position, this.transform.rotation);
+        var bullet = GameObject.Instantiate(shot, this.transform.position, this.transform.rotation);
 		
 		if(mod != 1.0)
 			shot.SendMessage("amplify", mod);
