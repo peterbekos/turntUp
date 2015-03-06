@@ -1,21 +1,31 @@
 ﻿<Properties>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\MidiTranslationCode\MidiAccess.cs">
 =======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Foundation\myScript.cs">
 >>>>>>> d7ffd67bc7face7df56f4ba26bda339f9819927f
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Gameplay\Enemy\Liner.cs">
+>>>>>>> 9b9a92c51a2fc42de89a0a4882394a9505c7d745
     <Files>
-      <File FileName="Assets\Code\Foundation\myScript.cs" Line="51" Column="2" />
-      <File FileName="Assets\Code\Gameplay\Player\PlayShip.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\Gameplay\General\ShotOrigin.cs" Line="37" Column="3" />
+      <File FileName="Assets\Code\Gameplay\Player\PlayShip.cs" Line="4" Column="37" />
       <File FileName="Assets\Code\Gameplay\General\EnemySpawner.cs" Line="1" Column="1" />
+<<<<<<< HEAD
 <<<<<<< HEAD
       <File FileName="Assets\Code\Gameplay\General\ShotOrigin.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\Foundation\GD.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\Gameplay\Enemy\Liner.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\Foundation\PlayObject.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\MidiTranslationCode\MidiAccess.cs" Line="1" Column="1" />
+=======
+      <File FileName="Assets\Code\Gameplay\General\DeathTimer.cs" Line="18" Column="1" />
+      <File FileName="Assets\Code\Gameplay\Enemy\Liner.cs" Line="6" Column="47" />
+>>>>>>> 9b9a92c51a2fc42de89a0a4882394a9505c7d745
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
