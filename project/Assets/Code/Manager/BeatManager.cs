@@ -7,6 +7,8 @@ using System.Collections.Generic;
  */
 public static class BeatManager {
 
+	public static void ping() {}
+
     private static List<Note> NotesToPlay;
     public static string fileName;
 

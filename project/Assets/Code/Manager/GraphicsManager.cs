@@ -6,6 +6,8 @@ using System.Collections;
  */
 public static class GraphicsManager {
 
+	public static void ping() {}
+
 	static GraphicsManager() {
 		init ();
 	}
