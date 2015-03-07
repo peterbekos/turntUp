@@ -19,6 +19,11 @@ public class PlayShip : PlayObject {
 	new void Update () {
 		base.Update ();
 		
+		if (System.DateTime.Now.Millisecond % 1000 < 20){
+			onMelody ();
+			Debug.Log("onmelody");
+		}
+		
 		//change the ship's velocity based on input
 		if( rigidbody2D.velocity != Vector2.zero || Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0){
 			rigidbody2D.velocity = new Vector2 (Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed);
@@ -99,5 +104,12 @@ public class PlayShip : PlayObject {
 		}
 		
 		generateShip();
+	}
+	
+	public void onMelody(){
+		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
+		foreach(ShotOrigin s in guns){
+			s.SendMessage("onMelody");
+		}
 	}
 }
