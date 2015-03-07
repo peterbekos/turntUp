@@ -56,6 +56,7 @@
      <Compile Include="Assets\Code\Foundation\PlayObject.cs" />
      <Compile Include="Assets\Code\Foundation\ShotObject.cs" />
      <Compile Include="Assets\Code\Foundation\StageManager.cs" />
+     <Compile Include="Assets\Code\Foundation\loadingSong.cs" />
      <Compile Include="Assets\Code\Gameplay\Enemy\Liner.cs" />
      <Compile Include="Assets\Code\Gameplay\General\EnemySpawner.cs" />
      <Compile Include="Assets\Code\Gameplay\General\ShotOrigin.cs" />
@@ -67,7 +68,7 @@
  <HintPath>F:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="NAudio">
- <HintPath>F:/Unity Projects/turntUp/project/Assets/Code/NAudio.dll</HintPath>
+ <HintPath>F:/Unity Projects/Unity 4/turntUp/project/Assets/Code/NAudio.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
