@@ -127,6 +127,10 @@ MonoBehaviour:
   maxPitch: 15
   maxRoll: 15
   maxYaw: 30
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
 --- !u!212 &21234870
 SpriteRenderer:
   m_ObjectHideFlags: 1

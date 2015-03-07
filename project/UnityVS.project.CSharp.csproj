@@ -72,6 +72,7 @@
     <Compile Include="Assets\Code\Gameplay\Enemy\Liner.cs" />
     <Compile Include="Assets\Code\Gameplay\General\DeathTimer.cs" />
     <Compile Include="Assets\Code\Gameplay\General\EnemySpawner.cs" />
+    <Compile Include="Assets\Code\Gameplay\General\PlayerBounds.cs" />
     <Compile Include="Assets\Code\Gameplay\General\ShotOrigin.cs" />
     <Compile Include="Assets\Code\Gameplay\Player\PlayShip.cs" />
     <Compile Include="Assets\Code\MidiTranslationCode\MidiAccess.cs" />
