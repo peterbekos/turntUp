@@ -73,7 +73,6 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &169705590
 GameObject:
@@ -278,8 +277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f04687c6f848134bab0afe93be0e859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: 
-  gun: {fileID: 1123606907}
 --- !u!1 &470599541
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,8 +339,6 @@ GameObject:
   - 50: {fileID: 1123606909}
   - 114: {fileID: 1123606910}
   - 60: {fileID: 1123606911}
-  - 114: {fileID: 1123606912}
-  - 114: {fileID: 1123606913}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -435,35 +430,6 @@ PolygonCollider2D:
       - {x: -.703396678, y: -.670054853}
       - {x: -.695865989, y: -1.3273567}
       - {x: -2.33039999, y: -1.32250702}
---- !u!114 &1123606912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1123606907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4a79039407ddca4d8a5ef9e7ab9ae31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1123606913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1123606907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bc41d15f3c385f4fb3a26bc571724fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  melodyShot: {fileID: 158798, guid: ec489592bc492fe45a863f7df728bb20, type: 2}
-  harmonyShot: {fileID: 106644, guid: 00794856c65111a4dbeb95db30b61d24, type: 2}
-  kickShot: {fileID: 144394, guid: 27818e29f2c5cd4418840f555ee62f9c, type: 2}
-  snareShot: {fileID: 149016, guid: e471636386cbd874e90385419762dfeb, type: 2}
-  hatShot: {fileID: 0}
-  bassShot: {fileID: 0}
-  trebleShot: {fileID: 0}
 --- !u!1001 &1528877001
 Prefab:
   m_ObjectHideFlags: 0

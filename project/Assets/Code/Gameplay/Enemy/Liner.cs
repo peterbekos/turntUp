@@ -30,7 +30,9 @@ public class Liner : EnemyObject {
 		transform.position += transform.up * speed * Time.deltaTime;
 	}
 	
-	void OnTriggerEnter2D(Collider2D coll){
+	new void OnTriggerEnter2D(Collider2D coll){
+		base.OnTriggerEnter2D(coll);
+	
 		if (coll.tag.Equals("Player")){
 			coll.gameObject.SendMessage("takeDamage", strength);
 			takeDamage(strength);

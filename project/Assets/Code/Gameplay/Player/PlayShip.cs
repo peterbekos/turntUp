@@ -21,7 +21,7 @@ public class PlayShip : PlayObject {
 		
 		if (System.DateTime.Now.Millisecond % 1000 < 20){
 			onMelody ();
-			Debug.Log("onmelody");
+			Debug.Log("onMelody");
 		}
 		
 		//change the ship's velocity based on input
@@ -106,7 +106,9 @@ public class PlayShip : PlayObject {
 		generateShip();
 	}
 	
-	public void onMelody(){
+	new public void onMelody(){
+		base.onMelody ();
+		
 		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
 		foreach(ShotOrigin s in guns){
 			s.SendMessage("onMelody");
