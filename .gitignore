@@ -1,8 +1,8 @@
-\project\Library\
-\project\Temp\
-\project\*.csproj
-\project\*.sln
-\project\*.suo
-\project\*.userprefs
-\project\obj\
-\project\ProjectSettings\
+project/Library/
+project/Temp/
+project/*.csproj
+project/*.sln
+project/*.suo
+project/*.userprefs
+project/obj/
+project/ProjectSettings/
