@@ -11,15 +11,23 @@ public class PlayShip : PlayObject {
 	public int maxRoll = 15;
 	public int maxYaw = 30;
 	
+	public float minX, maxX, minY, maxY;
+	
 	void Start(){
 		generateShip();
+		
+		//get bounds of camera
+		maxX = Camera.main.transform.position.x + Camera.main.orthographicSize * Screen.width / Screen.height / 2;
+		minX = Camera.main.transform.position.x - Camera.main.orthographicSize * Screen.width / Screen.height / 2;
+		maxY = Camera.main.transform.position.x + Camera.main.orthographicSize * Screen.height / Screen.width / 2;
+		minY = Camera.main.transform.position.x - Camera.main.orthographicSize * Screen.height / Screen.width / 2;
 	}
 	
 	// Update is called once per frame
 	new void Update () {
 		base.Update ();
 		
-		if (System.DateTime.Now.Millisecond % 1000 < 20){
+		if (Input.GetButtonDown("Fire1")){
 			onMelody ();
 			Debug.Log("onMelody");
 		}
@@ -45,6 +53,15 @@ public class PlayShip : PlayObject {
 		addPart(body);
 		addPart(wing);
 		addPart(booster);
+	}
+	
+	//Change all parts and craft ship
+	private void generateShip(GameObject body, GameObject wing, GameObject booster){
+		changePart(0, body);
+		changePart(1, wing);
+		changePart(2, booster);
+		
+		//changepart automatically generates ship
 	}
 	
 	//Add a ship part to the sceneand set it as a child, then craft the collider
@@ -112,6 +129,60 @@ public class PlayShip : PlayObject {
 		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
 		foreach(ShotOrigin s in guns){
 			s.SendMessage("onMelody");
+		}
+	}
+	
+	new public void onHarmony(){
+		base.onHarmony ();
+		
+		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
+		foreach(ShotOrigin s in guns){
+			s.SendMessage("onHarmony");
+		}
+	}
+	
+	new public void onKick(){
+		base.onKick ();
+		
+		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
+		foreach(ShotOrigin s in guns){
+			s.SendMessage("onKick");
+		}
+	}
+	
+	new public void onHat(){
+		base.onHat ();
+		
+		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
+		foreach(ShotOrigin s in guns){
+			s.SendMessage("onHat");
+		}
+	}
+	
+	new public void onSnare(){
+		base.onSnare ();
+		
+		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
+		foreach(ShotOrigin s in guns){
+			s.SendMessage("onSnare");
+		}
+	}
+	
+	new public void onBass(){
+		base.onBass ();
+		
+		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
+		foreach(ShotOrigin s in guns){
+			s.SendMessage("onBass");
+		}
+	}
+	
+	new public void onTreble(){
+		base.onTreble ();
+		
+		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
+		foreach(ShotOrigin s in guns){
+			s.SendMessage("onTreble");
 		}
 	}
 }
