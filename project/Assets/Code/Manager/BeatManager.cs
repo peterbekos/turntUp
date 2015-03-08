@@ -11,6 +11,7 @@ public static class BeatManager {
 
     private static List<Note> NotesToPlay;
     public static string fileName;
+	private static int notePosition = 0;
 
 	static BeatManager() {
         fileName = "";
@@ -31,11 +32,29 @@ public static class BeatManager {
         
 	}
 
+	public static void checkBeats(float time) {
+		//TODO - grab all beats within time range
+		if (NotesToPlay != null) {
+			while (NotesToPlay[notePosition].startTime <= time) {
+				Note note = NotesToPlay[notePosition];
+				//TODO - call beat on the note's type
+				callBeat (GDMethods.getBeatType(note.InstrumentName));
+				notePosition++;
+			}
+		}
+	}
+
+
+
 	public static void callBeat(GD type) {
+		GameManager.player.onBeat (type);
+		GameManager.player.onMelody ();
+		/*
 		List<BeatObject> beatObjects = new List<BeatObject>();// = (BeatObject) GameObject.FindGameObjectsWithTag("beatObject");
 		foreach (BeatObject beatobject in beatObjects) {
 			beatobject.onBeat(type);
 		}
+		*/
 	}
 
 }

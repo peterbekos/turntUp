@@ -15,6 +15,7 @@ public class PlayShip : PlayObject {
 	
 	void Start(){
 		generateShip();
+		GameManager.player = this;
 		
 		//get bounds of camera
 		maxX = Camera.main.transform.position.x + Camera.main.orthographicSize * Screen.width / Screen.height / 2;
