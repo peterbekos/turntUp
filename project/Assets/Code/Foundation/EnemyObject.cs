@@ -15,5 +15,7 @@ public class EnemyObject : PlayObject {
 	
 	new void OnTriggerEnter2D(Collider2D coll){
 		base.OnTriggerEnter2D(coll);
+		
+		Debug.Log("" + gameObject.name + "Exited collision");
 	}
 }

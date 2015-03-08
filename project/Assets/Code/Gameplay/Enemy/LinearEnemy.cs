@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Liner : EnemyObject {
+public class LinearEnemy : EnemyObject {
 	
 	public Vector3 target = new Vector3(0, 0, 0);
 	
@@ -32,6 +32,8 @@ public class Liner : EnemyObject {
 	
 	new void OnTriggerEnter2D(Collider2D coll){
 		base.OnTriggerEnter2D(coll);
+		
+		Debug.Log("" + gameObject.name + " Entered collision");
 	
 		if (coll.tag.Equals("Player")){
 			coll.gameObject.SendMessage("takeDamage", strength);

@@ -6,7 +6,7 @@ public class PlayerBounds : MonoBehaviour {
 	public enum direction { top, left, right, bottom };
 	public direction location = direction.left;
 
-	void OnTriggerEnter2D(Collision2D coll){
+	void OnTriggerEnter2D(Collider2D coll){
 		GameObject g = coll.gameObject;
 	
 		if(g.tag.Equals("Player")){

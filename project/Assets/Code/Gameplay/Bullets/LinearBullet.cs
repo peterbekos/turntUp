@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Linear : ShotObject {
+public class LinearBullet : ShotObject {
 	
 	// Update is called once per frame
 	new public void Update () {

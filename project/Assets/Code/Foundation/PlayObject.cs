@@ -34,11 +34,11 @@ public abstract class PlayObject : BeatObject {
 	//Use this for collisions, built-in to Unity
 	//Triggers don't physically collide (as in, they don't send things flying when you bump into them)
 	//they just pass through each other and trigger this method
-	protected void OnTriggerEnter2D(Collider2D coll){
+	public void OnTriggerEnter2D(Collider2D coll){
 		
 	}
 	
-	protected void OnTriggerExit2D(Collider2D coll){
+	public void OnTriggerExit2D(Collider2D coll){
 		if (coll.gameObject.tag.Equals("MainCamera")){
 			Destroy(gameObject);
 		}
