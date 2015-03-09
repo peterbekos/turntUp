@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 402928}
   - 114: {fileID: 11402930}
   - 60: {fileID: 6002930}
+  - 82: {fileID: 8217510}
   m_Layer: 9
   m_Name: Widow
   m_TagString: Enemy
@@ -77,6 +78,64 @@ PolygonCollider2D:
       - {x: .8981902, y: .273050308}
       - {x: 2.32772589, y: -1.31983316}
       - {x: -2.33039999, y: -1.32250702}
+--- !u!82 &8217510
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102928}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 1ae279feb6d7b724dbaed83cc06241ed, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .0410000011
+  m_Pitch: 2.1500001
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: .991379321
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11402930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,6 +150,7 @@ MonoBehaviour:
   hitpoints: 10
   strength: 10
   speed: 7
+  deathSoundPlayer: {fileID: 125326, guid: fb1926bb2214e27479222dbb339b33d6, type: 2}
   target: {x: 0, y: 0, z: 0}
 --- !u!212 &21202930
 SpriteRenderer:

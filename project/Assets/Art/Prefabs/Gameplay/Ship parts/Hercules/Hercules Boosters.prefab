@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 433288}
   - 212: {fileID: 21233288}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: direction_arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 433290}
   - 114: {fileID: 11433288}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: shot_origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,12 +145,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc41d15f3c385f4fb3a26bc571724fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  melodyShot: {fileID: 158798, guid: ec489592bc492fe45a863f7df728bb20, type: 2}
+  melodyShot: {fileID: 0}
   harmonyShot: {fileID: 0}
   kickShot: {fileID: 0}
   snareShot: {fileID: 0}
   hatShot: {fileID: 0}
-  bassShot: {fileID: 0}
+  bassShot: {fileID: 106644, guid: 00794856c65111a4dbeb95db30b61d24, type: 2}
   trebleShot: {fileID: 0}
 --- !u!212 &21233288
 SpriteRenderer:

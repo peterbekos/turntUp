@@ -9,6 +9,10 @@ public abstract class PlayObject : BeatObject {
 	public int hitpoints;
 	public int strength;
 	public float speed;
+	
+	public GameObject deathSoundPlayer; //object that plays a sound effect after the object dies
+	//this is because if we destroy the object while the sound is playing, the sound stops
+	//so we need another object to play the sound
 
 	protected void Update(){
 	
@@ -27,6 +31,8 @@ public abstract class PlayObject : BeatObject {
 		hitpoints -= dmg;
 		if(hitpoints <= 0)
 		{
+			//play the death sound and kill the object
+			Instantiate(deathSoundPlayer);
 			Destroy(gameObject);
 		}
 	}

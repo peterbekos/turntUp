@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//if the camera moved, we need to find its new position
-		cameraLocation = GameObject.Find("Main Camera").transform.position;
+		cameraLocation = Camera.main.transform.position;
 		
 		//increase the time elapsed
 		timeSinceSpawn += Time.deltaTime;
@@ -31,12 +31,37 @@ public class EnemySpawner : MonoBehaviour {
 		}
 	}
 	
-	//spawn a radnom enemy at a random point outside the camera
+	//spawn a random enemy at a random point outside the camera
 	void spawnEnemy(){
 		Vector3 spawnPoint = getRandomPoint();
-		
-		//spawn a random enemy unit from the array
 		GameObject spawn = (GameObject)GameObject.Instantiate(enemiesToSpawn[Random.Range(0, enemiesToSpawn.Length)], spawnPoint, gameObject.transform.rotation);
+	}
+	
+	//spawn a random enemy at a given point outside the camera
+	void spawnEnemy(Vector3 spawnPoint){
+		GameObject spawn = (GameObject)GameObject.Instantiate(enemiesToSpawn[Random.Range(0, enemiesToSpawn.Length)], spawnPoint, gameObject.transform.rotation);
+	}
+	
+	//spawn a given enemy at a random point outside the camera
+	void spawnEnemy(GameObject enemy){
+		Vector3 spawnPoint = getRandomPoint();
+		GameObject spawn = (GameObject)GameObject.Instantiate(enemy, spawnPoint, gameObject.transform.rotation);
+	}
+	
+	//spawn a given enemy at a given point outside the camera
+	void spawnEnemy(GameObject enemy, Vector3 spawnPoint){
+		GameObject spawn = (GameObject)GameObject.Instantiate(enemy, spawnPoint, gameObject.transform.rotation);
+	}
+	
+	//spawn a given enemy in the array at a random point outside the camera
+	void spawnEnemy(int enemy){
+		Vector3 spawnPoint = getRandomPoint();
+		GameObject spawn = (GameObject)GameObject.Instantiate(enemiesToSpawn[enemy], spawnPoint, gameObject.transform.rotation);
+	}
+	
+	//spawn a given enemy in the array at a given point outside the camera
+	void spawnEnemy(int enemy, Vector3 spawnPoint){
+		GameObject spawn = (GameObject)GameObject.Instantiate(enemiesToSpawn[enemy], spawnPoint, gameObject.transform.rotation);
 	}
 	
 	//gets a random point outside the camera

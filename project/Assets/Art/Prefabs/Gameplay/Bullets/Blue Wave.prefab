@@ -9,11 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 406644}
   - 114: {fileID: 11406644}
-  - 114: {fileID: 11404930}
   - 60: {fileID: 6003980}
-  - 114: {fileID: 11408808}
-  - 114: {fileID: 11485292}
-  - 114: {fileID: 11469554}
   m_Layer: 9
   m_Name: Blue Wave
   m_TagString: Untagged
@@ -86,18 +82,6 @@ PolygonCollider2D:
       - {x: -.366232991, y: -.351004809}
       - {x: -.599079967, y: -.504062414}
       - {x: -.747753441, y: -.504195035}
---- !u!114 &11404930
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106644}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de74592db41a4144b0e0d40914235be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToDeath: 10
 --- !u!114 &11406644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,46 +90,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 106644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d250d25f7cc70f14599b8e7cd8f78fe3, type: 3}
+  m_Script: {fileID: 11500000, guid: b06666993a7af8b4ea89a9b5dfc68f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  timeToReturn: 1
---- !u!114 &11408808
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30603d88ab1e7d8469121a04c296fe6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 5
---- !u!114 &11469554
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a985187faec44e4dbf08dedc5c07aaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11485292
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab480fe3f0f1aa24593ee2bf52b792d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 2
+  hitpoints: 2
+  strength: 0
+  speed: 0
+  deathSoundPlayer: {fileID: 0}
+  target: 1
 --- !u!212 &21206644
 SpriteRenderer:
   m_ObjectHideFlags: 1
