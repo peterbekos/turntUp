@@ -10,9 +10,8 @@ public abstract class PlayObject : BeatObject {
 	public int strength;
 	public float speed;
 	
-	public GameObject deathSoundPlayer; //object that plays a sound effect after the object dies
-	//this is because if we destroy the object while the sound is playing, the sound stops
-	//so we need another object to play the sound
+	//plays a sound and animation when the unit dies
+	public GameObject deathAnimation; 
 
 	protected void Update(){
 	
@@ -32,7 +31,7 @@ public abstract class PlayObject : BeatObject {
 		if(hitpoints <= 0)
 		{
 			//play the death sound and kill the object
-			Instantiate(deathSoundPlayer);
+			Instantiate(deathAnimation, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 		}
 	}
@@ -45,7 +44,8 @@ public abstract class PlayObject : BeatObject {
 	}
 	
 	public void OnTriggerExit2D(Collider2D coll){
-		if (coll.gameObject.tag.Equals("MainCamera")){
+		Debug.Log(gameObject.name + "exited collision with " + coll.ToString());
+		if (coll.Equals(Camera.main.collider2D)){
 			Destroy(gameObject);
 		}
 	}

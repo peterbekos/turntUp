@@ -11,26 +11,52 @@ public class PlayShip : PlayObject {
 	public int maxRoll = 15;
 	public int maxYaw = 30;
 	
-	public float minX, maxX, minY, maxY;
+	//for respawning
+	private int numBlinks = 4;
+	private float timeBetweenBlinks = 0.25f;
+	private float blinkDuration = 0.15f;
+	private float timeSinceBlink = 0;
+	private bool isVisible = true;
+	
+	void blink(){
+		if(isVisible && timeSinceBlink > timeBetweenBlinks){
+			Debug.Log("blink");
+			isVisible = false;
+			foreach(SpriteRenderer rend in transform.GetComponentsInChildren<SpriteRenderer>()){
+				rend.enabled = false;
+			}
+			timeSinceBlink = 0;
+		}
+		else if (timeSinceBlink > blinkDuration){
+			Debug.Log("unblink");
+			isVisible = true;
+			foreach(SpriteRenderer rend in transform.GetComponentsInChildren<SpriteRenderer>()){
+				rend.enabled = true;
+			}
+			timeSinceBlink = 0;
+		}
+		
+		numBlinks--;
+	}
 	
 	void Start(){
 		generateShip();
 		GameManager.player = this;
-		
-		//get bounds of camera
-		maxX = Camera.main.transform.position.x + Camera.main.orthographicSize * Screen.width / Screen.height / 2;
-		minX = Camera.main.transform.position.x - Camera.main.orthographicSize * Screen.width / Screen.height / 2;
-		maxY = Camera.main.transform.position.x + Camera.main.orthographicSize * Screen.height / Screen.width / 2;
-		minY = Camera.main.transform.position.x - Camera.main.orthographicSize * Screen.height / Screen.width / 2;
 	}
 	
 	// Update is called once per frame
 	new void Update () {
 		base.Update ();
 		
+		if(numBlinks > 0)
+		{
+			//blink();
+			timeSinceBlink += Time.deltaTime;
+		}
+		
 		if (Input.GetButtonDown("Fire1")){
 			onMelody ();
-			Debug.Log("onMelody");
+			//Debug.Log("onMelody");
 		}
 		
 		//change the ship's velocity based on input
@@ -41,7 +67,11 @@ public class PlayShip : PlayObject {
 		
 		//rotate the ship based on its velocity
 		gameObject.transform.rotation = Quaternion.Euler(maxPitch * rigidbody2D.velocity.y / speed, -maxRoll * rigidbody2D.velocity.x / speed, -maxYaw * rigidbody2D.velocity.x / speed);
-	
+		
+		
+		if(Input.GetAxis("Hold") != 0){
+			rigidbody2D.velocity = Vector3.zero;
+		}
 	}
 	
 	//Craft the ship out of the stored parts
@@ -78,14 +108,9 @@ public class PlayShip : PlayObject {
 		temp.transform.SetParent(this.gameObject.transform);
 		
 		//move the part's collider
-#pragma warning disable 0169
-//disable "unused" warnings
-
 		PolygonCollider2D coll = gameObject.GetComponent<PolygonCollider2D>();
 		PolygonCollider2D old = temp.GetComponent<PolygonCollider2D>();
 		
-#pragma warning restore 0169
-//re-enable "unused" warnings
 		
 		
 		//TODO: re-create the collider to fit the new shape
