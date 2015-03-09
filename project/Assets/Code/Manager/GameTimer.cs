@@ -3,14 +3,22 @@ using System.Collections;
 
 public class GameTimer : MonoBehaviour {
 
+	//variables
+	float gameTime = 0f; //In mills
+
 	// Use this for initialization
 	void Start () {
 
 	}
-	
+
+	void FixedUpdate() {
+		gameTime = gameTime + (Time.fixedDeltaTime * 1000);
+		BeatManager.checkBeats (gameTime);
+	}
+
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	void spawnPlayer() {
