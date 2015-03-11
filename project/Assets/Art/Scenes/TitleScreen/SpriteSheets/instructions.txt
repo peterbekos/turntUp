@@ -1,0 +1,3 @@
+sprite 1 is the idle image
+sprite 2 is on hover
+sprite 3 is on click
