@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 468748}
   - 114: {fileID: 11403610}
+  - 114: {fileID: 11490478}
   m_Layer: 0
   m_Name: Small Star
   m_TagString: Untagged
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.68187189, y: .962286174, z: 150}
+  m_LocalPosition: {x: 0, y: 0, z: 150}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 468750}
@@ -68,7 +69,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619d7b8e76de46a41a670ed26d8290f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -.800000012
+  speed: -.600000024
+--- !u!114 &11490478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5f3dfbdab761842b604fbec137010f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDeath: 60
 --- !u!212 &21268750
 SpriteRenderer:
   m_ObjectHideFlags: 1

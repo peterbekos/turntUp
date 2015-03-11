@@ -122,17 +122,13 @@ MonoBehaviour:
   hitpoints: 50
   strength: 0
   speed: 10
-  deathSoundPlayer: {fileID: 172264, guid: a01fd0774372d3641af6953d83946b22, type: 2}
+  deathAnimation: {fileID: 172264, guid: a01fd0774372d3641af6953d83946b22, type: 2}
   body: {fileID: 167118, guid: 493316efccaaccc4292ad1f4b924c7e5, type: 2}
   wing: {fileID: 100872, guid: 8d43d571bfd6e7f46a1aae46893614c0, type: 2}
   booster: {fileID: 148042, guid: d1f16e1d615ac914c956c9207e7913eb, type: 2}
   maxPitch: 15
   maxRoll: 15
   maxYaw: 30
-  minX: 0
-  maxX: 0
-  minY: 0
-  maxY: 0
 --- !u!114 &11478128
 MonoBehaviour:
   m_ObjectHideFlags: 1
