@@ -14,7 +14,7 @@ public static class BeatManager {
 	private static int notePosition = 0;
 
 	static BeatManager() {
-        fileName = "";
+		fileName = "Assets/Art/Music/ColorsMIDI(Unfinished).mid";
 		init ();
 	}
 
@@ -25,20 +25,15 @@ public static class BeatManager {
 	private static void init() {
         MidiAccess myAccess = new MidiAccess();
         NotesToPlay = myAccess.getNotes(fileName);
-        //foreach(Note nt in NotesToPlay)
-        //{
-
-//33        }
-        
 	}
 
 	public static void checkBeats(float time) {
-		//TODO - grab all beats within time range
 		if (NotesToPlay != null) {
 			while (NotesToPlay[notePosition].startTime <= time) {
 				Note note = NotesToPlay[notePosition];
-				//TODO - call beat on the note's type
-				callBeat (GDMethods.getBeatType(note.InstrumentName));
+				string instramentName = note.InstrumentName;
+				GD noteType = GDMethods.getBeatType(instramentName);
+				callBeat (noteType);
 				notePosition++;
 			}
 		}
@@ -47,7 +42,8 @@ public static class BeatManager {
 
 
 	public static void callBeat(GD type) {
-		GameManager.player.onBeat (type);
+		Debug.Log (type);
+		//GameManager.player.onBeat (type);
 		GameManager.player.onMelody ();
 		/*
 		List<BeatObject> beatObjects = new List<BeatObject>();// = (BeatObject) GameObject.FindGameObjectsWithTag("beatObject");

@@ -21,13 +21,18 @@ public enum GD {
 	CHILL
 }
 
-static class GDMethods
+public static class GDMethods
 {
 
 	private static Dictionary<string, GD> instrumentMappings = new Dictionary<string, GD>();
-	
+	private static bool isInit = false;
+
+	public static void init() {
+		mapInstruments ();
+	}
+
 	//To be called only once!
-	public static void mapInstruments()
+	private static void mapInstruments()
 	{
 		instrumentMappings.Add("Acoustic Grand Piano", GD.MELODY);
 		instrumentMappings.Add("Bright Acoustic Piano", GD.HARMONY);
@@ -161,6 +166,11 @@ static class GDMethods
 	
 	public static GD getBeatType(string _instrument)
 	{
+		if (!isInit) {
+			init();
+			isInit = true;
+		}
+
 		if (instrumentMappings.ContainsKey(_instrument))
 		{
 			return instrumentMappings[_instrument];
@@ -168,7 +178,7 @@ static class GDMethods
 		else
 		{
 			//Returns harmony if instrument doesn't exist in mappings
-			return GD.HARMONY;
+			return GD.MELODY;
 		}
 	}
 	
