@@ -157,8 +157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitpoints: 1
   strength: 10
-  speed: 10
-  deathSoundPlayer: {fileID: 0}
+  speed: 15
+  deathAnimation: {fileID: 0}
   target: 0
 --- !u!212 &21258798
 SpriteRenderer:
