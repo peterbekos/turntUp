@@ -71,6 +71,8 @@
      <Compile Include="Assets\Code\MidiTranslationCode\MidiBackend\Channel.cs" />
      <Compile Include="Assets\Code\MidiTranslationCode\MidiBackend\MidiFileInspector.cs" />
      <Compile Include="Assets\Code\MidiTranslationCode\MidiBackend\Note.cs" />
+     <Compile Include="Assets\Spawner.cs" />
+     <None Include="Assets\Art\Scenes\TitleScreen\SpriteSheets\instructions.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>
