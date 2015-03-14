@@ -42,9 +42,12 @@ public static class BeatManager {
 
 
 	public static void callBeat(GD type) {
-		Debug.Log (type);
-		//GameManager.player.onBeat (type);
-		GameManager.player.onMelody ();
+		//Debug.Log (type);
+        if (GameManager.player != null)
+        {
+            GameManager.player.onBeat(type);
+        }
+		//GameManager.player.onMelody ();
 		/*
 		List<BeatObject> beatObjects = new List<BeatObject>();// = (BeatObject) GameObject.FindGameObjectsWithTag("beatObject");
 		foreach (BeatObject beatobject in beatObjects) {

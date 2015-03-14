@@ -15,17 +15,17 @@ public class myScript : MonoBehaviour {
 	
 	//Use this for initialization
 	void Start () {  // get all the files in the directory, and convert to strings
-		StartCoroutine(loadAudio());
+		//StartCoroutine(loadAudio());
 	}
 	
-	IEnumerator loadAudio()
-	{
-		string path = EditorUtility.OpenFilePanel ("Load mp3 files from Directory" ,@Application.dataPath, "");
-		Debug.Log (path);
-		WWW audioLoader = new WWW ("file://" + path);
-		yield return audioLoader;
-		toPlay= audioLoader.GetAudioClip(false);
-	}
+	//IEnumerator loadAudio()
+	//{
+		//string path = EditorUtility.OpenFilePanel ("Load mp3 files from Directory" ,@Application.dataPath, "");
+		//Debug.Log (path);
+		//WWW audioLoader = new WWW ("file://" + path);
+		//yield return audioLoader;
+		//toPlay= audioLoader.GetAudioClip(false);
+	//}
 	     
 	// Update is called once per frame
 	void Update () {

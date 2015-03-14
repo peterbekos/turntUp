@@ -94,10 +94,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 2
-  strength: 0
-  speed: 0
-  deathSoundPlayer: {fileID: 0}
-  target: 1
+  strength: 2
+  speed: 10
+  deathAnimation: {fileID: 0}
+  target: 0
 --- !u!212 &21206644
 SpriteRenderer:
   m_ObjectHideFlags: 1

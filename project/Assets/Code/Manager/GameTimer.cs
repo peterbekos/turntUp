@@ -13,7 +13,7 @@ public class GameTimer : MonoBehaviour {
 
 	void FixedUpdate() {
 		gameTime = gameTime + (Time.fixedDeltaTime * 1000);
-		Debug.Log (gameTime);
+		//Debug.Log (gameTime);
 		BeatManager.checkBeats (gameTime);
 	}
 

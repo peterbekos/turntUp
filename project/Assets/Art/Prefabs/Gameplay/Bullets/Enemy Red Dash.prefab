@@ -24,12 +24,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 444394}
-  - 114: {fileID: 11444398}
   - 50: {fileID: 5044392}
   - 61: {fileID: 6144392}
-  - 114: {fileID: 11444396}
-  - 114: {fileID: 11444394}
-  - 114: {fileID: 11444392}
   - 114: {fileID: 11457476}
   m_Layer: 9
   m_Name: Enemy Red Dash
@@ -89,54 +85,6 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .150000006, y: 1}
   m_Center: {x: 0, y: 0}
---- !u!114 &11444392
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab480fe3f0f1aa24593ee2bf52b792d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
---- !u!114 &11444394
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30603d88ab1e7d8469121a04c296fe6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
---- !u!114 &11444396
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de74592db41a4144b0e0d40914235be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToDeath: 3
---- !u!114 &11444398
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab006a2ce968d9743bbbd3cc1f24f7d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!114 &11457476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,9 +93,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 144394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57f6095c035632049a11127b4232f285, type: 3}
+  m_Script: {fileID: 11500000, guid: b06666993a7af8b4ea89a9b5dfc68f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitpoints: 1
+  strength: 5
+  speed: 20
+  deathAnimation: {fileID: 0}
+  target: 0
 --- !u!212 &21244392
 SpriteRenderer:
   m_ObjectHideFlags: 1

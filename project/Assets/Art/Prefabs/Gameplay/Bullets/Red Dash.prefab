@@ -24,13 +24,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 458504}
-  - 114: {fileID: 11458504}
   - 50: {fileID: 5058502}
   - 61: {fileID: 6158502}
-  - 114: {fileID: 11458502}
-  - 114: {fileID: 11427380}
-  - 114: {fileID: 11475992}
-  - 114: {fileID: 11499896}
+  - 114: {fileID: 11450398}
   m_Layer: 9
   m_Name: Red Dash
   m_TagString: Untagged
@@ -89,7 +85,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .150000006, y: 1}
   m_Center: {x: 0, y: 0}
---- !u!114 &11427380
+--- !u!114 &11450398
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -97,57 +93,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 158504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30603d88ab1e7d8469121a04c296fe6d, type: 3}
+  m_Script: {fileID: 11500000, guid: b06666993a7af8b4ea89a9b5dfc68f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
---- !u!114 &11458502
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de74592db41a4144b0e0d40914235be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToDeath: .25
---- !u!114 &11458504
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab006a2ce968d9743bbbd3cc1f24f7d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  hitpoints: 1
+  strength: 10
   speed: 10
---- !u!114 &11475992
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab480fe3f0f1aa24593ee2bf52b792d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 99
---- !u!114 &11499896
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a985187faec44e4dbf08dedc5c07aaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  deathAnimation: {fileID: 172264, guid: a01fd0774372d3641af6953d83946b22, type: 2}
+  target: 0
 --- !u!212 &21258502
 SpriteRenderer:
   m_ObjectHideFlags: 1

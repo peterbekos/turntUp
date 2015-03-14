@@ -54,7 +54,7 @@ public class PlayShip : PlayObject {
 			timeSinceBlink += Time.deltaTime;
 		}
 		
-		if (Input.GetButtonDown("Fire1")){
+		if (Input.GetButton("Fire1")){
 			onMelody ();
 			//Debug.Log("onMelody");
 		}
@@ -149,6 +149,28 @@ public class PlayShip : PlayObject {
 		
 		generateShip();
 	}
+
+    new public void onBeat(GD type){
+        //base.onBeat();
+        switch(type)
+        {
+            case GD.HAT:
+                onHat();
+                break; // =)
+            case GD.BASS:
+                onBass();
+                break; // =)
+            case GD.MELODY:
+                onMelody();
+                break; // =)
+            case GD.KICK:
+                onKick();
+                break; // =)
+            case GD.HARMONY:
+                onHarmony();
+                break; // =)
+        }
+    }
 	
 	new public void onMelody(){
 		base.onMelody ();

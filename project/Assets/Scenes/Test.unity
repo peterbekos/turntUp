@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1001 &3719591
 Prefab:
@@ -273,6 +274,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8262848, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 850ab124ed3c6ed49bad8b563627d7a3, type: 3}
     m_RemovedComponents:
     - {fileID: 6802938, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
@@ -1102,6 +1107,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDeath: 60
+--- !u!1 &465342577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 465342579}
+  - 114: {fileID: 465342578}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &465342578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 465342577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba96af70f97410c468fbd2ddab999dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &465342579
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 465342577}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.24872732, y: -.437038451, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &470599541
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,7 +2111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1004958516
 Transform:
   m_ObjectHideFlags: 0
@@ -3214,7 +3258,7 @@ AudioSource:
   m_GameObject: {fileID: 1645786854}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 52c88f7d42c44b04292d323fe1bf8ecc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 850ab124ed3c6ed49bad8b563627d7a3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4169,6 +4213,10 @@ Prefab:
     - target: {fileID: 11432346, guid: 8ca11fcd4b20c594ab3d7050cc14579d, type: 2}
       propertyPath: timeBetweenSpawns
       value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 132346, guid: 8ca11fcd4b20c594ab3d7050cc14579d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ca11fcd4b20c594ab3d7050cc14579d, type: 2}

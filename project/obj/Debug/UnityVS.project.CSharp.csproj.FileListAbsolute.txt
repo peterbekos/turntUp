@@ -1,1 +1,12 @@
 D:\Spring2015\CS426\Repo\turntUp\project\obj\Debug\UnityVS.project.CSharp.csprojResolveAssemblyReference.cache
+D:\Spring2015\CS426\Repo\turntUp\project\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+D:\Spring2015\CS426\Repo\turntUp\project\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+D:\Spring2015\CS426\Repo\turntUp\project\Temp\UnityVS_bin\Debug\NAudio.dll
+D:\Spring2015\CS426\Repo\turntUp\project\Temp\UnityVS_bin\Debug\UnityEditor.dll
+D:\Spring2015\CS426\Repo\turntUp\project\Temp\UnityVS_bin\Debug\UnityEngine.dll
+D:\Spring2015\CS426\Repo\turntUp\project\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+D:\Spring2015\CS426\Repo\turntUp\project\Temp\UnityVS_bin\Debug\UnityEngine.xml
+D:\Spring2015\CS426\Repo\turntUp\project\Temp\UnityVS_bin\Debug\UnityEditor.xml
+D:\Spring2015\CS426\Repo\turntUp\project\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+D:\Spring2015\CS426\Repo\turntUp\project\obj\Debug\Assembly-CSharp.dll
+D:\Spring2015\CS426\Repo\turntUp\project\obj\Debug\Assembly-CSharp.pdb
