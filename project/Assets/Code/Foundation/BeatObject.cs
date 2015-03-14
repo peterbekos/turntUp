@@ -60,6 +60,34 @@ public abstract class BeatObject : MonoBehaviour {
 		
 	}
 	
+	public void onMelody(float interp) {
+		
+	}
+	
+	public void onHarmony(float interp) {
+		
+	}
+	
+	public void onKick(float interp) {
+		
+	}
+	
+	public void onSnare(float interp) {
+		
+	}
+	
+	public void onHat(float interp) {
+		
+	}
+	
+	public void onBass(float interp) {
+		
+	}
+	
+	public void onTreble(float interp) {
+		
+	}
+	
 	public void move(float x, float y) {
 		//TODO - use rigid body velocity
 		float dt = Time.deltaTime;

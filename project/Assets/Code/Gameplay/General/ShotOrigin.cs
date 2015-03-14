@@ -11,40 +11,43 @@ public class ShotOrigin : BeatObject {
 	
 	
 	//Fire a bullet.  What else?
-	public void fireBullet(GameObject shot, double mod){
-        var bullet = GameObject.Instantiate(shot, this.transform.position, this.transform.rotation);
+	public void fireBullet(GameObject shot, double mod, float interp){
+        GameObject bullet = (GameObject)GameObject.Instantiate(shot, this.transform.position, this.transform.rotation);
+		
+		
+		bullet.SendMessage("interpolate", interp);
 		
 		if(mod != 1.0)
-			shot.SendMessage("amplify", mod);
+			bullet.SendMessage("amplify", mod);
 	}
 	
 	//Override beat functions
-	new public void onMelody(){
+	new public void onMelody(float interp){
 		if(melodyShot == null) return;
-		fireBullet(melodyShot, mMod);
+		fireBullet(melodyShot, mMod, interp);
 	}
-	new public void onHarmony() {
+	new public void onHarmony(float interp) {
 		if(harmonyShot == null) return;
-		fireBullet(harmonyShot, hMod);
+		fireBullet(harmonyShot, hMod, interp);
 	}
-	new public void onKick() {
+	new public void onKick(float interp) {
 		if(kickShot == null) return;
-		fireBullet(kickShot, kMod);
+		fireBullet(kickShot, kMod, interp);
 	}
-	new public void onSnare() {
+	new public void onSnare(float interp) {
 		if(snareShot == null) return;
-		fireBullet(snareShot, sMod);
+		fireBullet(snareShot, sMod, interp);
 	}
-	new public void onHat() {
+	new public void onHat(float interp) {
 		if(hatShot == null) return;
-		fireBullet(hatShot, hatMod);
+		fireBullet(hatShot, hatMod, interp);
 	}
-	new public void onBass() {
+	new public void onBass(float interp) {
 		if(bassShot == null) return;
-		fireBullet(bassShot, bMod);
+		fireBullet(bassShot, bMod, interp);
 	}
-	new public void onTreble() {
+	new public void onTreble(float interp) {
 		if(trebleShot == null) return;
-		fireBullet(trebleShot, tMod);
+		fireBullet(trebleShot, tMod, interp);
 	}
 }

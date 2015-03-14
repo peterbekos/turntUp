@@ -20,7 +20,7 @@ public class PlayShip : PlayObject {
 	
 	void blink(){
 		if(isVisible && timeSinceBlink > timeBetweenBlinks){
-			Debug.Log("blink");
+			//Debug.Log("blink");
 			isVisible = false;
 			foreach(SpriteRenderer rend in transform.GetComponentsInChildren<SpriteRenderer>()){
 				rend.enabled = false;
@@ -28,7 +28,7 @@ public class PlayShip : PlayObject {
 			timeSinceBlink = 0;
 		}
 		else if (timeSinceBlink > blinkDuration){
-			Debug.Log("unblink");
+			//Debug.Log("unblink");
 			isVisible = true;
 			foreach(SpriteRenderer rend in transform.GetComponentsInChildren<SpriteRenderer>()){
 				rend.enabled = true;
@@ -150,88 +150,91 @@ public class PlayShip : PlayObject {
 		generateShip();
 	}
 
-    new public void onBeat(GD type){
+    new public void onBeat(GD type, float interp){
         //base.onBeat();
         switch(type)
         {
             case GD.HAT:
-                onHat();
+                onHat(interp);
                 break; // =)
             case GD.BASS:
-                onBass();
+				onBass(interp);
                 break; // =)
             case GD.MELODY:
-                onMelody();
+				onMelody(interp);
                 break; // =)
             case GD.KICK:
-                onKick();
+				onKick(interp);
                 break; // =)
             case GD.HARMONY:
-                onHarmony();
+				onHarmony(interp);
                 break; // =)
+            case GD.SNARE:
+				onSnare (interp);
+            	break; // =(
         }
     }
 	
-	new public void onMelody(){
+	new public void onMelody(float interp){
 		base.onMelody ();
 		
 		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
 		foreach(ShotOrigin s in guns){
-			s.SendMessage("onMelody");
+			s.SendMessage("onMelody", interp);
 		}
 	}
 	
-	new public void onHarmony(){
+	new public void onHarmony(float interp){
 		base.onHarmony ();
 		
 		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
 		foreach(ShotOrigin s in guns){
-			s.SendMessage("onHarmony");
+			s.SendMessage("onHarmony", interp);
 		}
 	}
 	
-	new public void onKick(){
+	new public void onKick(float interp){
 		base.onKick ();
 		
 		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
 		foreach(ShotOrigin s in guns){
-			s.SendMessage("onKick");
+			s.SendMessage("onKick", interp);
 		}
 	}
 	
-	new public void onHat(){
+	new public void onHat(float interp){
 		base.onHat ();
 		
 		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
 		foreach(ShotOrigin s in guns){
-			s.SendMessage("onHat");
+			s.SendMessage("onHat", interp);
 		}
 	}
 	
-	new public void onSnare(){
+	new public void onSnare(float interp){
 		base.onSnare ();
 		
 		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
 		foreach(ShotOrigin s in guns){
-			s.SendMessage("onSnare");
+			s.SendMessage("onSnare", interp);
 		}
 	}
 	
-	new public void onBass(){
+	new public void onBass(float interp){
 		base.onBass ();
 		
 		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
 		foreach(ShotOrigin s in guns){
-			s.SendMessage("onBass");
+			s.SendMessage("onBass", interp);
 		}
 	}
 	
-	new public void onTreble(){
+	new public void onTreble(float interp){
 		base.onTreble ();
 		
 		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
 		foreach(ShotOrigin s in guns){
-			s.SendMessage("onTreble");
+			s.SendMessage("onTreble", interp);
 		}
 	}
 }

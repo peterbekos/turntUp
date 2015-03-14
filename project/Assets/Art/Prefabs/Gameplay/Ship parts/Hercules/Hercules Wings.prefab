@@ -217,9 +217,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   melodyShot: {fileID: 0}
   harmonyShot: {fileID: 0}
-  kickShot: {fileID: 106644, guid: 00794856c65111a4dbeb95db30b61d24, type: 2}
-  snareShot: {fileID: 158798, guid: ec489592bc492fe45a863f7df728bb20, type: 2}
-  hatShot: {fileID: 158504, guid: 47a86fa98e3c6454782bf70c760cc19e, type: 2}
+  kickShot: {fileID: 0}
+  snareShot: {fileID: 0}
+  hatShot: {fileID: 0}
   bassShot: {fileID: 0}
   trebleShot: {fileID: 0}
 --- !u!114 &11422380
@@ -235,9 +235,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   melodyShot: {fileID: 0}
   harmonyShot: {fileID: 0}
-  kickShot: {fileID: 106644, guid: 00794856c65111a4dbeb95db30b61d24, type: 2}
-  snareShot: {fileID: 158798, guid: ec489592bc492fe45a863f7df728bb20, type: 2}
-  hatShot: {fileID: 144394, guid: 27818e29f2c5cd4418840f555ee62f9c, type: 2}
+  kickShot: {fileID: 0}
+  snareShot: {fileID: 0}
+  hatShot: {fileID: 0}
   bassShot: {fileID: 0}
   trebleShot: {fileID: 0}
 --- !u!212 &21212642

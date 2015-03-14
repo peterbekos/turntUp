@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 449016}
   - 50: {fileID: 5049018}
-  - 114: {fileID: 11449014}
   - 60: {fileID: 6049018}
   - 114: {fileID: 11467506}
   m_Layer: 9
@@ -99,18 +98,6 @@ PolygonCollider2D:
       - {x: -.366232991, y: -.351004809}
       - {x: -.599079967, y: -.504062414}
       - {x: -.747753441, y: -.504195035}
---- !u!114 &11449014
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149016}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de74592db41a4144b0e0d40914235be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToDeath: 3
 --- !u!114 &11467506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,8 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06666993a7af8b4ea89a9b5dfc68f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 1
-  strength: 5
+  hitpoints: 99
+  strength: 20
   speed: 50
   deathAnimation: {fileID: 0}
   target: 0

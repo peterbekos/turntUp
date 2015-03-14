@@ -44,7 +44,7 @@ public abstract class PlayObject : BeatObject {
 	}
 	
 	public void OnTriggerExit2D(Collider2D coll){
-		Debug.Log(gameObject.name + "exited collision with " + coll.ToString());
+		//Debug.Log(gameObject.name + " exited collision with " + coll.ToString());
 		if (coll.Equals(Camera.main.collider2D)){
 			Destroy(gameObject);
 		}

@@ -12,6 +12,10 @@ public class ShotObject : PlayObject {
 	
 	}
 	
+	public void interpolate(float interp){
+		transform.position += Vector3.up * interp * speed;
+	}
+	
 	public void amplify(double mod){
 		strength = (int)(strength * mod);
 	}

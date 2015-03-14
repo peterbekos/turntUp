@@ -33,7 +33,7 @@ public class LinearEnemy : EnemyObject {
 	new void OnTriggerEnter2D(Collider2D coll){
 		base.OnTriggerEnter2D(coll);
 		
-		Debug.Log("" + gameObject.name + " Entered collision");
+		//Debug.Log("" + gameObject.name + " Entered collision");
 	
 		if (coll.tag.Equals("Player")){
 			coll.gameObject.SendMessage("takeDamage", strength);

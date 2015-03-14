@@ -5,21 +5,31 @@ public class GameTimer : MonoBehaviour {
 
 	//variables
 	float gameTime = 0f; //In mills
+	
+	bool started = false;
 
 	// Use this for initialization
 	void Start () {
-
-	}
-
-	void FixedUpdate() {
-		gameTime = gameTime + (Time.fixedDeltaTime * 1000);
-		//Debug.Log (gameTime);
 		BeatManager.checkBeats (gameTime);
 	}
 
+	void FixedUpdate() {
+		
+	}
+
+
+	public void initTime(){
+		gameTime = 0f;
+		started = true;
+	}
+	
 	// Update is called once per frame
 	void Update () {
-
+		if(started){
+			gameTime += (Time.deltaTime * 1000);
+			//Debug.Log (gameTime);
+			BeatManager.checkBeats (gameTime + 1500);
+		}
 	}
 
 	void spawnPlayer() {

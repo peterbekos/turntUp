@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 2
-  strength: 2
+  strength: 5
   speed: 10
   deathAnimation: {fileID: 0}
   target: 0

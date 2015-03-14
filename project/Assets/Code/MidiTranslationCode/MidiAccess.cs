@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MidiAccess : MonoBehaviour {
+public class MidiAccess: MonoBehaviour {
 
 
     private List<Channel> mChannels;

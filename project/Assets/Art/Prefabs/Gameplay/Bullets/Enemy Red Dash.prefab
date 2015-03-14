@@ -100,7 +100,7 @@ MonoBehaviour:
   strength: 5
   speed: 20
   deathAnimation: {fileID: 0}
-  target: 0
+  target: 1
 --- !u!212 &21244392
 SpriteRenderer:
   m_ObjectHideFlags: 1
