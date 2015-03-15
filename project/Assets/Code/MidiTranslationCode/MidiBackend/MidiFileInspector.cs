@@ -75,9 +75,10 @@ public class MidiFileInspector
 		int beatsPerBar = timeSignature == null ? 4 : timeSignature.Numerator;
 		int ticksPerBar = timeSignature == null ? ticksPerQuarterNote * 4 : (timeSignature.Numerator * ticksPerQuarterNote * 4) / (1 << timeSignature.Denominator);
 		int ticksPerBeat = ticksPerBar / beatsPerBar;
-		long bar = 1 + (eventTime / ticksPerBar);
-		long beat = 1 + ((eventTime % ticksPerBar) / ticksPerBeat);
+		long bar = (eventTime / ticksPerBar);
+		long beat = ((eventTime % ticksPerBar) / ticksPerBeat);
 		long tick = eventTime % ticksPerBeat;
+		float milsPerTick = milliSecondsPerQuartNote / ticksPerBeat;
 		
 		String initialMidiString = currentMidiEvent.ToString();
 		
@@ -89,13 +90,16 @@ public class MidiFileInspector
 			
 			//START TIME AND DURATION TIME ARE CALCULATED HERE!!!!
 			Note newNote = new Note();
-			Double theStartTime = (bar * milliSecondsPerQuartNote * 4) + (milliSecondsPerQuartNote * (beat - 1));
+			//Double theStartTime = (bar * milliSecondsPerQuartNote * 4) + (milliSecondsPerQuartNote * (beat));
+			Double theStartTime = eventTime * milsPerTick;
 			newNote.startTime = theStartTime; //Start time Measured in milliseconds
 			String midiInfo = currentMidiEvent.ToString();
 			String typeOfNote = getTypeOfNote(midiInfo, currentChannel);
 			newNote.NoteType = typeOfNote;
 			Double timeOfNote = noteLength;
-			newNote.durationTime = ((((double)(timeOfNote))/(double)ticksPerBeat)* milliSecondsPerQuartNote);//Duration slso meseaured in milliseconds
+			//newNote.durationTime = ((((double)(timeOfNote))/(double)ticksPerBeat)* milliSecondsPerQuartNote);//Duration slso meseaured in milliseconds
+			//TODO - check this
+			newNote.durationTime = noteLength * milsPerTick;
 			Channels[currentChannel].Notes.Add(newNote);
 			
 			if(!Channels[currentChannel].TypesOfNotes.Contains(typeOfNote))
@@ -105,7 +109,7 @@ public class MidiFileInspector
 		}
 		
 		
-		string finalReturn = String.Format("{0}:{1}:{2}", bar, beat, tick);
+		string finalReturn = String.Format("{0}:{1}:{2}", bar + 1, beat + 1, tick);
 		Console.WriteLine(finalReturn);
 		return finalReturn;
 		//Print out this string to see full output

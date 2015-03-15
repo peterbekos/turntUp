@@ -28,7 +28,7 @@ public class GameTimer : MonoBehaviour {
 		if(started){
 			gameTime += (Time.deltaTime * 1000);
 			//Debug.Log (gameTime);
-			BeatManager.checkBeats (gameTime + 1500);
+			BeatManager.checkBeats (gameTime);
 		}
 	}
 
