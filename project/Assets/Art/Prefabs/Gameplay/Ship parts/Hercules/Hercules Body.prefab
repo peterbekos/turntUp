@@ -154,7 +154,7 @@ MonoBehaviour:
   melodyShot: {fileID: 0}
   harmonyShot: {fileID: 0}
   kickShot: {fileID: 0}
-  snareShot: {fileID: 0}
+  snareShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
   hatShot: {fileID: 0}
   bassShot: {fileID: 0}
   trebleShot: {fileID: 0}
