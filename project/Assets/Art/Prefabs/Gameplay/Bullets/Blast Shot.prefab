@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 484386}
   - 212: {fileID: 21284388}
   - 95: {fileID: 9584388}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: blast_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 50: {fileID: 5084388}
   - 61: {fileID: 6184388}
   - 114: {fileID: 11484388}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Blast Shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
