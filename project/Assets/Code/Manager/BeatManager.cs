@@ -58,6 +58,10 @@ public static class BeatManager {
         {
             GameManager.player.onBeat(type, interp);
         }
+        if (GameManager.notebar != null)
+        {
+            GameManager.notebar.onBeat(type, interp);
+        }
 		//GameManager.player.onMelody ();
 		/*
 		List<BeatObject> beatObjects = new List<BeatObject>();// = (BeatObject) GameObject.FindGameObjectsWithTag("beatObject");

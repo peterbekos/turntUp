@@ -14,6 +14,7 @@ public static class GameManager {
 	}
 	
 	//variables
+    public static NoteBar notebar;
 	public static PlayShip player;
 	public static List<EnemyObject> enemies;
 	
