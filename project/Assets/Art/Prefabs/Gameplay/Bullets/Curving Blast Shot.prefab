@@ -112,13 +112,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e0ac49c89586a47b3b883c512d3c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 1
-  strength: 10
-  speed: 30
+  hitpoints: 3
+  strength: 3
+  speed: 50
   deathAnimation: {fileID: 0}
   target: 0
   lifeSpan: 1
-  rotationSpeed: 180
+  rotationSpeed: 90
 --- !u!212 &21228524
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -129,7 +129,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122374}
-  m_LocalRotation: {x: 0, y: 0, z: .382409215, w: .923993111}
+  m_LocalRotation: {x: .382683456, y: -.923879564, z: -4.03840588e-08, w: -1.67276255e-08}
   m_LocalPosition: {x: -1.49000001, y: -.25999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   melodyShot: {fileID: 0}
   harmonyShot: {fileID: 0}
-  kickShot: {fileID: 111510, guid: 2c83785c3cec90246972b0223653403e, type: 2}
+  kickShot: {fileID: 0}
   snareShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
   hatShot: {fileID: 128522, guid: 0035f89376fe4d447b18b88272871595, type: 2}
   bassShot: {fileID: 0}
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   melodyShot: {fileID: 0}
   harmonyShot: {fileID: 0}
-  kickShot: {fileID: 111510, guid: 2c83785c3cec90246972b0223653403e, type: 2}
+  kickShot: {fileID: 0}
   snareShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
   hatShot: {fileID: 128522, guid: 0035f89376fe4d447b18b88272871595, type: 2}
   bassShot: {fileID: 0}

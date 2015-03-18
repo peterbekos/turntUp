@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: sonic_ring_0
+  m_Name: SonicBoom_controller
   serializedVersion: 2
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -49,10 +49,10 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110244414}
+      first: {fileID: 0}
       second: []
     data:
-      first: {fileID: 0}
+      first: {fileID: 110244414}
       second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 0, y: 144, z: 0}

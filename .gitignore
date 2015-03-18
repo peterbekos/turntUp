@@ -1,15 +1,15 @@
 # =============== #
 # Unity generated #
 # =============== #
-Temp/
-Obj/
-UnityGenerated/
-Library/
+project/Temp/
+project/Obj/
+project/UnityGenerated/
+project/Library/
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
-ExportedObj/
+project/ExportedObj/
 *.svd
 *.userprefs
 *.csproj
@@ -23,6 +23,7 @@ ExportedObj/
 # ============ #
 # OS generated #
 # ============ #
+project/
 .DS_Store
 .DS_Store?
 ._*
