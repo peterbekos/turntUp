@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   melodyShot: {fileID: 0}
   harmonyShot: {fileID: 0}
-  kickShot: {fileID: 0}
+  kickShot: {fileID: 111510, guid: 2c83785c3cec90246972b0223653403e, type: 2}
   snareShot: {fileID: 0}
   hatShot: {fileID: 0}
   bassShot: {fileID: 0}

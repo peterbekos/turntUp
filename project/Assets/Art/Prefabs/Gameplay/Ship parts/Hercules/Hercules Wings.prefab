@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 422374}
-  - 114: {fileID: 11422378}
+  - 114: {fileID: 11443196}
   m_Layer: 11
   m_Name: shot_origin
   m_TagString: Untagged
@@ -204,24 +204,6 @@ PolygonCollider2D:
       - {x: -2.34548879, y: -1.32309163}
       - {x: -1.51309478, y: -.495598435}
       - {x: -1.50316274, y: -.273148775}
---- !u!114 &11422378
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bc41d15f3c385f4fb3a26bc571724fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  melodyShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
-  harmonyShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
-  kickShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
-  snareShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
-  hatShot: {fileID: 0}
-  bassShot: {fileID: 0}
-  trebleShot: {fileID: 0}
 --- !u!114 &11422380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,11 +215,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc41d15f3c385f4fb3a26bc571724fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  melodyShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
-  harmonyShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
-  kickShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
+  melodyShot: {fileID: 0}
+  harmonyShot: {fileID: 0}
+  kickShot: {fileID: 111510, guid: 2c83785c3cec90246972b0223653403e, type: 2}
   snareShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
-  hatShot: {fileID: 0}
+  hatShot: {fileID: 128522, guid: 0035f89376fe4d447b18b88272871595, type: 2}
+  bassShot: {fileID: 0}
+  trebleShot: {fileID: 0}
+--- !u!114 &11443196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc41d15f3c385f4fb3a26bc571724fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  melodyShot: {fileID: 0}
+  harmonyShot: {fileID: 0}
+  kickShot: {fileID: 111510, guid: 2c83785c3cec90246972b0223653403e, type: 2}
+  snareShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
+  hatShot: {fileID: 128522, guid: 0035f89376fe4d447b18b88272871595, type: 2}
   bassShot: {fileID: 0}
   trebleShot: {fileID: 0}
 --- !u!212 &21212642

@@ -7,6 +7,12 @@ public class GameTimer : MonoBehaviour {
 	float gameTime = 0f; //In mills
 	
 	bool started = false;
+	
+	public GameObject playerPrefab;
+	public Vector3 playerStartPos = new Vector3(0, -10, 0);
+	
+	public float respawnCD = 1.5f; //cooldown on player respawn after death
+	public float respawnTimer = 0; //how much time remains
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +27,7 @@ public class GameTimer : MonoBehaviour {
 	public void initTime(){
 		gameTime = 0f;
 		started = true;
+		spawnPlayer();
 	}
 	
 	// Update is called once per frame
@@ -29,12 +36,26 @@ public class GameTimer : MonoBehaviour {
 			gameTime += (Time.deltaTime * 1000);
 			//Debug.Log (gameTime);
 			BeatManager.checkBeats (gameTime);
+			
+			if(respawnTimer != -99){
+				respawnTimer -= Time.deltaTime;
+				if(respawnTimer <=0 ){
+					spawnPlayer();
+				}
+			}
 		}
+	}
+	
+	public void startRespawnTimer(){
+		respawnTimer = respawnCD;
+		GameManager.player = null;
 	}
 
 	void spawnPlayer() {
-		//TODO - write code that can spawn a playable ship
-		//TODO - pass instance of the player ship to GameManager
+		GameObject playerObj = (GameObject)Instantiate(playerPrefab, playerStartPos, Quaternion.identity);
+		GameManager.player = playerObj.GetComponent<PlayShip>();
+		
+		respawnTimer = -99f;
 	}
 
 	void pingManagers() {
