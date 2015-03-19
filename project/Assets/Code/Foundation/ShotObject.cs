@@ -7,9 +7,21 @@ public class ShotObject : PlayObject {
 	public enum hit {enemy, player};
 	public hit target = hit.player;
 	
-	// Update is called once per frame
-	new void Update () {
+	public float lifeSpan = 10;
 	
+	protected void Start(){
+	
+	}
+	
+	// Update is called once per frame
+	new protected void Update () {
+		if(lifeSpan != -99 && lifeSpan > 0){
+			lifeSpan -= Time.deltaTime;
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
 	}
 	
 	public void interpolate(float interp){

@@ -481,6 +481,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba96af70f97410c468fbd2ddab999dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 134868, guid: f0c93ac59200e124589ea926a11761f8, type: 2}
+  playerStartPos: {x: 0, y: -15, z: 0}
+  respawnCD: 1.5
+  respawnTimer: 0
 --- !u!124 &12402938
 Behaviour:
   m_ObjectHideFlags: 1

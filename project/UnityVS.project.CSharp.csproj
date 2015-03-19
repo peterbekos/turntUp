@@ -63,6 +63,9 @@
     <Compile Include="Assets\Code\Foundation\PlayObject.cs" />
     <Compile Include="Assets\Code\Foundation\ShotObject.cs" />
     <Compile Include="Assets\Code\Foundation\loadingSong.cs" />
+    <Compile Include="Assets\Code\Gameplay\Bullets\CircularCurveBullet.cs" />
+    <Compile Include="Assets\Code\Gameplay\Bullets\FollowPlayerBullet.cs" />
+    <Compile Include="Assets\Code\Gameplay\Bullets\ImmobileBullet.cs" />
     <Compile Include="Assets\Code\Gameplay\Bullets\LinearBullet.cs" />
     <Compile Include="Assets\Code\Gameplay\Enemy\LinearEnemy.cs" />
     <Compile Include="Assets\Code\Gameplay\General\BackgroundObjectSpawner.cs" />

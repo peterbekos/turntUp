@@ -37,13 +37,7 @@ public static class BeatManager {
 				Note note = NotesToPlay[notePosition];
 				GD noteType = GDMethods.getBeatType(note.InstrumentName);
 				
-				
 				float interp = (float)(time - note.startTime)/1000;
-				
-				
-				if( noteType == GD.HAT)
-					Debug.Log("Should start at: " + (note.startTime/1000) + " Current time: " + (time/1000) + " instead offset by: "  + interp);
-					
 				callBeat (noteType, interp);
 				notePosition++;
 			}

@@ -28,11 +28,17 @@ public abstract class PlayObject : BeatObject {
 	//reduce health, and if <= 0 die
 	public void takeDamage(int dmg){
 		hitpoints -= dmg;
+		
 		if(hitpoints <= 0)
 		{
 			//play the death sound and kill the object
 			Instantiate(deathAnimation, transform.position, Quaternion.identity);
 			Destroy(gameObject);
+			
+			if(gameObject.tag == "Player") 
+			{
+				Camera.main.GetComponent<GameTimer>().startRespawnTimer();
+			}
 		}
 	}
 	
