@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CircularCurveBullet : ShotObject {
 
-	public int rotationSpeed = 180; //how many degrees to turn in one second
+	public float rotationSpeed = 180f; //how many degrees to turn in one second
 	
 	// Rotate and move forward (moves in a circle)
 	new void Update () {

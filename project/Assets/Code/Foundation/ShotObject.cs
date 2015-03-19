@@ -39,16 +39,11 @@ public class ShotObject : PlayObject {
 		if(coll.gameObject.tag == "Enemy" && target == hit.enemy)
 		{
 			coll.gameObject.SendMessage("takeDamage", this.strength);
-			this.hitpoints -= 1; //reduce number of remaining penetrations
+			takeDamage (1);
 		}
 		else if(coll.gameObject.tag == "Player" && target == hit.player){
 			coll.gameObject.SendMessage("takeDamage", this.strength);
-			this.hitpoints -= 1; //reduce number of remaining penetrations
-		}
-		
-		//if this bullet has hit as much as it's allowed to, die
-		if(hitpoints <= 0){
-			Destroy (gameObject);
+			takeDamage (1);
 		}
 	}
 }

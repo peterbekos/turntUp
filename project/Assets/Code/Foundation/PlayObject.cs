@@ -32,7 +32,7 @@ public abstract class PlayObject : BeatObject {
 		if(hitpoints <= 0)
 		{
 			//play the death sound and kill the object
-			Instantiate(deathAnimation, transform.position, Quaternion.identity);
+			if(deathAnimation != null) Instantiate(deathAnimation, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 			
 			if(gameObject.tag == "Player") 

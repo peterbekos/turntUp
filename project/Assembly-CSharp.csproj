@@ -49,6 +49,7 @@
      <Compile Include="Assets\Code\Foundation\BeatGraphic.cs" />
      <Compile Include="Assets\Code\Foundation\BeatObject.cs" />
      <Compile Include="Assets\Code\Foundation\EnemyObject.cs" />
+     <Compile Include="Assets\Code\Foundation\NoteObject.cs" />
      <Compile Include="Assets\Code\Foundation\PlayObject.cs" />
      <Compile Include="Assets\Code\Foundation\ShotObject.cs" />
      <Compile Include="Assets\Code\Foundation\loadingSong.cs" />
@@ -56,6 +57,7 @@
      <Compile Include="Assets\Code\Gameplay\Bullets\FollowPlayerBullet.cs" />
      <Compile Include="Assets\Code\Gameplay\Bullets\ImmobileBullet.cs" />
      <Compile Include="Assets\Code\Gameplay\Bullets\LinearBullet.cs" />
+     <Compile Include="Assets\Code\Gameplay\Bullets\LockOnMissile.cs" />
      <Compile Include="Assets\Code\Gameplay\Enemy\LinearEnemy.cs" />
      <Compile Include="Assets\Code\Gameplay\General\BackgroundObjectSpawner.cs" />
      <Compile Include="Assets\Code\Gameplay\General\DeathTimer.cs" />
@@ -63,6 +65,8 @@
      <Compile Include="Assets\Code\Gameplay\General\LinearTravel.cs" />
      <Compile Include="Assets\Code\Gameplay\General\PlayerBounds.cs" />
      <Compile Include="Assets\Code\Gameplay\General\ShotOrigin.cs" />
+     <Compile Include="Assets\Code\Gameplay\Notes\LinearNote.cs" />
+     <Compile Include="Assets\Code\Gameplay\Notes\NoteOrigin.cs" />
      <Compile Include="Assets\Code\Gameplay\Player\PlayShip.cs" />
      <Compile Include="Assets\Code\Manager\BeatManager.cs" />
      <Compile Include="Assets\Code\Manager\GD.cs" />
@@ -74,6 +78,8 @@
      <Compile Include="Assets\Code\MidiTranslationCode\MidiBackend\Channel.cs" />
      <Compile Include="Assets\Code\MidiTranslationCode\MidiBackend\MidiFileInspector.cs" />
      <Compile Include="Assets\Code\MidiTranslationCode\MidiBackend\Note.cs" />
+     <Compile Include="Assets\Code\UI\MainMenu.cs" />
+     <Compile Include="Assets\Code\UI\NoteBar.cs" />
      <Compile Include="Assets\Spawner.cs" />
      <None Include="Assets\Art\Scenes\TitleScreen\SpriteSheets\instructions.txt" />
  <Reference Include="UnityEngine.UI">

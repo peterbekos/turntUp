@@ -150,7 +150,7 @@ MonoBehaviour:
   kickShot: {fileID: 111510, guid: 2c83785c3cec90246972b0223653403e, type: 2}
   snareShot: {fileID: 0}
   hatShot: {fileID: 0}
-  bassShot: {fileID: 106644, guid: 00794856c65111a4dbeb95db30b61d24, type: 2}
+  bassShot: {fileID: 161652, guid: a9a1e26b1ee469049bddc65455b90666, type: 2}
   trebleShot: {fileID: 0}
 --- !u!212 &21233288
 SpriteRenderer:
