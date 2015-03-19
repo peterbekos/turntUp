@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 446232}
   - 114: {fileID: 11446232}
   - 114: {fileID: 11490272}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: NoteOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,10 +40,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebfeca8e465d6647876572f7b404ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  note1: {fileID: 161872, guid: 2b1c59960b34c084cb813c2b61a32751, type: 2}
-  note2: {fileID: 161872, guid: 2b1c59960b34c084cb813c2b61a32751, type: 2}
-  note3: {fileID: 161872, guid: 2b1c59960b34c084cb813c2b61a32751, type: 2}
-  note4: {fileID: 161872, guid: 2b1c59960b34c084cb813c2b61a32751, type: 2}
+  greenNote: {fileID: 0}
+  yellowNote: {fileID: 0}
+  redNote: {fileID: 0}
+  blueNote: {fileID: 0}
+  greenNoteSpawnPoint: {x: 7, y: -5, z: 0}
+  yellowNoteSpawnPoint: {x: 0, y: 0, z: 0}
+  redNoteSpawnPoint: {x: 0, y: 0, z: 0}
+  blueNoteSpawnPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &11490272
 MonoBehaviour:
   m_ObjectHideFlags: 1

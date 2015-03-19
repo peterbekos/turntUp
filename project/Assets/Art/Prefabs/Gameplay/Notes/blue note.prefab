@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 464450}
   - 212: {fileID: 21264450}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: beat_indicators_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 464452}
   - 114: {fileID: 11485392}
-  m_Layer: 0
+  - 61: {fileID: 6136514}
+  m_Layer: 5
   m_Name: blue note
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,11 +53,22 @@ Transform:
   m_GameObject: {fileID: 164452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 2}
   m_Children:
   - {fileID: 464450}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6136514
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164452}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!114 &11485392
 MonoBehaviour:
   m_ObjectHideFlags: 1
