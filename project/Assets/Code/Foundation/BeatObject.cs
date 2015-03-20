@@ -32,6 +32,33 @@ public abstract class BeatObject : MonoBehaviour {
 		}
 	}
 	
+	public void onBeat(GD type, float interp){
+		switch(type)
+		{
+		case GD.HAT:
+			onHat(interp);
+			break; // =)
+		case GD.BASS:
+			onBass(interp);
+			break; // =)
+		case GD.MELODY:
+			onMelody(interp);
+			break; // =)
+		case GD.KICK:
+			onKick(interp);
+			break; // =)
+		case GD.HARMONY:
+			onHarmony(interp);
+			break; // =)
+		case GD.SNARE:
+			onSnare (interp);
+			break; // =(
+		case GD.TREBLE:
+			onTreble (interp);
+			break;
+		}
+	}
+	
 	public void onMelody() {
 		
 	}
@@ -86,11 +113,5 @@ public abstract class BeatObject : MonoBehaviour {
 	
 	public void onTreble(float interp) {
 		
-	}
-	
-	public void move(float x, float y) {
-		//TODO - use rigid body velocity
-		float dt = Time.deltaTime;
-		transform.Translate(x * dt, y * dt, 0);
 	}
 }

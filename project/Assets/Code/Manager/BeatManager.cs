@@ -12,6 +12,7 @@ public static class BeatManager {
     private static List<Note> NotesToPlay;
     public static string fileName;
 	private static int notePosition = 0;
+	private static int noteBarPosition = 0;
 
 	static BeatManager() {
 		fileName = "Assets/Art/Music/ColorsMIDI(Unfinished).mid";
@@ -41,20 +42,30 @@ public static class BeatManager {
 				callBeat (noteType, interp);
 				notePosition++;
 			}
+			
+			while (NotesToPlay[noteBarPosition].startTime <= (time + 4500f)) {
+				Note note = NotesToPlay[noteBarPosition];
+				GD noteType = GDMethods.getBeatType(note.InstrumentName);
+				
+				float interp = (float)(time + 4500f - note.startTime)/1000;
+				callNoteBarBeat (noteType, interp);
+				noteBarPosition++;
+			}
 		}
 	}
 
-
+	public static void callNoteBarBeat(GD type, float interp){
+		if (GameManager.notebar != null)
+		{
+			GameManager.notebar.onBeat(type, interp);
+		}
+	}
 
 	public static void callBeat(GD type, float interp) {
 		//Debug.Log (type);
         if (GameManager.player != null)
         {
             GameManager.player.onBeat(type, interp);
-        }
-        if (GameManager.notebar != null)
-        {
-            GameManager.notebar.onBeat(type, interp);
         }
 		//GameManager.player.onMelody ();
 		/*

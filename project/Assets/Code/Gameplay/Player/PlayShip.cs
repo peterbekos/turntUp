@@ -111,23 +111,6 @@ public class PlayShip : PlayObject {
 		PolygonCollider2D coll = gameObject.GetComponent<PolygonCollider2D>();
 		PolygonCollider2D old = temp.GetComponent<PolygonCollider2D>();
 		
-		
-		
-		//TODO: re-create the collider to fit the new shape
-		/*
-		//edit the correct path
-		if(part == body){
-			coll.SetPath(0, old.GetPath(0)); //copy body collider
-		}
-		else if(part == wing){
-			coll.SetPath(1, old.GetPath(0)); //copy wing collider
-		}
-		else if(part == booster){
-			coll.SetPath(2, old.GetPath(0)); //copy booster collider
-		}
-		Destroy(old); //old one not needed; waste of CPU
-		*/
-		
 	}
 	
 	//swap a part
@@ -154,24 +137,27 @@ public class PlayShip : PlayObject {
         //base.onBeat();
         switch(type)
         {
-            case GD.HAT:
-                onHat(interp);
-                break; // =)
-            case GD.BASS:
-				onBass(interp);
-                break; // =)
-            case GD.MELODY:
-				onMelody(interp);
-                break; // =)
-            case GD.KICK:
-				onKick(interp);
-                break; // =)
-            case GD.HARMONY:
-				onHarmony(interp);
-                break; // =)
-            case GD.SNARE:
-				onSnare (interp);
-            	break; // =(
+        case GD.HAT:
+            onHat(interp);
+            break; // =)
+        case GD.BASS:
+			onBass(interp);
+            break; // =)
+        case GD.MELODY:
+			onMelody(interp);
+            break; // =)
+        case GD.KICK:
+			onKick(interp);
+            break; // =)
+        case GD.HARMONY:
+			onHarmony(interp);
+            break; // =)
+        case GD.SNARE:
+			onSnare (interp);
+            break; // =(
+		case GD.TREBLE:
+			onTreble (interp);
+			break;
         }
     }
 	

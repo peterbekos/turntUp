@@ -7,14 +7,7 @@ public class NoteBar : PlayObject
     // Use this for initialization
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        base.Update();
-        GameManager.notebar = this;
+		GameManager.notebar = this;
     }
 
     new public void onBeat(GD type, float interp)
@@ -40,6 +33,9 @@ public class NoteBar : PlayObject
             case GD.SNARE:
                 onSnare(interp);
                 break; // =(
+            case GD.TREBLE:
+            	onTreble (interp);
+            	break;
         }
     }
 

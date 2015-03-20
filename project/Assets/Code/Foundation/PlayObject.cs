@@ -17,14 +17,6 @@ public abstract class PlayObject : BeatObject {
 	
 	}
 	
-	void onCollideSelf() {
-
-	}
-
-	void onCollideTarget(PlayObject target) {
-
-	}
-	
 	//reduce health, and if <= 0 die
 	public void takeDamage(int dmg){
 		hitpoints -= dmg;
