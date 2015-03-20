@@ -18,7 +18,7 @@ public static class GameManager {
 	public static PlayShip player;
 	public static List<EnemyObject> enemies;
 	public static EnemySpawnerController spawnController;
-	
+	public static int score = 0;
 	//initalization function
 	private static void init() {
 		

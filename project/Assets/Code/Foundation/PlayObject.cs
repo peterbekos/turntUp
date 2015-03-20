@@ -9,6 +9,7 @@ public abstract class PlayObject : BeatObject {
 	public int hitpoints;
 	public int strength;
 	public float speed;
+	public int scoreOnKill = 0;
 	
 	//plays a sound and animation when the unit dies
 	public GameObject deathAnimation; 
@@ -25,6 +26,7 @@ public abstract class PlayObject : BeatObject {
 		{
 			//play the death sound and kill the object
 			if(deathAnimation != null) Instantiate(deathAnimation, transform.position, Quaternion.identity);
+			GameManager.score += scoreOnKill;
 			Destroy(gameObject);
 			
 			if(gameObject.tag == "Player") 
@@ -32,6 +34,18 @@ public abstract class PlayObject : BeatObject {
 				Camera.main.GetComponent<GameTimer>().startRespawnTimer();
 			}
 		}
+	}
+	
+	public void rotateToward(GameObject target){
+		//Rotate to face object
+		float zRot = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
+		transform.rotation = Quaternion.Euler(0f, 0f, zRot - 90);
+	}
+	
+	public void rotateToward(Vector3 target){
+		//Rotate to face point
+		float zRot = Mathf.Atan2(target.y - transform.position.y, target.x - transform.position.x) * Mathf.Rad2Deg;
+		transform.rotation = Quaternion.Euler(0f, 0f, zRot - 90);
 	}
 	
 	//Use this for collisions, built-in to Unity

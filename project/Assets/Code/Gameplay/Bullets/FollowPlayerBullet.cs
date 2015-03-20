@@ -5,7 +5,7 @@ public class FollowPlayerBullet : ShotObject {
 
 	public GameObject player;
 	
-	float zRot; //rotation to face player
+	//float zRot; //rotation to face player
 	
 	public enum actions { standStill, moveForward };
 	
@@ -23,9 +23,7 @@ public class FollowPlayerBullet : ShotObject {
 		//Debug.Log ("SonicBoom Alive");
 		if(player != null) //if there still exists a player
 		{
-			//Rotate to face player
-			zRot = Mathf.Atan2(player.transform.position.y - transform.position.y, player.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.Euler(0f, 0f, zRot - 90);
+			rotateToward(player);
 			
 			//If player is within the movement range of the bullet, match the location
 			if(Vector3.Distance(transform.position, player.transform.position) <= speed * Time.deltaTime){

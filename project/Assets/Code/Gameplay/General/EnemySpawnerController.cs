@@ -11,7 +11,7 @@ public class EnemySpawnerController : MonoBehaviour {
 	
 	public int nextChange = 0;
 	
-	public Change[] changes = new Change[6];
+	public Change[] changes = new Change[8];
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +23,9 @@ public class EnemySpawnerController : MonoBehaviour {
 		changes[2] = new Change( 88000f, changetypes.enemySpawnRate, .25f);
 		changes[3] = new Change( 124000f, changetypes.enemySpawnRate, .1f);
 		changes[4] = new Change( 138000f, changetypes.spawnEnemy, enemyToSpawn);
-		changes[5] = new Change( 138000f, changetypes.enemySpawnRate, .025f);
+		changes[5] = new Change( 138000f, changetypes.enemySpawnRate, .06f);
+		changes[6] = new Change( 165000f, changetypes.enemySpawnRate, 1f);
+		changes[7] = new Change( 180000f, changetypes.enemySpawnRate, 100f);
 	}
 	
 	//read change list and apply any changes that need to be made

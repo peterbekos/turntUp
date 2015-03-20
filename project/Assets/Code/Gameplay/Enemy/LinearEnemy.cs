@@ -5,8 +5,6 @@ public class LinearEnemy : EnemyObject {
 	
 	public Vector3 target = new Vector3(0, 0, 0);
 	
-	private float zRot;
-	
 	// Use this for initialization
 	void Start () {
 		
@@ -19,8 +17,7 @@ public class LinearEnemy : EnemyObject {
 		
 		
 		//rotate to face the target point
-		zRot = Mathf.Atan2(target.y - transform.position.y, target.x - transform.position.x) * Mathf.Rad2Deg;
-		transform.rotation = Quaternion.Euler(0f, 0f, zRot - 90);
+		rotateToward(target);
 	}
 	
 	// Update is called once per frame
