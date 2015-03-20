@@ -87,6 +87,7 @@ MonoBehaviour:
   hitpoints: 99
   strength: 10
   speed: 0
+  scoreOnKill: 0
   deathAnimation: {fileID: 0}
   target: 0
   lifeSpan: .400000006

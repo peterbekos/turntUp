@@ -29,7 +29,7 @@ GameObject:
   - 114: {fileID: 11457476}
   m_Layer: 9
   m_Name: Enemy Red Dash
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,8 +99,10 @@ MonoBehaviour:
   hitpoints: 1
   strength: 5
   speed: 20
+  scoreOnKill: 0
   deathAnimation: {fileID: 0}
   target: 1
+  lifeSpan: 10
 --- !u!212 &21244392
 SpriteRenderer:
   m_ObjectHideFlags: 1

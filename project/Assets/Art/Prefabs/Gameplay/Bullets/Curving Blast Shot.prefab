@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11428524}
   m_Layer: 9
   m_Name: Curving Blast Shot
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +115,7 @@ MonoBehaviour:
   hitpoints: 3
   strength: 4
   speed: 50
+  scoreOnKill: 0
   deathAnimation: {fileID: 0}
   target: 0
   lifeSpan: 1

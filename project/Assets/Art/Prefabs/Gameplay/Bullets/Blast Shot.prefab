@@ -30,7 +30,7 @@ GameObject:
   - 114: {fileID: 11484388}
   m_Layer: 10
   m_Name: Blast Shot
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +115,7 @@ MonoBehaviour:
   hitpoints: 1
   strength: 5
   speed: 15
+  scoreOnKill: 0
   deathAnimation: {fileID: 0}
   target: 0
   lifeSpan: 10
