@@ -15,7 +15,8 @@ public static class BeatManager {
 	private static int noteBarPosition = 0;
 
 	static BeatManager() {
-		fileName = "Assets/Art/Music/ColorsMIDI(Unfinished).mid";
+		//fileName = "Assets/Art/Music/ColorsMIDI(Unfinished).mid";
+		fileName = "Assets/Art/Music/sandstorm.mid";
 		init ();
 		Debug.Log ("init called");
 	}
