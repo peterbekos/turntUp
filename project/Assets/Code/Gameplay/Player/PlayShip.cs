@@ -132,6 +132,13 @@ public class PlayShip : PlayObject {
 		
 		generateShip();
 	}
+	
+	new public void takeDamage(int dmg){
+		base.takeDamage(dmg);
+		if (hitpoints <= 0 ){
+			GameManager.score = (int)(GameManager.score * .5);
+		}
+	}
 
     new public void onBeat(GD type, float interp){
         //base.onBeat();
