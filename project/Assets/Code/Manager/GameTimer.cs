@@ -4,6 +4,8 @@ using System.Collections;
 public class GameTimer : MonoBehaviour {
 
 	//variables
+	public string levelName = "Colors";
+	
 	float gameTime = 0f; //In mills
 	
 	bool started = false;
@@ -16,6 +18,9 @@ public class GameTimer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		GameManager.score = 0;
+		BeatManager.loadFile("Assets/Art/Music/" + levelName + ".mid");
+		//Camera.main.GetComponent<AudioSource>().clip = AssetDatabase.FindAsset("Assets/Art/Music" + levelName + ".mp3");
 		BeatManager.checkBeats (gameTime);
 	}
 

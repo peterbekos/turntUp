@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     public GUIStyle creditButtonTexture;
     public GUIStyle exitButtonTexture;
     public float menuStartX, menuStartY, menuWidth, menuHeight, menuOptionDistance;
-    public string[] buttonNames = { "Play", "Upgrade", "Credit", "Exit" };
+    public string[] buttonNames = { "Play Stage 1", "Play Stage 2", "Upgrade", "Credit", "Exit" };
     public int selectedIndex;
     bool[] buttons;
 
@@ -86,7 +86,7 @@ public class MainMenu : MonoBehaviour
         //button actions
         if (buttons[0])
         {
-            Application.LoadLevel(0);
+            Application.LoadLevel(1);
         }
         if (buttons[1])
         {
@@ -94,7 +94,8 @@ public class MainMenu : MonoBehaviour
         }
         if (buttons[2])
         {
-            print("clicked credit");
+        	Application.LoadLevel(2);
+            //print("clicked credit");
         }
         if (buttons[3] == true)
         {

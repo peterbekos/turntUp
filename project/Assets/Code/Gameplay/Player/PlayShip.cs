@@ -48,6 +48,10 @@ public class PlayShip : PlayObject {
 	new void Update () {
 		base.Update ();
 		
+		if(Input.GetKeyDown(KeyCode.Escape)){
+			Application.LoadLevel(0);
+		}
+		
 		if(numBlinks > 0)
 		{
 			//blink();
