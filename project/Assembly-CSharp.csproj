@@ -74,6 +74,7 @@
      <Compile Include="Assets\Code\Manager\GameManager.cs" />
      <Compile Include="Assets\Code\Manager\GameTimer.cs" />
      <Compile Include="Assets\Code\Manager\GraphicsManager.cs" />
+     <Compile Include="Assets\Code\Manager\ScoreManager.cs" />
      <Compile Include="Assets\Code\Manager\StageManager.cs" />
      <Compile Include="Assets\Code\MidiTranslationCode\MidiAccess.cs" />
      <Compile Include="Assets\Code\MidiTranslationCode\MidiBackend\Channel.cs" />
