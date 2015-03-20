@@ -62,6 +62,7 @@
      <Compile Include="Assets\Code\Gameplay\General\BackgroundObjectSpawner.cs" />
      <Compile Include="Assets\Code\Gameplay\General\DeathTimer.cs" />
      <Compile Include="Assets\Code\Gameplay\General\EnemySpawner.cs" />
+     <Compile Include="Assets\Code\Gameplay\General\EnemySpawnerController.cs" />
      <Compile Include="Assets\Code\Gameplay\General\LinearTravel.cs" />
      <Compile Include="Assets\Code\Gameplay\General\PlayerBounds.cs" />
      <Compile Include="Assets\Code\Gameplay\General\ShotOrigin.cs" />

@@ -36,6 +36,7 @@ public class GameTimer : MonoBehaviour {
 			gameTime += (Time.deltaTime * 1000);
 			//Debug.Log (gameTime);
 			BeatManager.checkBeats (gameTime);
+			GameManager.spawnController.checkChanges(gameTime);
 			
 			if(respawnTimer != -99){
 				respawnTimer -= Time.deltaTime;

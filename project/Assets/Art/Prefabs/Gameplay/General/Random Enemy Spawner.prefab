@@ -25,6 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 462126}
   - 114: {fileID: 11462124}
+  - 114: {fileID: 11407162}
   m_Layer: 0
   m_Name: Random Enemy Spawner
   m_TagString: Untagged
@@ -57,6 +58,19 @@ Transform:
   - {fileID: 462124}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11407162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c04698ec7b2e664cb52ae43a87e0874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyToSpawn: {fileID: 199284, guid: 4a4d28a8aff63e54d8ee741522bd8eb4, type: 2}
+  nextChange: 0
 --- !u!114 &11462124
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -32,35 +32,35 @@ public class EnemySpawner : MonoBehaviour {
 	}
 	
 	//spawn a random enemy at a random point outside the camera
-	void spawnEnemy(){
+	public void spawnEnemy(){
 		Vector3 spawnPoint = getRandomPoint();
 		GameObject spawn = (GameObject)GameObject.Instantiate(enemiesToSpawn[Random.Range(0, enemiesToSpawn.Length)], spawnPoint, gameObject.transform.rotation);
 	}
 	
 	//spawn a random enemy at a given point outside the camera
-	void spawnEnemy(Vector3 spawnPoint){
+	public void spawnEnemy(Vector3 spawnPoint){
 		GameObject spawn = (GameObject)GameObject.Instantiate(enemiesToSpawn[Random.Range(0, enemiesToSpawn.Length)], spawnPoint, gameObject.transform.rotation);
 	}
 	
 	//spawn a given enemy at a random point outside the camera
-	void spawnEnemy(GameObject enemy){
+	public void spawnEnemy(GameObject enemy){
 		Vector3 spawnPoint = getRandomPoint();
 		GameObject spawn = (GameObject)GameObject.Instantiate(enemy, spawnPoint, gameObject.transform.rotation);
 	}
 	
 	//spawn a given enemy at a given point outside the camera
-	void spawnEnemy(GameObject enemy, Vector3 spawnPoint){
+	public void spawnEnemy(GameObject enemy, Vector3 spawnPoint){
 		GameObject spawn = (GameObject)GameObject.Instantiate(enemy, spawnPoint, gameObject.transform.rotation);
 	}
 	
 	//spawn a given enemy in the array at a random point outside the camera
-	void spawnEnemy(int enemy){
+	public void spawnEnemy(int enemy){
 		Vector3 spawnPoint = getRandomPoint();
 		GameObject spawn = (GameObject)GameObject.Instantiate(enemiesToSpawn[enemy], spawnPoint, gameObject.transform.rotation);
 	}
 	
 	//spawn a given enemy in the array at a given point outside the camera
-	void spawnEnemy(int enemy, Vector3 spawnPoint){
+	public void spawnEnemy(int enemy, Vector3 spawnPoint){
 		GameObject spawn = (GameObject)GameObject.Instantiate(enemiesToSpawn[enemy], spawnPoint, gameObject.transform.rotation);
 	}
 	

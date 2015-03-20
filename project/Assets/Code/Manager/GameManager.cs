@@ -17,6 +17,7 @@ public static class GameManager {
     public static NoteBar notebar;
 	public static PlayShip player;
 	public static List<EnemyObject> enemies;
+	public static EnemySpawnerController spawnController;
 	
 	//initalization function
 	private static void init() {
