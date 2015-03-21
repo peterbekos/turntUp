@@ -222,6 +222,13 @@ MonoBehaviour:
   hatShot: {fileID: 128522, guid: 0035f89376fe4d447b18b88272871595, type: 2}
   bassShot: {fileID: 0}
   trebleShot: {fileID: 0}
+  melodyAngle: 0
+  harmonyAngle: 0
+  kickAngle: 0
+  snareAngle: 0
+  hatAngle: 0
+  bassAngle: 0
+  trebleAngle: 0
 --- !u!114 &11443196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -240,6 +247,13 @@ MonoBehaviour:
   hatShot: {fileID: 128522, guid: 0035f89376fe4d447b18b88272871595, type: 2}
   bassShot: {fileID: 0}
   trebleShot: {fileID: 0}
+  melodyAngle: 0
+  harmonyAngle: 0
+  kickAngle: 0
+  snareAngle: 0
+  hatAngle: 4
+  bassAngle: 0
+  trebleAngle: 0
 --- !u!212 &21212642
 SpriteRenderer:
   m_ObjectHideFlags: 1

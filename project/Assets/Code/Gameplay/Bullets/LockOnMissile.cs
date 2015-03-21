@@ -7,7 +7,6 @@ public class LockOnMissile : ShotObject {
 	private phase currPhase = phase.exit;
 	
 	public float launchSpeed = 3f;
-	public float launchDuration = 2f;
 	
 	public float maxRotationPerSecond = 180f;
 	
@@ -21,9 +20,9 @@ public class LockOnMissile : ShotObject {
 		switch(currPhase){
 		case phase.exit: // missile has just been launched and is delayed before targeting
 			transform.position += transform.up * launchSpeed * Time.deltaTime;
-			launchDuration -= Time.deltaTime;
+			duration -= Time.deltaTime * 1000;
 			
-			if(launchDuration <= 0){
+			if(duration <= 0){
 				currPhase = phase.lockOn;
 			}
 			break;
@@ -42,15 +41,16 @@ public class LockOnMissile : ShotObject {
 				break;
 			}
 			
-			zRot = Mathf.Atan2(lockTarget.transform.position.y - transform.position.y, lockTarget.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
-			
-			//if( transform.rotation.z - zRot > maxRotationPerSecond / Time.deltaTime ) zRot = maxRotationPerSecond / Time.deltaTime;
-			
-			transform.rotation = Quaternion.Euler (0f, 0f, zRot - 90);
+			rotateToward(lockTarget);
 			
 			transform.position += transform.up * speed * Time.deltaTime;
 			
 			break;
 		}
+	}
+	
+	new public void setDuration(float dur){
+		base.setDuration(dur);
+		duration *= .75f;
 	}
 }

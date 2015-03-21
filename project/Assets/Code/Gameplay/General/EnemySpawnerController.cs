@@ -7,11 +7,11 @@ public class EnemySpawnerController : MonoBehaviour {
 	
 	public enum changetypes { enemySpawnRate, addEnemy, removeEnemy, spawnEnemy, spawnEnemyAtPoint };
 	
-	public GameObject enemyToSpawn;
+	public GameObject miniboss, boss;
 	
 	public int nextChange = 0;
 	
-	public Change[] changes = new Change[8];
+	public Change[] changes = new Change[9];
 
 	// Use this for initialization
 	void Start () {
@@ -20,12 +20,13 @@ public class EnemySpawnerController : MonoBehaviour {
 		
 		changes[0] = new Change( 50000f, changetypes.enemySpawnRate, .1f );
 		changes[1] = new Change( 60000f, changetypes.enemySpawnRate, 0f);
-		changes[2] = new Change( 88000f, changetypes.enemySpawnRate, .25f);
-		changes[3] = new Change( 124000f, changetypes.enemySpawnRate, .1f);
-		changes[4] = new Change( 138000f, changetypes.spawnEnemy, enemyToSpawn);
-		changes[5] = new Change( 138000f, changetypes.enemySpawnRate, .06f);
-		changes[6] = new Change( 165000f, changetypes.enemySpawnRate, 1f);
-		changes[7] = new Change( 180000f, changetypes.enemySpawnRate, 100f);
+		changes[2] = new Change( 62000f, changetypes.spawnEnemy, miniboss);
+		changes[3] = new Change( 88000f, changetypes.enemySpawnRate, .25f);
+		changes[4] = new Change( 124000f, changetypes.enemySpawnRate, .1f);
+		changes[5] = new Change( 138000f, changetypes.spawnEnemy, boss);
+		changes[6] = new Change( 138000f, changetypes.enemySpawnRate, .06f);
+		changes[7] = new Change( 165000f, changetypes.enemySpawnRate, 1f);
+		changes[8] = new Change( 180000f, changetypes.enemySpawnRate, 100f);
 	}
 	
 	//read change list and apply any changes that need to be made

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BeatGraphic : BeatObject {
 
-	private GD mode = GD.STANDARD;
+	//private GD mode = GD.STANDARD;
 
 	// Use this for initialization
 	void Start () {

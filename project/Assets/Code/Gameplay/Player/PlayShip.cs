@@ -171,6 +171,35 @@ public class PlayShip : PlayObject {
 			break;
         }
     }
+    
+	new public void onBeat(GD type, float interp, float dur){
+		float[] args = {interp, dur};
+	
+		switch(type)
+		{
+		case GD.HAT:
+			onHat(args); //herpa derp
+			break; // =)
+		case GD.BASS:
+			onBass(args);
+			break; // =)
+		case GD.MELODY:
+			onMelody(args);
+			break; // =)
+		case GD.KICK:
+			onKick(args);
+			break; // =)
+		case GD.HARMONY:
+			onHarmony(args);
+			break; // =)
+		case GD.SNARE:
+			onSnare (args);
+			break; // =(
+		case GD.TREBLE:
+			onTreble (args);
+			break;
+		}
+	}
 	
 	new public void onMelody(float interp){
 		base.onMelody ();
@@ -232,6 +261,69 @@ public class PlayShip : PlayObject {
 		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
 		foreach(ShotOrigin s in guns){
 			s.SendMessage("onTreble", interp);
+		}
+	}
+	
+	new public void onMelody(float[] args){
+		base.onMelody ();
+		
+		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
+		foreach(ShotOrigin s in guns){
+			s.SendMessage("onMelody", args);
+		}
+	}
+	
+	new public void onHarmony(float[] args){
+		base.onHarmony ();
+		
+		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
+		foreach(ShotOrigin s in guns){
+			s.SendMessage("onHarmony", args);
+		}
+	}
+	
+	new public void onKick(float[] args){
+		base.onKick ();
+		
+		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
+		foreach(ShotOrigin s in guns){
+			s.SendMessage("onKick", args);
+		}
+	}
+	
+	new public void onHat(float[] args){
+		base.onHat ();
+		
+		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
+		foreach(ShotOrigin s in guns){
+			s.SendMessage("onHat", args);
+		}
+	}
+	
+	new public void onSnare(float[] args){
+		base.onSnare ();
+		
+		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
+		foreach(ShotOrigin s in guns){
+			s.SendMessage("onSnare", args);
+		}
+	}
+	
+	new public void onBass(float[] args){
+		base.onBass ();
+		
+		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
+		foreach(ShotOrigin s in guns){
+			s.SendMessage("onBass", args);
+		}
+	}
+	
+	new public void onTreble(float[] args){
+		base.onTreble ();
+		
+		ShotOrigin[] guns = transform.GetComponentsInChildren<ShotOrigin>();
+		foreach(ShotOrigin s in guns){
+			s.SendMessage("onTreble", args);
 		}
 	}
 }

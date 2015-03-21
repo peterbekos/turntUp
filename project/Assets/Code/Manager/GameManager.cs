@@ -19,6 +19,7 @@ public static class GameManager {
 	public static List<EnemyObject> enemies;
 	public static EnemySpawnerController spawnController;
 	public static int score = 0;
+	public static float durationForHold = 500f;
 	//initalization function
 	private static void init() {
 		

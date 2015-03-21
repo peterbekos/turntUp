@@ -20,8 +20,7 @@ public class NoteObject : BeatObject {
         transform.position += Vector3.left * interp * speed;
     }
 
-	new public void OnTriggerEnter2D(Collider2D coll){
-			Destroy (this.gameObject);
-
-		}
+	public void OnTriggerEnter2D(Collider2D coll){
+		Destroy (this.gameObject);
+	}
 }

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ImmobileBullet : ShotObject {
-	void Start () {
+	new void Start () {
 		speed = 0;
 	}
 }

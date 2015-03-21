@@ -50,12 +50,18 @@ public static class BeatManager {
 				GD noteType = GDMethods.getBeatType(note.InstrumentName);
 				
 				float interp = (float)(time - note.startTime)/1000;
-				callBeat (noteType, interp);
+				
+				if(note.durationTime >= GameManager.durationForHold ){
+					callBeat(noteType, interp, (float)note.durationTime);
+				}
+				else {
+					callBeat (noteType, interp);
+				}
 				notePosition++;
 			}
 			
 			while (noteBarPosition < NotesToPlay.Count && NotesToPlay[noteBarPosition].startTime <= (time + 4500f)) {
-				Debug.Log ("" + noteBarPosition + ": " + NotesToPlay[noteBarPosition].startTime);
+				//Debug.Log ("" + noteBarPosition + ":" + NotesToPlay[noteBarPosition].startTime);
 				Note note = NotesToPlay[noteBarPosition];
 				GD noteType = GDMethods.getBeatType(note.InstrumentName);
 				
@@ -87,6 +93,20 @@ public static class BeatManager {
         {
             GameManager.player.onBeat(type, interp);
         }
+		//GameManager.player.onMelody ();
+		/*
+		List<BeatObject> beatObjects = new List<BeatObject>();// = (BeatObject) GameObject.FindGameObjectsWithTag("beatObject");
+		foreach (BeatObject beatobject in beatObjects) {
+			beatobject.onBeat(type);
+		}
+		*/
+	}
+	
+	public static void callBeat(GD type, float interp, float duration) {
+		if (GameManager.player != null)
+		{
+			GameManager.player.onBeat(type, interp, duration);
+		}
 		//GameManager.player.onMelody ();
 		/*
 		List<BeatObject> beatObjects = new List<BeatObject>();// = (BeatObject) GameObject.FindGameObjectsWithTag("beatObject");

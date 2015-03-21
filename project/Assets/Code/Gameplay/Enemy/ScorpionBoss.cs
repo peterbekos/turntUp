@@ -14,60 +14,52 @@ public class ScorpionBoss : EnemyObject {
 
     //When boss moves after entering
     private short movingLeftAndRight;
-    
-    //Rotational shtuff
-    private float zRot;
-
-    private bool test = false;
-    private bool test2 = false;
 
     private float secondsPassed;
+    
+    private GameObject cockpit;
 
     // Use this for initialization
-    void Start()
+    new public void Start()
     {
+    	cockpit = GameObject.Find ("Cockpit");
         secondsPassed = 0;
+		startMoving = true;
+		doneInitialMoving = false;
+		movingLeftAndRight = 0;
+		transform.position = startPoint;
+		rotateToward(endPoint);
+		target = GameManager.player.gameObject.transform.position;
         
     }
 
     // Update is called once per frame
-    new void Update()
+    new public void Update()
     {
-        if (secondsPassed > 64 && !test2)
-        {
-            startMoving = true;
-            doneInitialMoving = false;
-            movingLeftAndRight = 0;
-            transform.position = startPoint;
-            target = GameManager.player.gameObject.transform.position;
-            test2 = true;
-        }
+    	if(cockpit == null) Destroy (gameObject);
         base.Update();
+        
         if (!doneInitialMoving && startMoving) { enterTheScreen(); }
         if (doneInitialMoving) { getCray(); }
         secondsPassed += Time.deltaTime;
-        Debug.Log("Seconds passed = " + secondsPassed);
+        //Debug.Log("Seconds passed = " + secondsPassed);
     }
 
     //Initial moving
-    void enterTheScreen()
+    protected void enterTheScreen()
     {
         transform.position += transform.up * (Time.deltaTime * 5);
         if (transform.position.y < endPoint.y)
             doneInitialMoving = true;
     }
 
-    void getCray()
+    protected void getCray()
     {
         moveLeftAndRight();
-        //transform.LookAt(target);
-        //rotate to face the target point
-        //zRot = Mathf.Atan2(target.y - transform.position.y, target.x - transform.position.x) * Mathf.Rad2Deg;
-        //transform.rotation = Quaternion.Euler(0f, 0f, zRot - 90);
         rotateToward(GameManager.player.transform.position);
     }
 
-    void moveLeftAndRight()
+    protected void moveLeftAndRight()
     {
         if (movingLeftAndRight == 0)
         {
@@ -87,29 +79,14 @@ public class ScorpionBoss : EnemyObject {
         }
     }
 
-    new void OnTriggerEnter2D(Collider2D coll)
+    new public void OnTriggerEnter2D(Collider2D coll)
     {
         base.OnTriggerEnter2D(coll);
-
-        //Debug.Log("" + gameObject.name + " Entered collision");
-        if (test)
-        {
-            renderer.material.color = new Color(1.0f, 0.0f, 0.0f);
-            test = false;
-        }
-        else
-        {
-            renderer.material.color = new Color(1.0f, 1.0f, 1.0f);
-            test = true;
-        }
 
         if (coll.tag.Equals("Player"))
         {
             coll.gameObject.SendMessage("takeDamage", strength);
             takeDamage(strength);
         }
-
-        
-
     }
 }

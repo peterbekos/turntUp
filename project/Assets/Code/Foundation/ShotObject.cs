@@ -9,6 +9,8 @@ public class ShotObject : PlayObject {
 	
 	public float lifeSpan = 10;
 	
+	public float duration = 0;
+	
 	protected void Start(){
 	
 	}
@@ -28,6 +30,10 @@ public class ShotObject : PlayObject {
 		transform.position += Vector3.up * interp * speed;
 	}
 	
+	public void setDuration(float dur){
+		this.duration = dur;
+	}
+	
 	public void amplify(double mod){
 		strength = (int)(strength * mod);
 	}
@@ -38,6 +44,7 @@ public class ShotObject : PlayObject {
 		//check that it's colliding with something it's supposed to damage, and if so damage it
 		if(coll.gameObject.tag == "Enemy" && target == hit.enemy)
 		{
+			GameManager.score += strength;
 			coll.gameObject.SendMessage("takeDamage", this.strength);
 			takeDamage (1);
 		}

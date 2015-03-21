@@ -59,6 +59,35 @@ public abstract class BeatObject : MonoBehaviour {
 		}
 	}
 	
+	public void onBeat(GD type, float interp, float dur){
+		float[] args = {interp, dur};
+	
+		switch(type)
+		{
+		case GD.HAT:
+			onHat(args); //herpa derp
+			break; // =)
+		case GD.BASS:
+			onBass(args);
+			break; // =)
+		case GD.MELODY:
+			onMelody(args);
+			break; // =)
+		case GD.KICK:
+			onKick(args);
+			break; // =)
+		case GD.HARMONY:
+			onHarmony(args);
+			break; // =)
+		case GD.SNARE:
+			onSnare (args);
+			break; // =(
+		case GD.TREBLE:
+			onTreble (args);
+			break;
+		}
+	}
+	
 	public void onMelody() {
 		
 	}
@@ -112,6 +141,34 @@ public abstract class BeatObject : MonoBehaviour {
 	}
 	
 	public void onTreble(float interp) {
+		
+	}
+	
+	public void onMelody(float[] args) {
+		
+	}
+	
+	public void onHarmony(float[] args) {
+		
+	}
+	
+	public void onKick(float[] args) {
+		
+	}
+	
+	public void onSnare(float[] args) {
+		
+	}
+	
+	public void onHat(float[] args) {
+		
+	}
+	
+	public void onBass(float[] args) {
+		
+	}
+	
+	public void onTreble(float[] args) {
 		
 	}
 }
