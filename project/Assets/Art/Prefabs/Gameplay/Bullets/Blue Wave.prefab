@@ -94,12 +94,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 2
-  strength: 5
+  strength: 500
   speed: 10
   scoreOnKill: 0
   deathAnimation: {fileID: 0}
   target: 0
   lifeSpan: 10
+  duration: 0
 --- !u!212 &21206644
 SpriteRenderer:
   m_ObjectHideFlags: 1

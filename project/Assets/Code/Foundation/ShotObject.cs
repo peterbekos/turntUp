@@ -11,8 +11,8 @@ public class ShotObject : PlayObject {
 	
 	public float duration = 0;
 	
-	protected void Start(){
-	
+	new protected void Start(){
+		
 	}
 	
 	// Update is called once per frame
@@ -42,15 +42,9 @@ public class ShotObject : PlayObject {
 	new public void OnTriggerEnter2D(Collider2D coll){
 	
 		//check that it's colliding with something it's supposed to damage, and if so damage it
-		if(coll.gameObject.tag == "Enemy" && target == hit.enemy)
-		{
-			GameManager.score += strength;
-			coll.gameObject.SendMessage("takeDamage", this.strength);
-			takeDamage (1);
-		}
-		else if(coll.gameObject.tag == "Player" && target == hit.player){
-			coll.gameObject.SendMessage("takeDamage", this.strength);
-			takeDamage (1);
+		if( target == hit.enemy && coll.tag.Equals("Enemy") || target == hit.player && coll.tag == "Player"){
+			coll.gameObject.SendMessage("takeDamage", strength);
+			takeDamage(1);
 		}
 	}
 }

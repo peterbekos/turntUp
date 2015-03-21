@@ -760,10 +760,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51cc9475ad161734e947305685e0d3e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 500
-  strength: 5
+  hitpoints: 50000
+  strength: 5000
   speed: 0
-  scoreOnKill: 8000
+  scoreOnKill: 800000
   deathAnimation: {fileID: 172264, guid: a01fd0774372d3641af6953d83946b22, type: 2}
   wholeScorpionBody: {fileID: 121488}
 --- !u!114 &11489958
@@ -777,10 +777,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a0ba4109c3edb4793153f0c8ddb675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 1000
-  strength: 4
+  hitpoints: 100000
+  strength: 4000
   speed: 0
-  scoreOnKill: 1000
+  scoreOnKill: 100000
   deathAnimation: {fileID: 172264, guid: a01fd0774372d3641af6953d83946b22, type: 2}
 --- !u!114 &11489960
 MonoBehaviour:
@@ -811,10 +811,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a0ba4109c3edb4793153f0c8ddb675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 200
-  strength: 5
+  hitpoints: 20000
+  strength: 5000
   speed: 0
-  scoreOnKill: 200
+  scoreOnKill: 20000
   deathAnimation: {fileID: 172264, guid: a01fd0774372d3641af6953d83946b22, type: 2}
 --- !u!212 &21221486
 SpriteRenderer:

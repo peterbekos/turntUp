@@ -76,10 +76,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0626667f6d70344a86084092e89111f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 10
-  strength: 10
+  hitpoints: 1000
+  strength: 1000
   speed: 7
-  scoreOnKill: 10
+  scoreOnKill: 1000
   deathAnimation: {fileID: 125326, guid: fb1926bb2214e27479222dbb339b33d6, type: 2}
   target: {x: 0, y: 0, z: 0}
 --- !u!212 &21221054

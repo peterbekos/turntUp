@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 428522}
+  - 114: {fileID: 11428524}
   - 50: {fileID: 5028524}
   - 61: {fileID: 6128524}
-  - 114: {fileID: 11428524}
   m_Layer: 9
   m_Name: Curving Blast Shot
   m_TagString: Bullet
@@ -113,12 +113,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 3
-  strength: 4
+  strength: 400
   speed: 50
   scoreOnKill: 0
   deathAnimation: {fileID: 0}
   target: 0
   lifeSpan: 1
+  duration: 0
   rotationSpeed: 90
 --- !u!212 &21228524
 SpriteRenderer:

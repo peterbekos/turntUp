@@ -25,9 +25,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 484388}
+  - 114: {fileID: 11484388}
   - 50: {fileID: 5084388}
   - 61: {fileID: 6184388}
-  - 114: {fileID: 11484388}
   m_Layer: 10
   m_Name: Blast Shot
   m_TagString: Bullet
@@ -113,12 +113,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 1
-  strength: 5
+  strength: 500
   speed: 15
   scoreOnKill: 0
   deathAnimation: {fileID: 0}
   target: 0
   lifeSpan: 10
+  duration: 0
 --- !u!212 &21284388
 SpriteRenderer:
   m_ObjectHideFlags: 1

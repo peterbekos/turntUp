@@ -5,7 +5,7 @@ public class NoteBar : PlayObject
 {
 
     // Use this for initialization
-    void Start()
+    new void Start()
     {
 		GameManager.notebar = this;
     }

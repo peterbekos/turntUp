@@ -52,12 +52,22 @@ public class EnemySpawnerController : MonoBehaviour {
 					break;
 				
 				case changetypes.spawnEnemy: //spawn an enemy directly
-					spawner.spawnEnemy(c.enemy);
-					Debug.Log("Spawning enemy " + c.enemy.name + ".");
+					if(c.enemy != null){
+						spawner.spawnEnemy(c.enemy);
+						Debug.Log("Spawning enemy " + c.enemy.name + ".");
+					}
+					else {
+						Debug.Log ("No enemy gameobject initialized, not spawning enemy" );
+					}
 					break;
 				case changetypes.spawnEnemyAtPoint: //spawn an enemy at a specific point
-					spawner.spawnEnemy(c.enemy, c.point);
-					Debug.Log("Spawning enemy " + c.enemy.name + " at point " + c.point + ".");
+					if (c.enemy != null){
+						spawner.spawnEnemy(c.enemy, c.point);
+						Debug.Log("Spawning enemy " + c.enemy.name + " at point " + c.point + ".");
+					}
+					else {
+						Debug.Log ("No enemy gameobject initialized, not spawning enemy" );
+					}
 					break;
 			}
 			

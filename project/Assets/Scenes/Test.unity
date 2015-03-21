@@ -590,7 +590,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22485226, guid: 446d900e3bfadde4cb71d6e9abfa3737, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22485226, guid: 446d900e3bfadde4cb71d6e9abfa3737, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -1905,7 +1905,7 @@ RectTransform:
   - {fileID: 1189395802}
   - {fileID: 1056046286}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -4353,7 +4353,7 @@ Transform:
   m_Children:
   - {fileID: 531307622}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &1136062960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4840,6 +4840,10 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: bd7247940f7c1454ca965ec44b5b8a10, type: 3}
+    - target: {fileID: 11432668, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
+      propertyPath: levelName
+      value: Colors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
   m_RootGameObject: {fileID: 359549766}

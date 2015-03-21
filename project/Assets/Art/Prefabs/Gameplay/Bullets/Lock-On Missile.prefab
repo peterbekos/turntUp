@@ -8,8 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 461652}
-  - 50: {fileID: 5061654}
   - 114: {fileID: 11461654}
+  - 50: {fileID: 5061654}
   - 61: {fileID: 6149508}
   m_Layer: 10
   m_Name: Lock-On Missile
@@ -97,13 +97,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 1
-  strength: 10
+  strength: 1000
   speed: 20
+  scoreOnKill: 0
   deathAnimation: {fileID: 151140, guid: ad71c4e0e09e5c842a56cf708605ed12, type: 2}
   target: 0
   lifeSpan: 10
+  duration: 0
   launchSpeed: 3
-  launchDuration: 1
   maxRotationPerSecond: 180
 --- !u!212 &21261654
 SpriteRenderer:

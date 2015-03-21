@@ -8,10 +8,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 451140}
+  - 114: {fileID: 11451140}
   - 212: {fileID: 21251140}
   - 58: {fileID: 5851140}
   - 50: {fileID: 5051140}
-  - 114: {fileID: 11451140}
   - 95: {fileID: 9551140}
   m_Layer: 10
   m_Name: SmallSonicBoom_Immobile
@@ -85,12 +85,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 99
-  strength: 10
+  strength: 1000
   speed: 0
   scoreOnKill: 0
   deathAnimation: {fileID: 0}
   target: 0
   lifeSpan: .400000006
+  duration: 0
 --- !u!212 &21251140
 SpriteRenderer:
   m_ObjectHideFlags: 1

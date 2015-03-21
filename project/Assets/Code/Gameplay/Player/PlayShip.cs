@@ -39,7 +39,8 @@ public class PlayShip : PlayObject {
 		numBlinks--;
 	}
 	
-	void Start(){
+	new void Start(){
+		base.Start ();
 		generateShip();
 		GameManager.player = this;
 	}

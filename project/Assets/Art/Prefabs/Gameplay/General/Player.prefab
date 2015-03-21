@@ -119,9 +119,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8070c1fd70ab49668fff9bdcd177944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 50
+  hitpoints: 5000
   strength: 0
   speed: 15
+  scoreOnKill: 0
   deathAnimation: {fileID: 172264, guid: a01fd0774372d3641af6953d83946b22, type: 2}
   body: {fileID: 167118, guid: 493316efccaaccc4292ad1f4b924c7e5, type: 2}
   wing: {fileID: 100872, guid: 8d43d571bfd6e7f46a1aae46893614c0, type: 2}

@@ -8,10 +8,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 411510}
+  - 114: {fileID: 11411510}
   - 212: {fileID: 21211510}
   - 95: {fileID: 9511510}
   - 58: {fileID: 5811510}
-  - 114: {fileID: 11411510}
   - 50: {fileID: 5092780}
   m_Layer: 10
   m_Name: SonicBoom
@@ -85,11 +85,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 99999
-  strength: 20
+  strength: 2000
   speed: 99999
+  scoreOnKill: 0
   deathAnimation: {fileID: 0}
   target: 0
   lifeSpan: .400000006
+  duration: 0
   player: {fileID: 0}
   ifNoPlayer: 0
 --- !u!212 &21211510

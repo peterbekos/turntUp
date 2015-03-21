@@ -4,6 +4,13 @@ using System.Collections;
 public abstract class PlayObject : BeatObject {
 
 	//Variables
+	protected bool flashVar = false;
+	protected int repeatStart = 2;
+	protected int repeatTemp = 0;
+	protected Color defaultColor;
+	
+	protected SpriteRenderer mSpriteRenderer;
+	
 	//note: they have to be public so we can tweak them in the editor, 
 	// or at least protected so we can see them at all in sub-classes
 	public int hitpoints;
@@ -11,15 +18,29 @@ public abstract class PlayObject : BeatObject {
 	public float speed;
 	public int scoreOnKill = 0;
 	
+	private int damageOverTime = 0;
+	
 	//plays a sound and animation when the unit dies
 	public GameObject deathAnimation; 
 
+	// Use this for initialization
+	public void Start () {
+		if(gameObject.GetComponent<SpriteRenderer>() != null){
+			mSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+			defaultColor = mSpriteRenderer.color;
+		}
+	}
+
 	protected void Update(){
-	
+		if(damageOverTime != 0) takeDamage(damageOverTime);
+		
+		if(mSpriteRenderer != null) flash ();
 	}
 	
 	//reduce health, and if <= 0 die
 	public void takeDamage(int dmg){
+		flashVar = true;
+	
 		hitpoints -= dmg;
 		
 		if(hitpoints <= 0)
@@ -34,6 +55,30 @@ public abstract class PlayObject : BeatObject {
 				Camera.main.GetComponent<GameTimer>().startRespawnTimer();
 			}
 		}
+	}
+	
+	public void flash()
+	{
+		if(flashVar)
+		{
+			mSpriteRenderer.color = new Color(1.0f, 0.0f, 0.0f);
+			flashVar = false;
+			repeatTemp = repeatStart;
+		}
+		else if(repeatTemp > 0)
+		{
+			mSpriteRenderer.color = new Color(1.0f, 0.0f, 0.0f);
+			repeatTemp--;
+			flashVar = false;
+		}
+		else
+		{
+			mSpriteRenderer.color = new Color(1.0f, 1.0f, 1.0f);
+		}
+	}
+	
+	public void changeDoT (int dmg){
+		damageOverTime += dmg;
 	}
 	
 	public void rotateToward(GameObject target){

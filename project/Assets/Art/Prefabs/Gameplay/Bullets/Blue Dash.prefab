@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 458798}
+  - 114: {fileID: 11487610}
   - 50: {fileID: 5071184}
   - 61: {fileID: 6136244}
-  - 114: {fileID: 11487610}
   m_Layer: 9
   m_Name: Blue Dash
   m_TagString: Bullet
@@ -155,12 +155,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 1
-  strength: 10
+  strength: 1000
   speed: 15
   scoreOnKill: 0
   deathAnimation: {fileID: 0}
   target: 0
   lifeSpan: 10
+  duration: 0
 --- !u!212 &21258798
 SpriteRenderer:
   m_ObjectHideFlags: 1

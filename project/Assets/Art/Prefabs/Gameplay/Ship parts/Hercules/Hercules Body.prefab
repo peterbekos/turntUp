@@ -165,7 +165,7 @@ MonoBehaviour:
   trebleShot: {fileID: 0}
   melodyAngle: 0
   harmonyAngle: 0
-  kickAngle: 0
+  kickAngle: 9
   snareAngle: 0
   hatAngle: 0
   bassAngle: 0
