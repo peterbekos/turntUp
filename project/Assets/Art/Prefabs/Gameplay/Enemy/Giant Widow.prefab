@@ -79,7 +79,7 @@ MonoBehaviour:
   hitpoints: 1000
   strength: 100
   speed: 3
-  scoreOnKill: 1000
+  scoreOnKill: 5000
   deathAnimation: {fileID: 172264, guid: a01fd0774372d3641af6953d83946b22, type: 2}
   target: {x: 0, y: 0, z: 0}
 --- !u!212 &21254618

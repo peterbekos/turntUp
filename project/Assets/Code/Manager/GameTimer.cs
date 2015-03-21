@@ -6,7 +6,7 @@ public class GameTimer : MonoBehaviour {
 	//variables
 	public string levelName = "Colors";
 	
-	float gameTime = 0f; //In mills
+	float gameTime = 0; //In mills
 	
 	bool started = false;
 	
@@ -18,6 +18,7 @@ public class GameTimer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		GameManager.gameTimer = this;
 		GameManager.score = 0;
 		BeatManager.loadFile("Assets/Art/Music/" + levelName + ".mid");
 		//Camera.main.GetComponent<AudioSource>().clip = AssetDatabase.FindAsset("Assets/Art/Music" + levelName + ".mp3");
@@ -30,7 +31,7 @@ public class GameTimer : MonoBehaviour {
 
 
 	public void initTime(){
-		gameTime = 0f;
+		gameTime = 0;
 		started = true;
 		spawnPlayer();
 	}
@@ -62,6 +63,10 @@ public class GameTimer : MonoBehaviour {
 		GameManager.player = playerObj.GetComponent<PlayShip>();
 		
 		respawnTimer = -99f;
+	}
+	
+	public float getTime(){
+		return gameTime;
 	}
 
 	void pingManagers() {

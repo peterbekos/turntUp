@@ -215,6 +215,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc41d15f3c385f4fb3a26bc571724fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currSeq1Index: 0
+  currSeq2Index: 0
+  currSeq3Index: 0
+  timeModifier: 4
+  maxTimeAngle: 45
   melodyShot: {fileID: 0}
   harmonyShot: {fileID: 0}
   kickShot: {fileID: 0}
@@ -225,8 +230,8 @@ MonoBehaviour:
   melodyAngle: 0
   harmonyAngle: 0
   kickAngle: 0
-  snareAngle: 0
-  hatAngle: 0
+  snareAngle: 6
+  hatAngle: 2
   bassAngle: 0
   trebleAngle: 0
 --- !u!114 &11443196
@@ -240,6 +245,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc41d15f3c385f4fb3a26bc571724fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currSeq1Index: 0
+  currSeq2Index: 0
+  currSeq3Index: 0
+  timeModifier: 4
+  maxTimeAngle: 45
   melodyShot: {fileID: 0}
   harmonyShot: {fileID: 0}
   kickShot: {fileID: 0}
@@ -250,8 +260,8 @@ MonoBehaviour:
   melodyAngle: 0
   harmonyAngle: 0
   kickAngle: 0
-  snareAngle: 0
-  hatAngle: 4
+  snareAngle: 6
+  hatAngle: 2
   bassAngle: 0
   trebleAngle: 0
 --- !u!212 &21212642

@@ -145,6 +145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc41d15f3c385f4fb3a26bc571724fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currSeq1Index: 0
+  currSeq2Index: 0
+  currSeq3Index: 0
+  timeModifier: .25
+  maxTimeAngle: 45
   melodyShot: {fileID: 0}
   harmonyShot: {fileID: 0}
   kickShot: {fileID: 111510, guid: 2c83785c3cec90246972b0223653403e, type: 2}
@@ -152,6 +157,13 @@ MonoBehaviour:
   hatShot: {fileID: 0}
   bassShot: {fileID: 161652, guid: a9a1e26b1ee469049bddc65455b90666, type: 2}
   trebleShot: {fileID: 0}
+  melodyAngle: 0
+  harmonyAngle: 0
+  kickAngle: 0
+  snareAngle: 0
+  hatAngle: 0
+  bassAngle: 0
+  trebleAngle: 0
 --- !u!212 &21233288
 SpriteRenderer:
   m_ObjectHideFlags: 1

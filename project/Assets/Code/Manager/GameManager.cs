@@ -20,8 +20,14 @@ public static class GameManager {
 	public static EnemySpawnerController spawnController;
 	public static int score = 0;
 	public static float durationForHold = 500f;
+	public static GameTimer gameTimer;
+	
 	//initalization function
 	private static void init() {
 		
+	}
+	
+	public static float getTime(){
+		return gameTimer.getTime();
 	}
 }
