@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Foundation\ContinuousShotObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Gameplay\Player\PlayShip.cs">
     <Files>
-      <File FileName="Assets\Code\Foundation\ShotObject.cs" Line="32" Column="2" />
-      <File FileName="Assets\Code\Foundation\ContinuousShotObject.cs" Line="11" Column="38" />
+      <File FileName="Assets\Code\Gameplay\Player\PlayShip.cs" Line="7" Column="8" />
+      <File FileName="Assets\Code\Manager\GameManager.cs" Line="40" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

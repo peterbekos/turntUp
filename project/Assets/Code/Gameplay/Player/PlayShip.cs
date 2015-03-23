@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class PlayShip : PlayObject {
-
-	//ship's parts
-	public GameObject body, wing, booster;
+	
+	//Default ship parts
+	public GameObject defaultBody, defaultWing, defaultBooster;
 	
 	//max rotations on x, y, and z axes, respectively
 	public int maxPitch = 15;
@@ -41,6 +41,11 @@ public class PlayShip : PlayObject {
 	
 	new void Start(){
 		base.Start ();
+		
+		if(PlayerConfig.body == null) PlayerConfig.body = defaultBody;
+		if(PlayerConfig.wing == null) PlayerConfig.wing = defaultWing;
+		if(PlayerConfig.booster == null) PlayerConfig.booster = defaultBooster;
+		
 		generateShip();
 		GameManager.player = this;
 	}
@@ -87,9 +92,9 @@ public class PlayShip : PlayObject {
 		}
 		
 		//add parts
-		addPart(body);
-		addPart(wing);
-		addPart(booster);
+		addPart(PlayerConfig.body);
+		addPart(PlayerConfig.wing);
+		addPart(PlayerConfig.booster);
 	}
 	
 	//Change all parts and craft ship
@@ -122,13 +127,13 @@ public class PlayShip : PlayObject {
 	private void changePart(int type, GameObject part){
 		switch(type){
 		case 0: //change body
-			body = part;
+			PlayerConfig.body = part;
 			break;
 		case 1: //change wings
-			wing = part;
+			PlayerConfig.wing = part;
 			break;
 		case 2: //change boosters
-			booster = part;
+			PlayerConfig.booster = part;
 			break;
 		default:
 			Debug.LogError("Invalid type when changing ship parts!");

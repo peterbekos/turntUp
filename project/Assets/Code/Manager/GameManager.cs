@@ -31,3 +31,12 @@ public static class GameManager {
 		return gameTimer.getTime();
 	}
 }
+
+[System.Serializable]
+public static class PlayerConfig {
+
+	public static GameObject body;
+	public static GameObject wing;
+	public static GameObject booster;
+
+}

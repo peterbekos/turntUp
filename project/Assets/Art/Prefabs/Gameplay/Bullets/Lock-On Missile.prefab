@@ -97,10 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 1
-  strength: 1000
-  speed: 20
+  strength: 500
+  speed: 30
   scoreOnKill: 0
-  deathAnimation: {fileID: 151140, guid: ad71c4e0e09e5c842a56cf708605ed12, type: 2}
+  deathAnimation: {fileID: 0}
   target: 0
   lifeSpan: 10
   duration: 0
