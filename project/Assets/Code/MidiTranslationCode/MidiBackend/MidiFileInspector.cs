@@ -187,7 +187,7 @@ public class MidiFileInspector
 			Debug.Log("Channels[" + i + "] - " + Channels[i].ChannelName);
 			for(int j = 0; j < Channels[i].Notes.Count; j++)
 			{
-				Debug.Log("Channels[" + i + "] - " + "Note #" + j + Channels[i].Notes[j].noteType);
+				Debug.Log("Channels[" + i + "] - " + "Note #" + j + Channels[i].Notes[j].notePitch);
 			}
 		}
 	}
