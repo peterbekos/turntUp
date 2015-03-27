@@ -97,6 +97,8 @@ public class MidiFileInspector
 			String typeOfNote = getTypeOfNote(midiInfo, currentChannel);
 			newNote.notePitch = typeOfNote;
             newNote.noteVelocity = getVelocity(midiInfo);
+            newNote.notePitchNumber = GDMethods.getPitchNumber(newNote.notePitch);
+            Debug.Log("Converted " + typeOfNote + " to -> " + newNote.notePitchNumber);
 			Double timeOfNote = noteLength;
 			//newNote.durationTime = ((((double)(timeOfNote))/(double)ticksPerBeat)* milliSecondsPerQuartNote);//Duration slso meseaured in milliseconds
 			//TODO - check this

@@ -181,5 +181,62 @@ public static class GDMethods
 			return GD.MELODY;
 		}
 	}
+
+    public static int getPitchNumber(string _pitch)
+    {
+        int x = -99;
+        if (_pitch.Length <= 2)
+        {
+            char firstChar = char.ToUpper(_pitch[0]);
+
+            switch (firstChar)
+            {
+                case 'C':
+                    x = 0;
+                    break;
+                case 'D':
+                    x = 2;
+                    break;
+                case 'E': //There is no E#
+                    x = 4;
+                    break;
+                case 'F':
+                    x = 5;
+                    break;
+                case 'G':
+                    x = 7;
+                    break;
+                case 'A':
+                    x = 9;
+                    break;
+                case 'B': //There is no B#
+                    x = 11;
+                    break;
+                default:
+                    x = -99;
+                    break;
+            }
+        }
+
+        
+        if (_pitch.Length == 2)
+        {
+
+            if (_pitch[1] == '#') //Checks if there is a '#'
+            {
+                x++;
+            }
+            else //I think C5 would go in here?
+            {
+
+            }
+                
+        }
+
+
+        return x;
+    }
+
+
 	
 }

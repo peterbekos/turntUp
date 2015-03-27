@@ -8,6 +8,7 @@
         public String instrumentName;
         public int noteVelocity;
         public String notePitch;
+        public int notePitchNumber;
         public bool active = false;
 		public bool done = false;
     }
