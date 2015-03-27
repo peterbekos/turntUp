@@ -4,8 +4,10 @@
     {
         public double startTime; //In Milliseconds
         public double durationTime; //In Milliseconds
-        public String NoteType;
-        public String InstrumentName;
+        public String noteType;
+        public String instrumentName;
+        public int noteVelocity;
+        public String notePitch;
         public bool active = false;
 		public bool done = false;
     }

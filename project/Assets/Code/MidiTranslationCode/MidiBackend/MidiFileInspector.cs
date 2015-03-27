@@ -95,7 +95,8 @@ public class MidiFileInspector
 			newNote.startTime = theStartTime; //Start time Measured in milliseconds
 			String midiInfo = currentMidiEvent.ToString();
 			String typeOfNote = getTypeOfNote(midiInfo, currentChannel);
-			newNote.NoteType = typeOfNote;
+			newNote.notePitch = typeOfNote;
+            newNote.noteVelocity = getVelocity(midiInfo);
 			Double timeOfNote = noteLength;
 			//newNote.durationTime = ((((double)(timeOfNote))/(double)ticksPerBeat)* milliSecondsPerQuartNote);//Duration slso meseaured in milliseconds
 			//TODO - check this
@@ -165,6 +166,17 @@ public class MidiFileInspector
 		
 		return Channels.Count - 1;
 	}
+
+    private int getVelocity(String initialMidi)
+    {
+        if(initialMidi.Contains("Vel:"))
+        {
+            String intermediateMidi1 = initialMidi.Remove(0, initialMidi.IndexOf("Vel:") + 4);
+            String intermeidateMidi2 = intermediateMidi1.Remove(3);
+            return Convert.ToInt32(intermeidateMidi2);
+        }
+        return -1;
+    }
 	
 	private void printInformation()
 	{
@@ -173,7 +185,7 @@ public class MidiFileInspector
 			Debug.Log("Channels[" + i + "] - " + Channels[i].ChannelName);
 			for(int j = 0; j < Channels[i].Notes.Count; j++)
 			{
-				Debug.Log("Channels[" + i + "] - " + "Note #" + j + Channels[i].Notes[j].NoteType);
+				Debug.Log("Channels[" + i + "] - " + "Note #" + j + Channels[i].Notes[j].noteType);
 			}
 		}
 	}

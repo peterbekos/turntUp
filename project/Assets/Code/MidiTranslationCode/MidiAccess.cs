@@ -29,7 +29,7 @@ public class MidiAccess: MonoBehaviour {
             Debug.Log("Note #" + i);
             Debug.Log("StartTime = " + currentNote.startTime);
             Debug.Log("DurationTime = " + currentNote.durationTime);
-            Debug.Log("Notetype = " + currentNote.NoteType);
+            Debug.Log("Notetype = " + currentNote.noteType);
             i++;
         }
     }
@@ -46,10 +46,10 @@ public class MidiAccess: MonoBehaviour {
         //Make all the notes into one stream
         foreach (Channel currentCh in mChannels)
         {
-            string intstrument = currentCh.ChannelName.Trim();
+            string instrument = currentCh.ChannelName.Trim();
             foreach (Note currentNt in currentCh.Notes)
             {
-                currentNt.InstrumentName = intstrument;
+                currentNt.instrumentName = instrument;
                 NotesToPlay.Add(currentNt);
             }
         }

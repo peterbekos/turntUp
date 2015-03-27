@@ -47,7 +47,7 @@ public static class BeatManager {
 		if (NotesToPlay != null) {
 			while (notePosition < NotesToPlay.Count && NotesToPlay[notePosition].startTime <= time) {
 				Note note = NotesToPlay[notePosition];
-				GD noteType = GDMethods.getBeatType(note.InstrumentName);
+				GD noteType = GDMethods.getBeatType(note.instrumentName);
 				
 				float interp = (float)(time - note.startTime)/1000;
 				
@@ -63,7 +63,15 @@ public static class BeatManager {
 			while (noteBarPosition < NotesToPlay.Count && NotesToPlay[noteBarPosition].startTime <= (time + 4500f)) {
 				//Debug.Log ("" + noteBarPosition + ":" + NotesToPlay[noteBarPosition].startTime);
 				Note note = NotesToPlay[noteBarPosition];
-				GD noteType = GDMethods.getBeatType(note.InstrumentName);
+				GD noteType = GDMethods.getBeatType(note.instrumentName);
+
+                //Pitch and Velocity  - use these two
+                //note.notePitch; - String
+                //note.noteVelocity; - int
+                //
+
+                
+
 				
 				float interp = (float)(time + 4500f - note.startTime)/1000;
 				callNoteBarBeat (noteType, interp);
