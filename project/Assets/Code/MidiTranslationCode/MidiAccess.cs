@@ -29,7 +29,7 @@ public class MidiAccess: MonoBehaviour {
             Debug.Log("Note #" + i);
             Debug.Log("StartTime = " + currentNote.startTime);
             Debug.Log("DurationTime = " + currentNote.durationTime);
-            Debug.Log("Notetype = " + currentNote.noteType);
+            Debug.Log("Notepitch = " + currentNote.notePitch);
             i++;
         }
     }

@@ -182,6 +182,7 @@ public static class GDMethods
 		}
 	}
 
+    //If X returns -99, there is no pitch
     public static int getPitchNumber(string _pitch)
     {
         int x = -99;
@@ -213,7 +214,6 @@ public static class GDMethods
                     x = 11;
                     break;
                 default:
-                    x = -99;
                     break;
             }
         }
@@ -221,19 +221,45 @@ public static class GDMethods
         
         if (_pitch.Length == 2)
         {
+            char secondChar = _pitch[1];
 
-            if (_pitch[1] == '#') //Checks if there is a '#'
+            switch (secondChar)
             {
-                x++;
-            }
-            else //I think C5 would go in here?
-            {
+                case '1':
+                    x =  x + (1 * 12);
+                    break;
+                case '2':
+                    x = x + (2 * 12);
+                    break;
+                case '3':
+                    x = x + (3 * 12);
+                    break;
+                case '4':
+                    x = x + (4 * 12);
+                    break;
+                case '5':
+                    x = x + (5 * 12);
+                    break;
+                case '6':
+                    x = x + (6 * 12);
+                    break;
+                case '7':
+                    x = x + (7 * 12);
+                    break;
+                case '8':
+                    x = x + (8 * 12);
+                    break;
+                case '9':
+                    x = x + (9 * 12);
+                    break;
+                case '#':
+                    x++;
+                    break;
+                default:
+                    break;
 
-            }
-                
+            }          
         }
-
-
         return x;
     }
 
