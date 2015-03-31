@@ -10,11 +10,6 @@ public class EnemyObject : PlayObject {
 		base.Update ();
 	}
 	
-	new public void takeDamage (int dmg){
-		base.takeDamage(dmg);
-		GameManager.score += dmg;
-	}
-	
 	new public void OnTriggerEnter2D(Collider2D coll){
 		base.OnTriggerEnter2D(coll);
 		

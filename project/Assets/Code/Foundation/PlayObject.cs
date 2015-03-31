@@ -43,6 +43,8 @@ public abstract class PlayObject : BeatObject {
 	
 		hitpoints -= dmg;
 		
+		if(gameObject.tag.Equals("Enemy")) GameManager.score += dmg;
+		
 		if(hitpoints <= 0)
 		{
 			//play the death sound and kill the object

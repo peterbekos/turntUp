@@ -8,6 +8,7 @@ public class LinearEnemy : EnemyObject {
 	// Use this for initialization
 	new public void Start () {
 		base.Start ();
+		
 		//get a quarter of camera's field of view
 		Vector2 camBounds = new Vector2(Camera.main.orthographicSize * Screen.width / Screen.height, Camera.main.orthographicSize * Screen.height / Screen.width);
 		
