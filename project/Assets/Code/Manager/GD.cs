@@ -25,10 +25,17 @@ public static class GDMethods
 {
 
 	private static Dictionary<string, GD> instrumentMappings = new Dictionary<string, GD>();
+	private static Dictionary<string, GameObject> shipPartMappings = new Dictionary<string, GameObject>();
 	private static bool isInit = false;
 
 	public static void init() {
 		mapInstruments ();
+		mapShipParts();
+	}
+	
+	//To be called only once!
+	private static void mapShipParts(){
+		//shipPartMappings.Add("Hercules Body", TODO:figure out how to get a gameobject in here
 	}
 
 	//To be called only once!

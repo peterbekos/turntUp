@@ -83,7 +83,8 @@ public static class BeatManager {
 			delayToMenuScreen -= Time.deltaTime;
 			
 			if(delayToMenuScreen <= 0) {
-				Application.LoadLevel(0);
+				GameManager.SavePlayer();
+				Application.LoadLevel(1);
 			}
 		}
 	}

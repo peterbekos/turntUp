@@ -4614,7 +4614,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2, y: 40}
+  m_Size: {x: 1.97000003, y: 40}
   m_Center: {x: 0, y: 0}
 --- !u!4 &1398868690
 Transform:
@@ -4874,6 +4874,10 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: bd7247940f7c1454ca965ec44b5b8a10, type: 3}
+    - target: {fileID: 11432668, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
+      propertyPath: levelName
+      value: Colors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
   m_RootGameObject: {fileID: 359549766}

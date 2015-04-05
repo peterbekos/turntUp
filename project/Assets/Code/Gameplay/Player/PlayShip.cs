@@ -6,6 +6,8 @@ public class PlayShip : PlayObject {
 	//Default ship parts
 	public GameObject defaultBody, defaultWing, defaultBooster;
 	
+	public GameObject testBody;
+	
 	//max rotations on x, y, and z axes, respectively
 	public int maxPitch = 15;
 	public int maxRoll = 15;
@@ -42,9 +44,9 @@ public class PlayShip : PlayObject {
 	new void Start(){
 		base.Start ();
 		
-		if(PlayerConfig.body == null) PlayerConfig.body = defaultBody;
-		if(PlayerConfig.wing == null) PlayerConfig.wing = defaultWing;
-		if(PlayerConfig.booster == null) PlayerConfig.booster = defaultBooster;
+		if(GameManager.getBody() == null) GameManager.setBody(defaultBody);
+		if(GameManager.getWing() == null) GameManager.setWing(defaultWing);
+		if(GameManager.getBooster() == null) GameManager.setBooster(defaultBooster);
 		
 		generateShip();
 		GameManager.player = this;
@@ -54,8 +56,14 @@ public class PlayShip : PlayObject {
 	new void Update () {
 		base.Update ();
 		
+		if(Input.GetKeyDown(KeyCode.K)){
+			GameManager.setBody(testBody);
+			generateShip();
+		}
+		
 		if(Input.GetKeyDown(KeyCode.Escape)){
-			Application.LoadLevel(0);
+			GameManager.SavePlayer();
+			Application.LoadLevel(1);
 		}
 		
 		if(numBlinks > 0)
@@ -92,9 +100,9 @@ public class PlayShip : PlayObject {
 		}
 		
 		//add parts
-		addPart(PlayerConfig.body);
-		addPart(PlayerConfig.wing);
-		addPart(PlayerConfig.booster);
+		addPart(GameManager.getBody());
+		addPart(GameManager.getWing());
+		addPart(GameManager.getBooster());
 	}
 	
 	//Change all parts and craft ship
@@ -127,13 +135,13 @@ public class PlayShip : PlayObject {
 	private void changePart(int type, GameObject part){
 		switch(type){
 		case 0: //change body
-			PlayerConfig.body = part;
+			GameManager.setBody (part);
 			break;
 		case 1: //change wings
-			PlayerConfig.wing = part;
+			GameManager.setWing (part);
 			break;
 		case 2: //change boosters
-			PlayerConfig.booster = part;
+			GameManager.setBooster(part);
 			break;
 		default:
 			Debug.LogError("Invalid type when changing ship parts!");

@@ -65,11 +65,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 187632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0e951b92e0a5184ca3182078f37c0bb, type: 3}
+  m_Script: {fileID: 11500000, guid: b182634ddb2868e40a155c7d155f63d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 1000
-  strength: 100
+  strength: 1000
   speed: 10
   scoreOnKill: 500
   deathAnimation: {fileID: 125326, guid: fb1926bb2214e27479222dbb339b33d6, type: 2}
