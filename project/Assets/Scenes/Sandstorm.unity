@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &16417490
 GameObject:
@@ -1360,6 +1361,52 @@ MonoBehaviour:
   miniboss: {fileID: 199284, guid: 4a4d28a8aff63e54d8ee741522bd8eb4, type: 2}
   boss: {fileID: 121488, guid: bd17e176c32bc4e488c588f698820bb0, type: 2}
   nextChange: 0
+  changes:
+  - time: 50
+    type: 0
+    enemy: {fileID: 0}
+    point: {x: 0, y: 0, z: 0}
+    spawnRate: .100000001
+  - time: 60
+    type: 0
+    enemy: {fileID: 0}
+    point: {x: 0, y: 0, z: 0}
+    spawnRate: 0
+  - time: 62
+    type: 3
+    enemy: {fileID: 199284, guid: 4a4d28a8aff63e54d8ee741522bd8eb4, type: 2}
+    point: {x: 0, y: 0, z: 0}
+    spawnRate: 0
+  - time: 88
+    type: 0
+    enemy: {fileID: 0}
+    point: {x: 0, y: 0, z: 0}
+    spawnRate: .25
+  - time: 124
+    type: 0
+    enemy: {fileID: 0}
+    point: {x: 0, y: 0, z: 0}
+    spawnRate: .100000001
+  - time: 138
+    type: 3
+    enemy: {fileID: 121488, guid: bd17e176c32bc4e488c588f698820bb0, type: 2}
+    point: {x: 0, y: 0, z: 0}
+    spawnRate: 0
+  - time: 138
+    type: 0
+    enemy: {fileID: 0}
+    point: {x: 0, y: 0, z: 0}
+    spawnRate: .0599999987
+  - time: 165
+    type: 0
+    enemy: {fileID: 0}
+    point: {x: 0, y: 0, z: 0}
+    spawnRate: 1
+  - time: 180
+    type: 0
+    enemy: {fileID: 0}
+    point: {x: 0, y: 0, z: 0}
+    spawnRate: .25
 --- !u!114 &145198993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1612,7 +1659,7 @@ Prefab:
     - target: {fileID: 8232668, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 541cf1145b8b65e4e829a56c69ab8409, type: 3}
+      objectReference: {fileID: 8300000, guid: daeab71adf921c049b0970a811880ddb, type: 3}
     - target: {fileID: 11432668, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
       propertyPath: levelName
       value: Sandstorm
@@ -1785,8 +1832,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreReversedGraphics: 1
-  blockingObjects: 0
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1847,6 +1894,7 @@ GameObject:
   - 114: {fileID: 798725497}
   - 114: {fileID: 798725496}
   - 114: {fileID: 798725495}
+  - 114: {fileID: 798725504}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1959,7 +2007,7 @@ AudioSource:
   m_GameObject: {fileID: 798725493}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 541cf1145b8b65e4e829a56c69ab8409, type: 3}
+  m_audioClip: {fileID: 8300000, guid: daeab71adf921c049b0970a811880ddb, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2042,6 +2090,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+--- !u!114 &798725504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798725493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40289c0b751e9634f8041a9bbc40c670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asource: {fileID: 798725502}
+  spectrumParticle: {fileID: 162554, guid: cd7ea3a80458559439c6ca6305c13187, type: 2}
+  channel: 0
+  numSamples: 2048
 --- !u!1 &1147214882
 GameObject:
   m_ObjectHideFlags: 0
@@ -4304,7 +4367,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2, y: 40}
+  m_Size: {x: 1.97000003, y: 40}
   m_Center: {x: 0, y: 0}
 --- !u!1 &1344193495
 GameObject:
