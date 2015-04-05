@@ -62,7 +62,7 @@ public class PlayShip : PlayObject {
 		}
 		
 		if(Input.GetKeyDown(KeyCode.Escape)){
-			GameManager.SavePlayer();
+			//GameManager.SavePlayer();
 			Application.LoadLevel(1);
 		}
 		
