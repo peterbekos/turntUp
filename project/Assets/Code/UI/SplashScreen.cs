@@ -7,7 +7,7 @@ public class SplashScreen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GameManager.LoadPlayer ();
+		//GameManager.LoadPlayer ();
 	}
 	
 	// Update is called once per frame
