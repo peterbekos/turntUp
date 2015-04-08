@@ -86,7 +86,7 @@ public class MainMenu : MonoBehaviour
         //button actions
         if (buttons[0])
         {
-            Application.LoadLevel(2);
+            Application.LoadLevel(1);
         }
         if (buttons[1])
         {
@@ -94,7 +94,7 @@ public class MainMenu : MonoBehaviour
         }
         if (buttons[2])
         {
-        	Application.LoadLevel(3);
+        	Application.LoadLevel(2);
             //print("clicked credit");
         }
         if (buttons[3] == true)

@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &83606558
 GameObject:
@@ -294,6 +295,7 @@ GameObject:
   - 114: {fileID: 359549773}
   - 114: {fileID: 359549775}
   - 114: {fileID: 359549776}
+  - 114: {fileID: 359549777}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -409,7 +411,7 @@ AudioSource:
   m_GameObject: {fileID: 359549766}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: c1b4232c8816933419f696d64327b0f9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: feb0fc2c1824c4a48aa247e78f7d8f5b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -489,6 +491,21 @@ MonoBehaviour:
   playerStartPos: {x: 0, y: -10, z: 0}
   respawnCD: 1.5
   respawnTimer: 0
+--- !u!114 &359549777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 359549766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40289c0b751e9634f8041a9bbc40c670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asource: {fileID: 359549774}
+  spectrumParticle: {fileID: 146214, guid: 2f1e8ee6e3b0f184a89d0fa196bb73d4, type: 2}
+  channel: 0
+  numSamples: 2048
 --- !u!1 &438870301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,8 +1901,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreReversedGraphics: 1
-  blockingObjects: 0
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -4873,14 +4890,10 @@ Prefab:
     - target: {fileID: 8232668, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: c1b4232c8816933419f696d64327b0f9, type: 3}
+      objectReference: {fileID: 8300000, guid: feb0fc2c1824c4a48aa247e78f7d8f5b, type: 3}
     - target: {fileID: 11432668, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
       propertyPath: levelName
       value: Colors
-      objectReference: {fileID: 0}
-    - target: {fileID: 8232668, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
-      propertyPath: BypassReverbZones
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 831f084b01835e84988fc929ffd68c78, type: 2}

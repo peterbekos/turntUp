@@ -2102,7 +2102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asource: {fileID: 798725502}
-  spectrumParticle: {fileID: 162554, guid: cd7ea3a80458559439c6ca6305c13187, type: 2}
+  spectrumParticle: {fileID: 146214, guid: 2f1e8ee6e3b0f184a89d0fa196bb73d4, type: 2}
   channel: 0
   numSamples: 2048
 --- !u!1 &1147214882
