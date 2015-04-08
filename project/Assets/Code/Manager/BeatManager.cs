@@ -97,18 +97,12 @@ public static class BeatManager {
 	}
 
 	public static void callBeat(GD type, float interp) {
-		//Debug.Log (type);
         if (GameManager.player != null)
         {
             GameManager.player.onBeat(type, interp);
         }
-		//GameManager.player.onMelody ();
-		/*
-		List<BeatObject> beatObjects = new List<BeatObject>();// = (BeatObject) GameObject.FindGameObjectsWithTag("beatObject");
-		foreach (BeatObject beatobject in beatObjects) {
-			beatobject.onBeat(type);
-		}
-		*/
+        
+		handleShake(type);
 	}
 	
 	public static void callBeat(GD type, float interp, float duration) {
@@ -116,13 +110,18 @@ public static class BeatManager {
 		{
 			GameManager.player.onBeat(type, interp, duration);
 		}
-		//GameManager.player.onMelody ();
-		/*
-		List<BeatObject> beatObjects = new List<BeatObject>();// = (BeatObject) GameObject.FindGameObjectsWithTag("beatObject");
-		foreach (BeatObject beatobject in beatObjects) {
-			beatobject.onBeat(type);
+		
+		handleShake(type);
+	}
+	
+	private static void handleShake(GD type){
+		if(type == GD.KICK){
+			//Debug.Log("BASSY");
+			GameManager.gameTimer.startHorizShake();
 		}
-		*/
+		else if(type == GD.SNARE){
+			GameManager.gameTimer.startVertShake();
+		}
 	}
 
 }

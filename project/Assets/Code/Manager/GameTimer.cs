@@ -15,9 +15,17 @@ public class GameTimer : MonoBehaviour {
 	
 	public float respawnCD = 1.5f; //cooldown on player respawn after death
 	public float respawnTimer = 0; //how much time remains
-
+	
+	private Vector3 anchorPoint; //resting point of the camera
+	private float anchorScale; //resting scale of the camera
+	public float horizShakeTime = 0, vertShakeTime = 0, zoomShakeTime = 0; //stores duration of shake remaining
+	private float timeForShake = .1f; //default shake duration
+	private Vector2 perlinPoint = new Vector2(0, 0);
+	
 	// Use this for initialization
 	void Start () {
+		anchorPoint = Camera.main.gameObject.transform.position;
+		anchorScale = Camera.main.orthographicSize;
 		GameManager.gameTimer = this;
 		GameManager.score = 0;
 		BeatManager.loadFile("Assets/Art/Music/" + levelName + ".mid");
@@ -50,7 +58,40 @@ public class GameTimer : MonoBehaviour {
 					spawnPlayer();
 				}
 			}
+			
+			//Handle shaking the camera
+			if(horizShakeTime > 0 || vertShakeTime > 0){
+				perlinPoint += new Vector2(Time.deltaTime*10, Time.deltaTime*10);
+				
+				float pX = .5f;
+				if(horizShakeTime > 0){
+					pX = Mathf.PerlinNoise(perlinPoint.x, 0) * 2;
+					horizShakeTime -= Time.deltaTime;
+				}
+				float pY = .5f;
+				if(vertShakeTime > 0){
+					pY = Mathf.PerlinNoise(0, perlinPoint.y);
+					vertShakeTime -= Time.deltaTime;
+				}
+				
+				
+				Camera.main.transform.position = anchorPoint + new Vector3(pX - .5f, pY - .5f, 0);
+				
+			}
+			else if(Camera.main.transform.position != anchorPoint){
+				Camera.main.transform.position = anchorPoint;
+			}
 		}
+	}
+	
+	public void startHorizShake(){
+		horizShakeTime = timeForShake;
+	}
+	public void startVertShake(){
+		vertShakeTime = timeForShake;
+	}
+	public void startZoomShake(){
+		zoomShakeTime = timeForShake;
 	}
 	
 	public void startRespawnTimer(){
