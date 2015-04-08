@@ -65,7 +65,7 @@ public class GameTimer : MonoBehaviour {
 				
 				float pX = .5f;
 				if(horizShakeTime > 0){
-					pX = Mathf.PerlinNoise(perlinPoint.x, 0) * 2;
+					pX = Mathf.PerlinNoise(perlinPoint.x, 0);
 					horizShakeTime -= Time.deltaTime;
 				}
 				float pY = .5f;
