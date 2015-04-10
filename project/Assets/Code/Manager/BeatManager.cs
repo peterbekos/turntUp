@@ -43,6 +43,24 @@ public static class BeatManager {
 		Camera.main.GetComponent<AudioSource>().Play();
 	}
 
+	public static int getshit() {
+		return 5;
+	}
+
+	public static Note getLastNote() {
+		if (notePosition > 0) {
+			return NotesToPlay [notePosition - 1];
+		} else {
+			return null;
+		}
+	}
+	public static Note getCurrentNote() {
+		return NotesToPlay [notePosition];
+	}
+	public static Note getNextNote() {
+		return NotesToPlay[notePosition+1];
+	}
+
 	public static void checkBeats(float time) {
 		if (NotesToPlay != null) {
 			while (notePosition < NotesToPlay.Count && NotesToPlay[notePosition].startTime <= time) {

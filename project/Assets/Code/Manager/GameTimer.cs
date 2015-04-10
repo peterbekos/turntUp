@@ -21,6 +21,8 @@ public class GameTimer : MonoBehaviour {
 	public float horizShakeTime = 0, vertShakeTime = 0, zoomShakeTime = 0; //stores duration of shake remaining
 	private float timeForShake = .1f; //default shake duration
 	private Vector2 perlinPoint = new Vector2(0, 0);
+
+	private float realTimeStageStarted = 0;
 	
 	// Use this for initialization
 	void Start () {
@@ -37,50 +39,74 @@ public class GameTimer : MonoBehaviour {
 		
 	}
 
+	//Key pressing stuff
+	void OnGUI() {
+		if (Input.GetKey (KeyCode.Z)) {
+			float pressTime = Time.realtimeSinceStartup - realTimeStageStarted;
+
+			Note nextNote = BeatManager.getNextNote();
+			float nextNoteTime = (float) nextNote.startTime / 1000;
+
+			Note thisNote = BeatManager.getCurrentNote();
+			float thisNoteTime = (float) thisNote.startTime / 1000;
+
+			Note lastNote = BeatManager.getLastNote();
+			float lastNoteTime = (float) lastNote.startTime / 1000;
+
+			Debug.Log("Acc = " + (lastNoteTime - pressTime) + " ; " + (thisNoteTime - pressTime) + " ; " + (nextNoteTime - pressTime));
+		}
+	}
+
 
 	public void initTime(){
 		gameTime = 0;
 		started = true;
 		spawnPlayer();
 	}
+
+	void detectKeyInput() {
+
+	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(started){
+		if (started) {
+
 			gameTime += (Time.deltaTime * 1000);
 			//Debug.Log (gameTime);
 			BeatManager.checkBeats (gameTime);
-			GameManager.spawnController.checkChanges(gameTime / 1000);
-			
-			if(respawnTimer != -99){
-				respawnTimer -= Time.deltaTime;
-				if(respawnTimer <=0 ){
-					spawnPlayer();
-				}
+			GameManager.spawnController.checkChanges (gameTime / 1000);
+
+			if (respawnTimer != -99) {
+					respawnTimer -= Time.deltaTime;
+					if (respawnTimer <= 0) {
+							spawnPlayer ();
+					}
 			}
-			
+
 			//Handle shaking the camera
-			if(horizShakeTime > 0 || vertShakeTime > 0){
-				perlinPoint += new Vector2(Time.deltaTime*10, Time.deltaTime*10);
-				
-				float pX = .5f;
-				if(horizShakeTime > 0){
-					pX = Mathf.PerlinNoise(perlinPoint.x, 0);
-					horizShakeTime -= Time.deltaTime;
-				}
-				float pY = .5f;
-				if(vertShakeTime > 0){
-					pY = Mathf.PerlinNoise(0, perlinPoint.y);
-					vertShakeTime -= Time.deltaTime;
-				}
-				
-				
-				Camera.main.transform.position = anchorPoint + new Vector3(pX - .5f, pY - .5f, 0);
-				
+			if (horizShakeTime > 0 || vertShakeTime > 0) {
+					perlinPoint += new Vector2 (Time.deltaTime * 10, Time.deltaTime * 10);
+	
+					float pX = .5f;
+					if (horizShakeTime > 0) {
+							pX = Mathf.PerlinNoise (perlinPoint.x, 0);
+							horizShakeTime -= Time.deltaTime;
+					}
+					float pY = .5f;
+					if (vertShakeTime > 0) {
+							pY = Mathf.PerlinNoise (0, perlinPoint.y);
+							vertShakeTime -= Time.deltaTime;
+					}
+	
+	
+					Camera.main.transform.position = anchorPoint + new Vector3 (pX - .5f, pY - .5f, 0);
+	
+			} else if (Camera.main.transform.position != anchorPoint) {
+					Camera.main.transform.position = anchorPoint;
 			}
-			else if(Camera.main.transform.position != anchorPoint){
-				Camera.main.transform.position = anchorPoint;
-			}
+		} else {
+			realTimeStageStarted = Time.realtimeSinceStartup;
 		}
 	}
 	
