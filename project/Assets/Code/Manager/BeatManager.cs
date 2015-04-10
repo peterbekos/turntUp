@@ -41,6 +41,7 @@ public static class BeatManager {
         
 		Camera.main.GetComponent<GameTimer>().initTime();
 		Camera.main.GetComponent<AudioSource>().Play();
+		GameManager.realTimeStageStarted = Time.realtimeSinceStartup;
 	}
 
 	public static int getshit() {

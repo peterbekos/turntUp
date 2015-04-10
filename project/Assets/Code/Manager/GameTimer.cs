@@ -21,8 +21,6 @@ public class GameTimer : MonoBehaviour {
 	public float horizShakeTime = 0, vertShakeTime = 0, zoomShakeTime = 0; //stores duration of shake remaining
 	private float timeForShake = .1f; //default shake duration
 	private Vector2 perlinPoint = new Vector2(0, 0);
-
-	private float realTimeStageStarted = 0;
 	
 	// Use this for initialization
 	void Start () {
@@ -42,19 +40,29 @@ public class GameTimer : MonoBehaviour {
 	//Key pressing stuff
 	void OnGUI() {
 		if (Input.GetKey (KeyCode.Z)) {
-			float pressTime = Time.realtimeSinceStartup - realTimeStageStarted;
-
-			Note nextNote = BeatManager.getNextNote();
-			float nextNoteTime = (float) nextNote.startTime / 1000;
-
-			Note thisNote = BeatManager.getCurrentNote();
-			float thisNoteTime = (float) thisNote.startTime / 1000;
-
-			Note lastNote = BeatManager.getLastNote();
-			float lastNoteTime = (float) lastNote.startTime / 1000;
-
-			Debug.Log("Acc = " + (lastNoteTime - pressTime) + " ; " + (thisNoteTime - pressTime) + " ; " + (nextNoteTime - pressTime));
+			checkAccuracy(GD.KICK);
+		} else if (Input.GetKey (KeyCode.X)) {
+			checkAccuracy(GD.BASS);
+		} else if (Input.GetKey (KeyCode.C)) {
+			checkAccuracy(GD.MELODY);
+		} else if (Input.GetKey (KeyCode.V)) {
+			checkAccuracy(GD.SNARE);
 		}
+
+	}
+
+	void checkAccuracy(GD input) {
+		float pressTime = Time.realtimeSinceStartup - GameManager.realTimeStageStarted;
+		
+		Note thisNote = BeatManager.getCurrentNote();
+
+		//if (GDMethods.getBeatType (thisNote.instrumentName) == ) {
+
+				
+
+		float thisNoteTime = (float) thisNote.startTime / 1000;
+		
+		Debug.Log("Acc = " + (thisNoteTime - pressTime) );
 	}
 
 
@@ -105,8 +113,6 @@ public class GameTimer : MonoBehaviour {
 			} else if (Camera.main.transform.position != anchorPoint) {
 					Camera.main.transform.position = anchorPoint;
 			}
-		} else {
-			realTimeStageStarted = Time.realtimeSinceStartup;
 		}
 	}
 	

@@ -32,6 +32,7 @@ public class Spectrum : MonoBehaviour
     // Update is called once per frame
     void Update () 
     {
+
         asource.GetOutputData(volume, channel);
         asource.GetSpectrumData(spectrum, channel, FFTWindow.Rectangular);
     
@@ -40,10 +41,14 @@ public class Spectrum : MonoBehaviour
         for (int i=0; i<255; i++) 
         {
     	    string curSpName = "sp"+(i+1);
-    	    GameObject curSpObj = GameObject.Find(curSpName);
-    	    curSpObj.transform.localScale= new  Vector3(widthOfSp,400*spectrum[i],1);
-            tempColor = new Color(100 * spectrum[i], 1f / (20 * spectrum[i]), 1f / (20 * spectrum[i]), 0.1f);
-            curSpObj.GetComponent<MeshRenderer>().material.color = tempColor;
+			try {
+	    	    GameObject curSpObj = GameObject.Find(curSpName);
+	    	    curSpObj.transform.localScale= new  Vector3(widthOfSp,400*spectrum[i],1);
+	            tempColor = new Color(100 * spectrum[i], 1f / (20 * spectrum[i]), 1f / (20 * spectrum[i]), 0.1f);
+	            curSpObj.GetComponent<MeshRenderer>().material.color = tempColor;
+			} catch {
+
+			}
         }
     }
 }
