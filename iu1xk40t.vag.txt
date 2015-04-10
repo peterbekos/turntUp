@@ -1,0 +1,62 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+Conflicts:
+	project/project.userprefs
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 1 different commit each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	new file:   project/Assets/Art/Materials/spMaterial1.mat
+#	new file:   project/Assets/Art/Materials/spMaterial1.mat.meta
+#	new file:   project/Assets/Art/Materials/spMaterial2.mat
+#	new file:   project/Assets/Art/Materials/spMaterial2.mat.meta
+#	new file:   project/Assets/Art/Music/Colors.ogg
+#	new file:   project/Assets/Art/Music/Colors.ogg.meta
+#	new file:   project/Assets/Art/Music/YellowClaw-Colors.ogg
+#	new file:   project/Assets/Art/Music/YellowClaw-Colors.ogg.meta
+#	new file:   project/Assets/Art/Music/sandstorm.ogg
+#	new file:   project/Assets/Art/Music/sandstorm.ogg.meta
+#	modified:   project/Assets/Art/Prefabs/Gameplay/Enemy/Asteroid(Medium).prefab
+#	modified:   project/Assets/Art/Prefabs/Gameplay/Enemy/Asteroid(Small).prefab
+#	modified:   project/Assets/Art/Prefabs/Gameplay/Enemy/Asteroid(Tiny).prefab
+#	modified:   project/Assets/Art/Prefabs/Gameplay/Enemy/Bosses/Asteroid(Large).prefab
+#	modified:   project/Assets/Art/Prefabs/Gameplay/Enemy/Bosses/ScorpionBoss.prefab
+#	new file:   project/Assets/Art/Prefabs/Gameplay/General/sp1.prefab
+#	new file:   project/Assets/Art/Prefabs/Gameplay/General/sp1.prefab.meta
+#	new file:   project/Assets/Art/Prefabs/Gameplay/General/sp2.prefab
+#	new file:   project/Assets/Art/Prefabs/Gameplay/General/sp2.prefab.meta
+#	modified:   project/Assets/Code/Gameplay/Enemy/Meteor.cs
+#	modified:   project/Assets/Code/Gameplay/Player/PlayShip.cs
+#	modified:   project/Assets/Code/Manager/BeatManager.cs
+#	modified:   project/Assets/Code/Manager/GD.cs
+#	modified:   project/Assets/Code/Manager/GameManager.cs
+#	new file:   project/Assets/Code/SpectrumAnalyzer.meta
+#	new file:   project/Assets/Code/SpectrumAnalyzer/Spectrum.cs
+#	new file:   project/Assets/Code/SpectrumAnalyzer/Spectrum.cs.meta
+#	modified:   project/Assets/Code/UI/MainMenu.cs
+#	modified:   project/Assets/Scenes/Colors.unity
+#	modified:   project/Assets/Scenes/Sandstorm.unity
+#	new file:   project/Assets/UnityVS/Editor.meta
+#	new file:   project/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll
+#	new file:   project/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll.meta
+#	new file:   project/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll
+#	new file:   project/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll.meta
+#	new file:   project/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll
+#	new file:   project/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll.meta
+#	modified:   project/ProjectSettings/ProjectSettings.asset
+#	deleted:    project/project.userprefs
+#
+
