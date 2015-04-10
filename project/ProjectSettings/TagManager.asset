@@ -3,7 +3,7 @@
 --- !u!78 &1
 TagManager:
   tags:
-  - Enemy
+  - UIText
   - Bullet
   - 
   Builtin Layer 0: Default
@@ -39,7 +39,19 @@ TagManager:
   User Layer 30: 
   User Layer 31: 
   m_SortingLayers:
+  - name: UIBackground
+    userID: 1
+    uniqueID: 2551898521
+    locked: 0
   - name: Default
     userID: 0
     uniqueID: 0
+    locked: 0
+  - name: UIParticles
+    userID: 2
+    uniqueID: 2292475399
+    locked: 0
+  - name: UITitle
+    userID: 3
+    uniqueID: 2977172109
     locked: 0

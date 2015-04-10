@@ -21,7 +21,7 @@ public class Spectrum : MonoBehaviour
         spectrum = new float[numSamples];
         widthOfSp = spectrumParticle.transform.localScale.x;
     
-    	for (float i=1; i<255; i++)
+    	for (float i=0; i<255; i++)
     	{
             GameObject particleClone = Instantiate(spectrumParticle,new Vector3(-38 + (i * widthOfSp),0,0), transform.rotation) as GameObject ;
             particleClone.name = "sp"+i;
