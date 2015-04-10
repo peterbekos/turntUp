@@ -22,6 +22,8 @@ public class Meteor : EnemyObject {
 	new void Update () {
 		base.Update();
 		transform.Rotate(0, 0, rotSpeed);
+		rigidbody2D.AddForce( -1 * GameManager.player.gameObject.rigidbody2D.velocity);
+
 	}
 	
 	new void OnTriggerEnter2D(Collider2D coll){
