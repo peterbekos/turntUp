@@ -1,0 +1,2 @@
+back_button has 2 states, active and idle.
+This should toggle when the user hovers on/off of the button.
