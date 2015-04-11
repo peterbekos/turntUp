@@ -22,7 +22,7 @@ public static class GameManager {
 	public static int durationForHold = 500;
 	public static GameTimer gameTimer;
 	public static float realTimeStageStarted = 0;
-
+	public static GameObject menuMusic;
 	
 	//initalization function
 	private static void init() {
