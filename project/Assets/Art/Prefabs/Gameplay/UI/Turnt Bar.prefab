@@ -8,8 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 459044}
-  - 198: {fileID: 19859052}
-  - 199: {fileID: 19959052}
+  - 199: {fileID: 19914286}
+  - 198: {fileID: 19814286}
   m_Layer: 0
   m_Name: Bubbles
   m_TagString: Untagged
@@ -160,7 +160,7 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!198 &19859052
+--- !u!198 &19814286
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -327,7 +327,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: .74000001
+      scalar: .600000024
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1003,7 +1003,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .196787268
+          value: .389558315
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1192,7 +1192,7 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &19959052
+--- !u!199 &19914286
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1204,7 +1204,7 @@ ParticleSystemRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 560bccead0cb7c641a0b122aa06c4dd2, type: 2}
+  - {fileID: 2100000, guid: 88a828216929de84fbfa8f8cb7ceddfc, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
