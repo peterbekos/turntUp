@@ -40,7 +40,7 @@ public class SpectrumSurrounder : MonoBehaviour
 
     #region Fields
 
-    public const int numOfSp = 200;
+    public const int numOfSp = 255;
     OctopusArm[] arms;
 
     public AudioSource asource;
@@ -64,6 +64,8 @@ public class SpectrumSurrounder : MonoBehaviour
     private float canvasWidth;
     private float canvasHeight;
 
+    public Animator mAnimator;
+
     #endregion
 
     public void Start()
@@ -71,7 +73,7 @@ public class SpectrumSurrounder : MonoBehaviour
         arms = new OctopusArm[numOfSp];
         volume = new float[numSamples];
         spectrum = new float[numSamples];
-        overallScale = 52.7f;
+        overallScale = 1;
         canvasWidth = mCanvas.pixelRect.width;
         canvasHeight = mCanvas.pixelRect.height;
     }
@@ -80,13 +82,29 @@ public class SpectrumSurrounder : MonoBehaviour
     {
         Debug.Log("Entered the play button!");
         Transform myRect = (RectTransform)currButton.GetComponent("RectTransform");
-        anchorX = (((RectTransform)myRect).anchoredPosition.x / overallScale);
-        anchorY = (((RectTransform)myRect).anchoredPosition.y / overallScale);
+        anchorX = (((RectTransform)myRect).anchoredPosition.x);
+        anchorY = (((RectTransform)myRect).anchoredPosition.y);
         //anchorX = 0;
         //anchorY = 0;
-        width = (((RectTransform)myRect).rect.width / overallScale);
-        height = (((RectTransform)myRect).rect.height / overallScale);
+        width = (((RectTransform)myRect).rect.width);
+        height = (((RectTransform)myRect).rect.height);
         inAButton = true;
+        
+        
+
+
+
+
+       /* var screenPoint = new Vector3(anchorX, anchorY, 0.5f);
+        var worldPoint = Camera.main.ScreenToWorldPoint(screenPoint);
+        anchorX = screenPoint.x;
+        anchorY = screenPoint.y;
+
+        screenPoint = new Vector3(width, height, 0.5f);
+        worldPoint = Camera.main.ScreenToWorldPoint(screenPoint);
+
+        width = worldPoint.x;
+        height = worldPoint.y;*/
     }
 
     public void ExitPlayButton()
@@ -101,12 +119,12 @@ public class SpectrumSurrounder : MonoBehaviour
         canvasHeight = mCanvas.pixelRect.height;
 
         //Some debugging messages
-        Debug.Log("anchorX = " + anchorX);
+        /*Debug.Log("anchorX = " + anchorX);
         Debug.Log("anchory = " + anchorY);
         Debug.Log("width = " + width);
         Debug.Log("height = " + height);
         Debug.Log("Canvaswidth = " + canvasWidth);
-        Debug.Log("Canvasheight = " + canvasHeight);
+        Debug.Log("Canvasheight = " + canvasHeight); */
 
         if(inAButton)
         {
@@ -143,7 +161,7 @@ public class SpectrumSurrounder : MonoBehaviour
 
             for (int i = 0; i < numOfSp; i++)
             {
-                arms[i].arm = Instantiate(spectrumParticle, new Vector3(xPos, yPos, 99), transform.rotation) as GameObject;
+                arms[i].arm = Instantiate(spectrumParticle, new Vector3(xPos, yPos, 99.96f), transform.rotation) as GameObject;
                 switch(currentDir)
                 {
                     case OctopusDraw.DrawRight:
@@ -207,16 +225,16 @@ public class SpectrumSurrounder : MonoBehaviour
             switch(arms[i].dirToExpand)
             { 
                 case OctopusExpand.ExpandUp:
-                    curSpObj.transform.localScale = new Vector3(1 * overallScale, 2 * spectrum[i], 1);
+                    curSpObj.transform.localScale = new Vector3(1 , 500 * spectrum[i], 1);
                     break;
                 case OctopusExpand.ExpandRight:
-                    curSpObj.transform.localScale = new Vector3(2 * spectrum[i], 1 * overallScale, 1);
+                    curSpObj.transform.localScale = new Vector3(500 * spectrum[i], 1 , 1);
                     break;
                 case OctopusExpand.ExpandDown:
-                    curSpObj.transform.localScale = new Vector3(1 * overallScale, 2 * spectrum[i], 1);
+                    curSpObj.transform.localScale = new Vector3(1, 500 * spectrum[i], 1);
                     break;
                 case OctopusExpand.ExpandLeft:
-                    curSpObj.transform.localScale = new Vector3(2 * spectrum[i], 1 * overallScale, 1);
+                    curSpObj.transform.localScale = new Vector3(500 * spectrum[i], 1 , 1);
                     break;
             //tempColor = new Color(100 * spectrum[i], 1f / (20 * spectrum[i]), 1f / (20 * spectrum[i]), 0.1f);
             //curSpObj.GetComponent<MeshRenderer>().material.color = tempColor;
@@ -230,5 +248,16 @@ public class SpectrumSurrounder : MonoBehaviour
         {
             Destroy(curArm.arm);
         }
+    }
+
+    public void playButtonClicked()
+    {
+        mAnimator.Play("PlayMenuRollIIn");
+        Debug.Log("Play button clicked");
+    }
+    public void backButtonClicked()
+    {
+        mAnimator.Play("backwadrds");
+        Debug.Log("Play button clicked");
     }
 }

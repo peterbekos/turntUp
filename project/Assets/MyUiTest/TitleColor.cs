@@ -61,16 +61,20 @@ public class TitleColor : MonoBehaviour {
         char currentLetter;
         // Use StringBuilder for concatenation in tight loops.
         System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        
         for(int i = 0; i < 7; i++)
         {
             sb.Append(colorHTMLBegin);
+            
             sb.Append(colors[((i + startingColor) % 7)]);
             sb.Append(colorHTMLMiddle);
             sb.Append(letters[i]);
+            sb.Append(" ");
             sb.Append(colorHTMLEnd);
             if (i == 4) { sb.Append(" "); }
         }
         startingColor = ((startingColor + 1) % 7);
+
         return sb.ToString();
     }
 }
