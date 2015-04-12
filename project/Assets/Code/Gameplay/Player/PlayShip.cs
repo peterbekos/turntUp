@@ -145,6 +145,7 @@ public class PlayShip : PlayObject {
 	
 	new public void takeDamage(int dmg){
 		base.takeDamage(dmg);
+		GameManager.gameTimer.startZoomShake();
 		if (hitpoints <= 0 ){
 			GameManager.score = (int)(GameManager.score * .5);
 		}

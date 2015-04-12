@@ -681,6 +681,7 @@ MonoBehaviour:
   horizShakeTime: 0
   vertShakeTime: 0
   zoomShakeTime: 0
+  maxZoom: 1
 --- !u!114 &359549777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7652,6 +7653,10 @@ Prefab:
     - target: {fileID: 11432668, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
       propertyPath: levelName
       value: Colors
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002938, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
+      propertyPath: orthographic size
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11429010, guid: 831f084b01835e84988fc929ffd68c78, type: 2}

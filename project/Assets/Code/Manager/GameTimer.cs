@@ -21,6 +21,7 @@ public class GameTimer : MonoBehaviour {
 	public float horizShakeTime = 0, vertShakeTime = 0, zoomShakeTime = 0; //stores duration of shake remaining
 	private float timeForShake = .1f; //default shake duration
 	private Vector2 perlinPoint = new Vector2(0, 0);
+	public float maxZoom = 2.5f; //max change to perspective view
 	
 	// Use this for initialization
 	void Start () {
@@ -93,7 +94,7 @@ public class GameTimer : MonoBehaviour {
 			}
 
 			//Handle shaking the camera
-			if (horizShakeTime > 0 || vertShakeTime > 0) {
+			if (horizShakeTime > 0 || vertShakeTime > 0 || zoomShakeTime > 0) {
 					perlinPoint += new Vector2 (Time.deltaTime * 10, Time.deltaTime * 10);
 	
 					float pX = .5f;
@@ -106,9 +107,14 @@ public class GameTimer : MonoBehaviour {
 							pY = Mathf.PerlinNoise (0, perlinPoint.y);
 							vertShakeTime -= Time.deltaTime;
 					}
-	
+					float zoom = 0f;
+					if (zoomShakeTime > 0){
+						zoom = maxZoom * zoomShakeTime / timeForShake;
+						zoomShakeTime -= Time.deltaTime;
+					}
 	
 					Camera.main.transform.position = anchorPoint + new Vector3 (pX - .5f, pY - .5f, 0);
+					Camera.main.orthographicSize = 20 - zoom;
 	
 			} else if (Camera.main.transform.position != anchorPoint) {
 					Camera.main.transform.position = anchorPoint;
