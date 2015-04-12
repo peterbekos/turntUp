@@ -1,0 +1,10 @@
+Layer ordering
+
+[closest to camera]
+
+note_bar_front
+beat_indicator(s)
+note_bar_back
+note_bar_track
+
+[furthest from camera]
