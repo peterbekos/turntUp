@@ -22,7 +22,7 @@ public class Meteor : EnemyObject {
 	new void Update () {
 		base.Update();
 		transform.Rotate(0, 0, rotSpeed);
-		rigidbody2D.AddForce( -1 * GameManager.player.gameObject.rigidbody2D.velocity);
+		rigidbody2D.velocity = new Vector3(-.5f * GameManager.player.rigidbody2D.velocity.x, rigidbody2D.velocity.y, 0);
 
 	}
 	
