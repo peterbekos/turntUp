@@ -30,6 +30,8 @@ public class GameTimer : MonoBehaviour {
 		GameManager.gameTimer = this;
 		GameManager.score = 0;
 		BeatManager.loadFile("Assets/Art/Music/" + levelName + ".mid");
+		GameManager.scoretable.displayScores();
+		GameManager.scoretable.enableAll(false);
 		//Camera.main.GetComponent<AudioSource>().clip = AssetDatabase.FindAsset("Assets/Art/Music" + levelName + ".mp3");
 		BeatManager.checkBeats (gameTime);
 	}
@@ -38,6 +40,10 @@ public class GameTimer : MonoBehaviour {
 		
 	}
 
+
+	public void stop(){
+		started = false;
+	}
 	//Key pressing stuff
 	void OnGUI() {
 		if (Input.GetKey (KeyCode.Z)) {

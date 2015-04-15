@@ -23,6 +23,7 @@ public static class GameManager {
 	public static GameTimer gameTimer;
 	public static float realTimeStageStarted = 0;
 	public static GameObject menuMusic;
+	public static HighScoreManager scoretable;
 	
 	//initalization function
 	private static void init() {
@@ -31,6 +32,20 @@ public static class GameManager {
 	
 	public static float getTime(){
 		return gameTimer.getTime();
+	}
+	
+	public static void endLevel(){
+		GameObject.Find("Random Enemy Spawner").SetActive(false); //stop spawning enemies
+		gameTimer.stop ();
+		checkScoreAndSave(gameTimer.levelName, score, "DEV");
+	}
+	
+	public static void checkScoreAndSave(string filename, int score, string name){
+		scoretable.getScoreTable().loadScores(filename);
+		scoretable.getScoreTable().addScore(score, name);
+		scoretable.getScoreTable().saveScores(filename);
+		scoretable.displayScores();
+		Debug.Log("Saved");
 	}
 }
 

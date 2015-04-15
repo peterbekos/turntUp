@@ -14,10 +14,10 @@ public static class BeatManager {
 	private static int notePosition = 0;
 	private static int noteBarPosition = 0;
 	
-	private static float delayToMenuScreen = 5f;
+	private static float delayToScores = 5f;
 
 	static BeatManager() {
-		delayToMenuScreen = 5f;
+		delayToScores = 5f;
 		//fileName = "Assets/Art/Music/ColorsMIDI(Unfinished).mid";
 		//fileName = "Assets/Art/Music/sandstorm.mid";
 		//init ();
@@ -83,14 +83,6 @@ public static class BeatManager {
 				//Debug.Log ("" + noteBarPosition + ":" + NotesToPlay[noteBarPosition].startTime);
 				Note note = NotesToPlay[noteBarPosition];
 				GD noteType = GDMethods.getBeatType(note.instrumentName);
-
-                //Pitch and Velocity  - use these two
-                //note.notePitch; - String
-                //note.noteVelocity; - int
-                //
-
-                
-
 				
 				float interp = (float)(time + 4500f - note.startTime)/1000;
 				callNoteBarBeat (noteType, interp);
@@ -99,10 +91,10 @@ public static class BeatManager {
 		}
 		
 		if(notePosition >= NotesToPlay.Count) {
-			delayToMenuScreen -= Time.deltaTime;
+			delayToScores -= Time.deltaTime;
 			
-			if(delayToMenuScreen <= 0) {
-				Application.LoadLevel(0);
+			if(delayToScores <= 0) {
+				GameManager.endLevel();
 			}
 		}
 	}

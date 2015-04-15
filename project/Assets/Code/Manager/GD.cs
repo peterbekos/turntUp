@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 //Game Dictionary
 public enum GD {
@@ -19,6 +22,68 @@ public enum GD {
 	STANDARD,
 	TURNT,
 	CHILL
+}
+
+[Serializable]
+public class HighScoreTable{
+	
+	public int[] scores = new int[10];
+	public string[] names = new string[10];
+	
+	public HighScoreTable(){
+	
+	}
+	
+	public HighScoreTable(string name){
+		loadScores(name);
+	}
+	
+	public int getScore(int i){
+		return scores[i-1];
+	}
+	
+	public string getName(int i){
+		return names[i-1];
+	}
+	
+	public void addScore(int s, string n){
+		int i = 10; //check lowest score first
+		
+		while(i >=1 && s > scores[i-1]){ //check each score if you beat it
+			i--;
+		}
+		
+		if( i == 10 ) return; //if you didn't beat the lowest score, gtfo
+		
+		for(int j = 9; j > i; j--){
+			if(j == 0) break;
+			scores[j] = scores[j-1];
+			names[j] = names[j-1];
+		}
+		scores[i] = s;
+		names[i] = n;
+	}
+	
+	public void saveScores(string filename){
+		  BinaryFormatter bf = new BinaryFormatter();
+		  FileStream fs = File.Create (Application.persistentDataPath + "/" + GameManager.gameTimer.levelName + ".scores");
+		  
+		  bf.Serialize(fs, this);
+		  fs.Close();
+	}
+	
+	public void loadScores(string filename){
+		if(File.Exists(Application.persistentDataPath + "/" + GameManager.gameTimer.levelName + ".scores")){
+			BinaryFormatter bf = new BinaryFormatter();
+			FileStream fs = File.Open(Application.persistentDataPath + "/" + GameManager.gameTimer.levelName + ".scores", FileMode.Open);
+			
+			HighScoreTable hst = (HighScoreTable)bf.Deserialize(fs);
+			scores = hst.scores;
+			names = hst.names;
+			
+			fs.Close();
+		}
+	}
 }
 
 public static class GDMethods
