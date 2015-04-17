@@ -73,6 +73,7 @@ public class HighScoreTable{
 	}
 	
 	public void loadScores(string filename){
+		Debug.Log(Application.persistentDataPath);
 		if(File.Exists(Application.persistentDataPath + "/" + GameManager.gameTimer.levelName + ".scores")){
 			BinaryFormatter bf = new BinaryFormatter();
 			FileStream fs = File.Open(Application.persistentDataPath + "/" + GameManager.gameTimer.levelName + ".scores", FileMode.Open);
@@ -82,6 +83,11 @@ public class HighScoreTable{
 			names = hst.names;
 			
 			fs.Close();
+		}
+		else{ //set defaults
+			scores = new int[] { 5000000, 4500000, 3500000, 2000000, 1000000, 500000, 100000, 50000, 25000, 10000 };  //if you get under 10,000 points you need to consider your life choices
+			names = new string[] { "TREVOR", "ADAM", "LUKASZ", "PETER", "VINCE", "JONATHAN", "TIAN", "SAD TREVOR", "CJ", "SUP" }; //sup
+			saveScores(filename);
 		}
 	}
 }
