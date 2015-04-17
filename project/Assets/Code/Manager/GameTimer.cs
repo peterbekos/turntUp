@@ -85,19 +85,19 @@ public class GameTimer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (respawnTimer != -99) {
+			respawnTimer -= Time.deltaTime;
+			if (respawnTimer <= 0) {
+				spawnPlayer ();
+			}
+		}
+		
 		if (started) {
 
 			gameTime += (Time.deltaTime * 1000);
 			//Debug.Log (gameTime);
 			BeatManager.checkBeats (gameTime);
 			GameManager.spawnController.checkChanges (gameTime / 1000);
-
-			if (respawnTimer != -99) {
-					respawnTimer -= Time.deltaTime;
-					if (respawnTimer <= 0) {
-							spawnPlayer ();
-					}
-			}
 
 			//Handle shaking the camera
 			if (horizShakeTime > 0 || vertShakeTime > 0 || zoomShakeTime > 0) {

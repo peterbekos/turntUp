@@ -86,7 +86,7 @@ public class MainMenu : MonoBehaviour
         //button actions
         if (buttons[0])
         {
-            Application.LoadLevel(1);
+            Application.LoadLevel("COlors");
         }
         if (buttons[1])
         {
