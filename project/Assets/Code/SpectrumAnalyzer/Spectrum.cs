@@ -24,21 +24,26 @@ public class Spectrum : MonoBehaviour
     	
     	Quaternion startRot = transform.rotation;
     	transform.rotation = Quaternion.identity;
+    	
+    	Vector3 startScale = transform.localScale;
+    	transform.localScale = new Vector3(1,1,1);
     
         volume = new float[numSamples];
         spectrum = new float[numSamples];
-        widthOfSp = spectrumParticle.transform.localScale.x/2;
+        //widthOfSp = spectrumParticle.transform.localScale.x/2;
+        widthOfSp = 1f/256;
         
         particles = new GameObject[256];
     
     	for (int i=0; i<255; i++)
     	{
-            particles[i] = Instantiate(spectrumParticle, new Vector3(i * widthOfSp,0,0), transform.rotation) as GameObject ;
+            particles[i] = Instantiate(spectrumParticle, new Vector3(i * widthOfSp,0,0), Quaternion.identity) as GameObject ;
 			particles[i].name = "sp"+i;
 			particles[i].transform.SetParent(gameObject.transform);
     	}
     	transform.position = startpos;
     	transform.rotation = startRot;
+    	transform.localScale = startScale;
     
     }
     

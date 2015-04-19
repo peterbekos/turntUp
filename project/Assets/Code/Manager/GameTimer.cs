@@ -6,7 +6,7 @@ public class GameTimer : MonoBehaviour {
 	//variables
 	public string levelName = "Colors";
 	
-	float gameTime = 0; //In mills
+	float gameTime = -5000; //In mills
 	
 	bool started = false;
 	
@@ -22,6 +22,7 @@ public class GameTimer : MonoBehaviour {
 	private float timeForShake = .1f; //default shake duration
 	private Vector2 perlinPoint = new Vector2(0, 0);
 	public float maxZoom = 2.5f; //max change to perspective view
+	private bool musicStarted = false;
 	
 	// Use this for initialization
 	void Start () {
@@ -31,9 +32,10 @@ public class GameTimer : MonoBehaviour {
 		GameManager.score = 0;
 		BeatManager.loadFile("Assets/Art/Music/" + levelName + ".mid");
 		GameManager.scoretable.displayScores();
-		GameManager.scoretable.enableAll(false);
+		GameManager.scoretable.enable(false);
 		//Camera.main.GetComponent<AudioSource>().clip = AssetDatabase.FindAsset("Assets/Art/Music" + levelName + ".mp3");
 		BeatManager.checkBeats (gameTime);
+		Destroy(GameManager.menuMusic);
 	}
 
 	void FixedUpdate() {
@@ -74,7 +76,7 @@ public class GameTimer : MonoBehaviour {
 
 
 	public void initTime(){
-		gameTime = 0;
+		gameTime = -2000;
 		started = true;
 		spawnPlayer();
 	}
@@ -95,6 +97,12 @@ public class GameTimer : MonoBehaviour {
 		if (started) {
 
 			gameTime += (Time.deltaTime * 1000);
+			if(musicStarted == false && gameTime > 0){
+				musicStarted = true;
+				AudioSource music = Camera.main.GetComponent<AudioSource>();
+				music.time = gameTime/1000;
+				music.Play ();
+			}
 			//Debug.Log (gameTime);
 			BeatManager.checkBeats (gameTime);
 			GameManager.spawnController.checkChanges (gameTime / 1000);
