@@ -24,6 +24,7 @@ public static class GameManager {
 	public static float realTimeStageStarted = 0;
 	public static GameObject menuMusic;
 	public static HighScoreManager scoretable;
+	public static string nextLevel;
 	
 	//initalization function
 	private static void init() {

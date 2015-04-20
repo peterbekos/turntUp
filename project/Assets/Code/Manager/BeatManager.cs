@@ -40,7 +40,7 @@ public static class BeatManager {
         NotesToPlay = myAccess.getNotes(fileName);
         
 		Camera.main.GetComponent<GameTimer>().initTime();
-		Camera.main.GetComponent<AudioSource>().Play();
+		//Camera.main.GetComponent<AudioSource>().Play();
 		GameManager.realTimeStageStarted = Time.realtimeSinceStartup;
 	}
 

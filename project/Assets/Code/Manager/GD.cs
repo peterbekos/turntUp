@@ -73,7 +73,7 @@ public class HighScoreTable{
 	}
 	
 	public void loadScores(string filename){
-		Debug.Log(Application.persistentDataPath);
+		//Debug.Log(Application.persistentDataPath);
 		if(File.Exists(Application.persistentDataPath + "/" + GameManager.gameTimer.levelName + ".scores")){
 			BinaryFormatter bf = new BinaryFormatter();
 			FileStream fs = File.Open(Application.persistentDataPath + "/" + GameManager.gameTimer.levelName + ".scores", FileMode.Open);

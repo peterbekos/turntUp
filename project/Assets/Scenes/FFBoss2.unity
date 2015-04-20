@@ -9780,6 +9780,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 185230, guid: 446d900e3bfadde4cb71d6e9abfa3737, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 446d900e3bfadde4cb71d6e9abfa3737, type: 2}
   m_RootGameObject: {fileID: 869883106}

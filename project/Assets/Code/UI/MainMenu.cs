@@ -86,16 +86,20 @@ public class MainMenu : MonoBehaviour
         //button actions
         if (buttons[0])
         {
-            Application.LoadLevel("COlors");
+        	Application.LoadLevel("LoadingScreen");
+            //Application.LoadLevel("Colors");
+            GameManager.nextLevel = "Colors";
         }
         if (buttons[1])
         {
             print("clicked upgrade");
         }
         if (buttons[2])
-        {
-        	Application.LoadLevel(2);
-            //print("clicked credit");
+		{
+			Application.LoadLevel("LoadingScreen");
+			//Application.LoadLevel("FFBoss2");
+			GameManager.nextLevel = "FFBoss2";
+            //print("clicked credit");//
         }
         if (buttons[3] == true)
         {

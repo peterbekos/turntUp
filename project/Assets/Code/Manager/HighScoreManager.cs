@@ -8,12 +8,12 @@ public class HighScoreManager : MonoBehaviour {
 	
 	void Awake(){
 		GameManager.scoretable = this;
-		enableAll(false);
+		enable(false);
 	}
 	
 	// Use this for initialization
 	public void displayScores () {
-		enableAll(true);
+		enable(true);
 		hscores.loadScores(GameManager.gameTimer.levelName);
 		GameObject.Find("HighScoreDisplay").GetComponent<Text>().text = "" + hscores.getScore(1);
 		for(int i = 1; i <= 10; i++){
@@ -22,18 +22,8 @@ public class HighScoreManager : MonoBehaviour {
 		}
 	}
 	
-	public void enableAll(bool enable){
+	public void enable(bool enable){
 		gameObject.SetActive(enable);
-		
-		foreach(Transform t in gameObject.GetComponentInChildren<Transform>()){
-			t.gameObject.SetActive(enable);
-		}
-		
-		/*for(int i = 1; i <= 10; i++){
-			GameObject.Find ("" + i).SetActive(true);
-			GameObject.Find("Score" + i).SetActive(true);
-			GameObject.Find("Name" + i).SetActive(true);
-		}*/
 	}
 	
 	public HighScoreTable getScoreTable(){
