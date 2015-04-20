@@ -36,6 +36,8 @@ public static class BeatManager {
 
 	//initalization function
 	private static void init() {
+		delayToScores = 5f;
+	
         MidiAccess myAccess = new MidiAccess();
         NotesToPlay = myAccess.getNotes(fileName);
         
