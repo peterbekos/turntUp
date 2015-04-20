@@ -44,10 +44,6 @@ public static class BeatManager {
 		GameManager.realTimeStageStarted = Time.realtimeSinceStartup;
 	}
 
-	public static int getshit() {
-		return 5;
-	}
-
 	public static Note getLastNote() {
 		if (notePosition > 0) {
 			return NotesToPlay [notePosition - 1];
@@ -55,9 +51,22 @@ public static class BeatManager {
 			return null;
 		}
 	}
+
 	public static Note getCurrentNote() {
 		return NotesToPlay [notePosition];
 	}
+
+	private static int maxSearch = 8;
+	public static Note getCurrentNote(GD type) {
+		for (int i = 0; i < maxSearch; i++) {
+			Note note = NotesToPlay[notePosition + i];
+			if (GDMethods.getBeatType(note.instrumentName) == type) {
+				return note;
+			}
+		}
+		return null;
+	}
+
 	public static Note getNextNote() {
 		return NotesToPlay[notePosition+1];
 	}
