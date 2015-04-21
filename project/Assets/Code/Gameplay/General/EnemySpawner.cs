@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
+using SimpleJSON;
+using System;
+using System.IO;
 
 public class EnemySpawner : MonoBehaviour {
 
@@ -26,20 +29,44 @@ public class EnemySpawner : MonoBehaviour {
 		
 		//if it's time to spawn an enemy, spawn an enemy and reset the timer
 		if(timeSinceSpawn > timeBetweenSpawns){
-			spawnEnemy ();
+
+			spawnCluster();
+
 			timeSinceSpawn = 0;
 		}
 	}
-	
+			
+
+	public void spawnCluster()
+	{
+		System.Random rnd = new System.Random();
+		int formationToSpawn = rnd.Next (0, 4);					
+		string jsonF = File.ReadAllText(Application.dataPath + "/clusterPattern.json");
+		var n = JSON.Parse(jsonF);	
+
+		var spawnCtr = n["clusterPatterns"][formationToSpawn]["numOfUnits"].AsInt;
+		Vector3 xyzCoordinates = new Vector3 ();
+		int i = 0;
+		for (i = 0; i < (spawnCtr); i++) {
+			xyzCoordinates.x = n["clusterPatterns"][formationToSpawn]["xyzCoord"][i]["x"].AsFloat;
+			xyzCoordinates.y = n["clusterPatterns"][formationToSpawn]["xyzCoord"][i]["y"].AsFloat;
+			xyzCoordinates.z = n["clusterPatterns"][formationToSpawn]["xyzCoord"][i]["z"].AsFloat;
+			GameObject spawn = (GameObject)GameObject.Instantiate (enemiesToSpawn [0], xyzCoordinates, Quaternion.identity);
+				
+		}
+		
+
+	}
+
 	//spawn a random enemy at a random point outside the camera
 	public void spawnEnemy(){
 		Vector3 spawnPoint = getRandomPoint();
-		GameObject spawn = (GameObject)GameObject.Instantiate(enemiesToSpawn[Random.Range(0, enemiesToSpawn.Length)], spawnPoint, gameObject.transform.rotation);
+		GameObject spawn = (GameObject)GameObject.Instantiate(enemiesToSpawn[UnityEngine.Random.Range(0, enemiesToSpawn.Length)], spawnPoint, gameObject.transform.rotation);
 	}
 	
 	//spawn a random enemy at a given point outside the camera
 	public void spawnEnemy(Vector3 spawnPoint){
-		GameObject spawn = (GameObject)GameObject.Instantiate(enemiesToSpawn[Random.Range(0, enemiesToSpawn.Length)], spawnPoint, gameObject.transform.rotation);
+		GameObject spawn = (GameObject)GameObject.Instantiate(enemiesToSpawn[UnityEngine.Random.Range(0, enemiesToSpawn.Length)], spawnPoint, gameObject.transform.rotation);
 	}
 	
 	//spawn a given enemy at a random point outside the camera
@@ -69,21 +96,21 @@ public class EnemySpawner : MonoBehaviour {
 		Vector3 spawnPoint = new Vector3(0, 0, 0);
 		
 		//determine whether to spawn on side or on top
-		if(Random.Range (0F,1F) > .5) //50% chance to spawn on side
+		if(UnityEngine.Random.Range (0F,1F) > .5) //50% chance to spawn on side
 		{
-			spawnPoint.y = cameraLocation.y + Random.Range (0, cameraVisibleBounds.y + 10);
-			if(Random.Range (0f, 1f) > .5)
+			spawnPoint.y = cameraLocation.y + UnityEngine.Random.Range (0, cameraVisibleBounds.y + 10);
+			if(UnityEngine.Random.Range (0f, 1f) > .5)
 			{ //50% chance to spawn on left
-				spawnPoint.x = cameraLocation.x - cameraVisibleBounds.x - Random.Range (10f, 15f); // spawn unit between 5 and 10 units to left of camera
+				spawnPoint.x = cameraLocation.x - cameraVisibleBounds.x - UnityEngine.Random.Range (10f, 15f); // spawn unit between 5 and 10 units to left of camera
 			}
 			else
 			{ //otherwise spawn on right
-				spawnPoint.x = cameraLocation.x + cameraVisibleBounds.x + Random.Range (10f, 15f); // spawn unit between 5 and 10 units to left of camera
+				spawnPoint.x = cameraLocation.x + cameraVisibleBounds.x + UnityEngine.Random.Range (10f, 15f); // spawn unit between 5 and 10 units to left of camera
 			}
 		}
 		else{ //otherwise spawn on top
-			spawnPoint.y = cameraLocation.y + cameraVisibleBounds.y + Random.Range (10f, 15f); //spawn unit between 5 and 10 units above camera
-			spawnPoint.x = cameraLocation.x + Random.Range ( -cameraVisibleBounds.x, cameraVisibleBounds.x); //spawn unit somewhere within the camera's x boundaries
+			spawnPoint.y = cameraLocation.y + cameraVisibleBounds.y + UnityEngine.Random.Range (10f, 15f); //spawn unit between 5 and 10 units above camera
+			spawnPoint.x = cameraLocation.x + UnityEngine.Random.Range ( -cameraVisibleBounds.x, cameraVisibleBounds.x); //spawn unit somewhere within the camera's x boundaries
 		}
 		
 		return spawnPoint;
