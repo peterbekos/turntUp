@@ -43,13 +43,13 @@ public class NoteOrigin : BeatObject
     // kick/snare = 3 since harmony is not really there
     new public void onSnare(float interp)
     {
-        if (redNote == null) return;
-        spanwnote(redNote, redNoteSpawnPoint, interp);
+        if (blueNote == null) return;
+        spanwnote(blueNote, redNoteSpawnPoint, interp);
     }
     new public void onHat(float interp)
     {
-        if (redNote == null) return;
-        spanwnote(redNote, redNoteSpawnPoint, interp);
+        if (yellowNote == null) return;
+        spanwnote(yellowNote, redNoteSpawnPoint, interp);
     }
 
     // treble + bass = 4

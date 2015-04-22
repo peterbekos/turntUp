@@ -103,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -52.4671516, y: -1.91089571, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 412642}
@@ -225,15 +225,15 @@ MonoBehaviour:
   kickShot: {fileID: 0}
   snareShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
   hatShot: {fileID: 128522, guid: 0035f89376fe4d447b18b88272871595, type: 2}
-  bassShot: {fileID: 196818, guid: 5555104446edd19428f63fa62c5fcdac, type: 2}
-  trebleShot: {fileID: 0}
+  bassShot: {fileID: 0}
+  trebleShot: {fileID: 196818, guid: 5555104446edd19428f63fa62c5fcdac, type: 2}
   melodyAngle: 0
   harmonyAngle: 0
   kickAngle: 0
   snareAngle: 9
   hatAngle: 0
   bassAngle: 7
-  trebleAngle: 0
+  trebleAngle: 2
 --- !u!114 &11443196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,15 +255,15 @@ MonoBehaviour:
   kickShot: {fileID: 0}
   snareShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
   hatShot: {fileID: 128522, guid: 0035f89376fe4d447b18b88272871595, type: 2}
-  bassShot: {fileID: 196818, guid: 5555104446edd19428f63fa62c5fcdac, type: 2}
-  trebleShot: {fileID: 0}
+  bassShot: {fileID: 0}
+  trebleShot: {fileID: 196818, guid: 5555104446edd19428f63fa62c5fcdac, type: 2}
   melodyAngle: 0
   harmonyAngle: 0
   kickAngle: 0
   snareAngle: 9
   hatAngle: 0
   bassAngle: 7
-  trebleAngle: 0
+  trebleAngle: 2
 --- !u!212 &21212642
 SpriteRenderer:
   m_ObjectHideFlags: 1

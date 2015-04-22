@@ -54,7 +54,7 @@ public class MidiFileInspector
 						
 						int microsecPerQuartNote = Convert.ToInt32(finalString);
 						milliSecondsPerQuartNote =  (float)((microsecPerQuartNote) / 1000.0);
-						Debug.Log(milliSecondsPerQuartNote + " Milliseconds per quarter note");
+						//Debug.Log(milliSecondsPerQuartNote + " Milliseconds per quarter note");
 						//String finalMPQ = extractMPQ.Remove()
 						//Console.WriteLine("Just hit BPM");
 					}

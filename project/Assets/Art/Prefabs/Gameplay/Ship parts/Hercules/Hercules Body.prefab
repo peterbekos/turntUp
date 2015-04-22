@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -52.240139, y: 2.06182122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 484432}
@@ -157,14 +157,14 @@ MonoBehaviour:
   timeModifier: 4
   maxTimeAngle: 45
   melodyShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
-  harmonyShot: {fileID: 0}
-  kickShot: {fileID: 113374, guid: 5488e5786e9293645bd2704b4ee1114a, type: 2}
+  harmonyShot: {fileID: 113374, guid: 5488e5786e9293645bd2704b4ee1114a, type: 2}
+  kickShot: {fileID: 0}
   snareShot: {fileID: 0}
   hatShot: {fileID: 0}
   bassShot: {fileID: 0}
   trebleShot: {fileID: 0}
   melodyAngle: 0
-  harmonyAngle: 0
+  harmonyAngle: 19
   kickAngle: 9
   snareAngle: 0
   hatAngle: 0

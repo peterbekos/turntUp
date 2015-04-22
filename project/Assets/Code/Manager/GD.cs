@@ -105,7 +105,14 @@ public static class GDMethods
 	//To be called only once!
 	private static void mapInstruments()
 	{
-		instrumentMappings.Add("Acoustic Grand Piano", GD.MELODY);
+		instrumentMappings.Add("Acoustic Grand", GD.MELODY);
+		instrumentMappings.Add("Acoustic Guitar(nylon)", GD.HARMONY);
+		instrumentMappings.Add("Acoustic Bass", GD.BASS);
+		instrumentMappings.Add("Violin", GD.TREBLE);
+		instrumentMappings.Add("Tinkle Bell", GD.HAT);
+		instrumentMappings.Add("Taiko Drum", GD.KICK);
+		instrumentMappings.Add("Melodic Tom", GD.SNARE);
+		/*
 		instrumentMappings.Add("Bright Acoustic Piano", GD.HARMONY);
 		instrumentMappings.Add("Electric Grand Piano", GD.HARMONY);
 		instrumentMappings.Add("Honky-tonk Piano", GD.HARMONY);
@@ -129,7 +136,6 @@ public static class GDMethods
 		instrumentMappings.Add("Accordion", GD.HARMONY);
 		instrumentMappings.Add("Harmonica", GD.HARMONY);
 		instrumentMappings.Add("Tango Accordion", GD.HARMONY);
-		instrumentMappings.Add("Acoustic Guitar (nylon)", GD.HARMONY);
 		instrumentMappings.Add("Acoustic Guitar (steel)", GD.HARMONY);
 		instrumentMappings.Add("Electric Guitar (jazz)", GD.HARMONY);
 		instrumentMappings.Add("Electric Guitar (clean)", GD.HARMONY);
@@ -137,7 +143,6 @@ public static class GDMethods
 		instrumentMappings.Add("Overdriven Guitar", GD.HARMONY);
 		instrumentMappings.Add("Distortion Guitar", GD.HARMONY);
 		instrumentMappings.Add("Guitar harmonics", GD.HARMONY);
-		instrumentMappings.Add("Acoustic Bass", GD.BASS);
 		instrumentMappings.Add("Electric Bass (finger)", GD.HARMONY);
 		instrumentMappings.Add("Electric Bass (pick)", GD.HARMONY);
 		instrumentMappings.Add("Fretless Bass", GD.HARMONY);
@@ -145,7 +150,6 @@ public static class GDMethods
 		instrumentMappings.Add("Slap Bass 2", GD.HARMONY);
 		instrumentMappings.Add("Synth Bass 1", GD.HARMONY);
 		instrumentMappings.Add("Synth Bass 2", GD.HARMONY);
-		instrumentMappings.Add("Violin", GD.TREBLE);
 		instrumentMappings.Add("Viola", GD.HARMONY);
 		instrumentMappings.Add("Cello", GD.HARMONY);
 		instrumentMappings.Add("Contrabass", GD.HARMONY);
@@ -217,12 +221,9 @@ public static class GDMethods
 		instrumentMappings.Add("Bag pipe", GD.HARMONY);
 		instrumentMappings.Add("Fiddle", GD.HARMONY);
 		instrumentMappings.Add("Shanai", GD.HARMONY);
-		instrumentMappings.Add("Tinkle Bell", GD.HAT);
 		instrumentMappings.Add("Agogo", GD.HARMONY);
 		instrumentMappings.Add("Steel Drums", GD.HARMONY);
 		instrumentMappings.Add("Woodblock", GD.HARMONY);
-		instrumentMappings.Add("Taiko Drum", GD.KICK);
-		instrumentMappings.Add("Melodic Tom", GD.SNARE);
 		instrumentMappings.Add("Synth Drum", GD.HARMONY);
 		instrumentMappings.Add("Reverse Cymbal", GD.HARMONY);
 		instrumentMappings.Add("Guitar Fret Noise", GD.HARMONY);
@@ -233,6 +234,7 @@ public static class GDMethods
 		instrumentMappings.Add("Helicopter", GD.HARMONY);
 		instrumentMappings.Add("Applause", GD.HARMONY);
 		instrumentMappings.Add("Gunshot", GD.HARMONY);
+		*/
 	}
 	
 	public static GD getBeatType(string _instrument)
@@ -249,7 +251,8 @@ public static class GDMethods
 		else
 		{
 			//Returns harmony if instrument doesn't exist in mappings
-			return GD.MELODY;
+			Debug.Log (_instrument + " is not in the dictionary!");
+			return GD.HARMONY;
 		}
 	}
 
