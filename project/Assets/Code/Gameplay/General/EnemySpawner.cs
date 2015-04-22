@@ -41,7 +41,7 @@ public class EnemySpawner : MonoBehaviour {
 	{
 		System.Random rnd = new System.Random();
 		int formationToSpawn = rnd.Next (0, 4);					
-		string jsonF = File.ReadAllText(Application.dataPath + "/clusterPattern.json");
+		string jsonF = File.ReadAllText(Application.dataPath + "/Code/Gameplay/Enemy/clusterPattern.json");
 		var n = JSON.Parse(jsonF);	
 
 		var spawnCtr = n["clusterPatterns"][formationToSpawn]["numOfUnits"].AsInt;
