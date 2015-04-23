@@ -250,14 +250,4 @@ public class SpectrumSurrounder : MonoBehaviour
         }
     }
 
-    public void playButtonClicked()
-    {
-        mAnimator.Play("PlayMenuRollIIn");
-        Debug.Log("Play button clicked");
-    }
-    public void backButtonClicked()
-    {
-        mAnimator.Play("backwadrds");
-        Debug.Log("Play button clicked");
-    }
 }

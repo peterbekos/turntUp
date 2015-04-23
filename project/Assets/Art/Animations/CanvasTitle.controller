@@ -25,13 +25,58 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: PlayMenuRollIIn
+  m_Name: LevelListRollIn
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 044385517c803fd4c946904b05520fb5, type: 2}
+  - {fileID: 7400000, guid: 13cce63b8c5f8dd4bb8ba4211b7b4229, type: 2}
   m_ParentStateMachine: {fileID: 110767864}
-  m_Position: {x: 156, y: 180, z: 0}
+  m_Position: {x: 156, y: 168, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110204338
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: UpgradesRollOut
+  m_Speed: -1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 6538b8cdc3e802f46ad43be7d86b1c0f, type: 2}
+  m_ParentStateMachine: {fileID: 110767864}
+  m_Position: {x: 372, y: 312, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110217922
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SettingsRollIn
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 5b8100178e98af643ba8205c2fb5bd65, type: 2}
+  m_ParentStateMachine: {fileID: 110767864}
+  m_Position: {x: 156, y: 240, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110242974
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: UpgradesRollIn
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 6538b8cdc3e802f46ad43be7d86b1c0f, type: 2}
+  m_ParentStateMachine: {fileID: 110767864}
+  m_Position: {x: 156, y: 312, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -50,18 +95,33 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110282264
+--- !u!1102 &110272806
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: backwadrds
-  m_Speed: 1
+  m_Name: SettingsRollOut
+  m_Speed: -1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 7cb5890f98a2d084ebafe7018236c628, type: 2}
+  - {fileID: 7400000, guid: 5b8100178e98af643ba8205c2fb5bd65, type: 2}
   m_ParentStateMachine: {fileID: 110767864}
-  m_Position: {x: 156, y: 312, z: 0}
+  m_Position: {x: 372, y: 240, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110276528
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: LevelListRollOut
+  m_Speed: -1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 13cce63b8c5f8dd4bb8ba4211b7b4229, type: 2}
+  m_ParentStateMachine: {fileID: 110767864}
+  m_Position: {x: 372, y: 168, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -76,7 +136,11 @@ StateMachine:
   m_States:
   - {fileID: 110267864}
   - {fileID: 110202770}
-  - {fileID: 110282264}
+  - {fileID: 110217922}
+  - {fileID: 110272806}
+  - {fileID: 110242974}
+  - {fileID: 110204338}
+  - {fileID: 110276528}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions: {}
