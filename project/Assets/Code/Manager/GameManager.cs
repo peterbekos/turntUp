@@ -25,6 +25,7 @@ public static class GameManager {
 	public static GameObject menuMusic;
 	public static HighScoreManager scoretable;
 	public static string nextLevel;
+	public static EnemySpawner spawner;
 	
 	//initalization function
 	private static void init() {

@@ -122,6 +122,9 @@ public static class BeatManager {
         {
             GameManager.player.onBeat(type, interp);
         }
+        if (GameManager.spawner != null){
+        	GameManager.spawner.onBeat(type);
+        }
         
 		handleShake(type);
 	}
@@ -130,6 +133,9 @@ public static class BeatManager {
 		if (GameManager.player != null)
 		{
 			GameManager.player.onBeat(type, interp, duration);
+		}
+		if (GameManager.spawner != null){
+			GameManager.spawner.onBeat(type);
 		}
 		
 		handleShake(type);

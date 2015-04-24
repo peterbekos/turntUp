@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour {
 	// Get the camera's bounds on creation
 	void Start () {
 		cameraVisibleBounds = new Vector2(Camera.main.orthographicSize * Screen.width / Screen.height, Camera.main.orthographicSize * Screen.height / Screen.width);
+		GameManager.spawner = this;
 	}
 	
 	// Update is called once per frame
@@ -29,6 +30,10 @@ public class EnemySpawner : MonoBehaviour {
 			spawnEnemy ();
 			timeSinceSpawn = 0;
 		}
+	}
+	
+	public void onBeat(GD type){ //TODO: Make this more involved
+		spawnEnemy();
 	}
 	
 	//spawn a random enemy at a random point outside the camera
