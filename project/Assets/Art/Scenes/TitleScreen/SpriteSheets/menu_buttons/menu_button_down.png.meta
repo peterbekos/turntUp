@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 4ad324749fb9c644d9081621041db678
+guid: 5330385ade1e55e47b40d0b8d43b03c9
 TextureImporter:
   fileIDToRecycleName:
-    21300000: menu_button_horiz_0
-    21300002: menu_button_horiz_1
+    21300000: menu_button_down_0
+    21300002: menu_button_down_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -45,23 +45,23 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: menu_button_horiz_0
+    - name: menu_button_down_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 41
-        height: 27
+        width: 160
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: menu_button_horiz_1
+    - name: menu_button_down_1
       rect:
         serializedVersion: 2
-        x: 41
+        x: 160
         y: 0
-        width: 41
-        height: 27
+        width: 160
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
