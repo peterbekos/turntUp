@@ -122,6 +122,11 @@ public static class BeatManager {
         {
             GameManager.player.onBeat(type, interp);
         }
+
+        if(GameManager.infinityBoss != null)
+        {
+            GameManager.infinityBoss.onBeat(type, interp);
+        }
         
 		handleShake(type);
 	}

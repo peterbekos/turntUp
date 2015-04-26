@@ -17,6 +17,7 @@ public static class GameManager {
     public static NoteBar notebar;
 	public static PlayShip player;
 	public static List<EnemyObject> enemies;
+    public static InfinityBoss infinityBoss;
 	public static EnemySpawnerController spawnController;
 	public static int score = 0;
 	public static int durationForHold = 500;
@@ -25,6 +26,7 @@ public static class GameManager {
 	public static GameObject menuMusic;
 	public static HighScoreManager scoretable;
 	public static string nextLevel;
+    
 	
 	//initalization function
 	private static void init() {

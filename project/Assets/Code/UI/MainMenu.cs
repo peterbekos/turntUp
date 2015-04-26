@@ -62,7 +62,7 @@ public class MainMenu : MonoBehaviour
         return selectedItem;
     }
 
-    void OnGUI()
+/*    void OnGUI()
     {
         // display background
         GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundTexture);
@@ -106,7 +106,7 @@ public class MainMenu : MonoBehaviour
             Application.Quit();
         }
         GUI.FocusControl(buttonNames[selectedIndex]);
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
