@@ -62,7 +62,7 @@ public class MainMenu : MonoBehaviour
         return selectedItem;
     }
 
-	FileBrowser file;
+	/*FileBrowser file;
 
     void OnGUI()
     {
@@ -124,7 +124,7 @@ public class MainMenu : MonoBehaviour
 		//m_fileBrowser = null;
 		//m_textPath = path;
 	}
-
+    */
     // Update is called once per frame
     void Update()
     {
