@@ -105,7 +105,8 @@ public class GameTimer : MonoBehaviour {
 			}
 			//Debug.Log (gameTime);
 			BeatManager.checkBeats (gameTime);
-			GameManager.spawnController.checkChanges (gameTime / 1000);
+            if(!object.ReferenceEquals(GameManager.spawnController, null))
+			    GameManager.spawnController.checkChanges (gameTime / 1000);
 
 			//Handle shaking the camera
 			if (horizShakeTime > 0 || vertShakeTime > 0 || zoomShakeTime > 0) {

@@ -215,7 +215,7 @@ public class SpectrumSurrounder : MonoBehaviour
         }
 
         asource.GetOutputData(volume, channel);
-        asource.GetSpectrumData(spectrum, channel, FFTWindow.Rectangular);
+        asource.GetSpectrumData(spectrum, channel, FFTWindow.BlackmanHarris);
 
         //Color tempColor;
 
