@@ -3,10 +3,8 @@
 --- !u!78 &1
 TagManager:
   tags:
-  - 
   - Bullet
   - Enemy
-  - 
   - UIText
   - 
   Builtin Layer 0: Default

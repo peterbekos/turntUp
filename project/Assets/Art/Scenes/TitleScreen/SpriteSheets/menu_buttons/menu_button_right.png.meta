@@ -26,7 +26,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -50,20 +50,20 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 164
+        width: 163
         height: 108
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: menu_button_right_1
       rect:
         serializedVersion: 2
         x: 164
         y: 0
-        width: 164
+        width: 163
         height: 108
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
