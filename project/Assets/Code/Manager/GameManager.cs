@@ -26,6 +26,7 @@ public static class GameManager {
 	public static HighScoreManager scoretable;
 	public static string nextLevel;
 	public static EnemySpawner spawner;
+	public static InfinityBoss infinityBoss;
 	
 	//initalization function
 	private static void init() {
