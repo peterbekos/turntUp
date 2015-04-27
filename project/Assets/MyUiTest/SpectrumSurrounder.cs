@@ -61,8 +61,8 @@ public class SpectrumSurrounder : MonoBehaviour
     bool armsCreated = false;
 
     public Canvas mCanvas;
-    private float canvasWidth;
-    private float canvasHeight;
+    //private float canvasWidth;
+    //private float canvasHeight;
 
     public Animator mAnimator;
 
@@ -74,8 +74,8 @@ public class SpectrumSurrounder : MonoBehaviour
         volume = new float[numSamples];
         spectrum = new float[numSamples];
         overallScale = 1;
-        canvasWidth = mCanvas.pixelRect.width;
-        canvasHeight = mCanvas.pixelRect.height;
+        //canvasWidth = mCanvas.pixelRect.width;
+        //canvasHeight = mCanvas.pixelRect.height;
     }
 
     public void EnterPlayButton(Button currButton)
@@ -115,8 +115,8 @@ public class SpectrumSurrounder : MonoBehaviour
 
     public void Update()
     {
-        canvasWidth = mCanvas.pixelRect.width;
-        canvasHeight = mCanvas.pixelRect.height;
+        //canvasWidth = mCanvas.pixelRect.width;
+        //canvasHeight = mCanvas.pixelRect.height;
 
         //Some debugging messages
         /*Debug.Log("anchorX = " + anchorX);
