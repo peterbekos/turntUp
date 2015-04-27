@@ -25,6 +25,9 @@ public class Meteor : EnemyObject {
 		if(GameManager.player != null){
 			rigidbody2D.velocity = new Vector3(-.5f * GameManager.player.rigidbody2D.velocity.x, rigidbody2D.velocity.y, 0);
 		}
+		
+		if(transform.position.y < Camera.main.transform.position.y - 20 - transform.localScale.y)
+			Destroy (gameObject);
 	}
 	
 	new void OnTriggerEnter2D(Collider2D coll){

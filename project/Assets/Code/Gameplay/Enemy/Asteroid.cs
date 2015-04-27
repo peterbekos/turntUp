@@ -22,6 +22,8 @@ public class Asteroid : EnemyObject
 	new void Update () {
 		base.Update();
 		transform.Rotate(0, 0, rotSpeed);
+		
+		
 	}
 	
 	new void OnTriggerEnter2D(Collider2D coll){
