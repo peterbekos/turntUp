@@ -4,7 +4,8 @@ using System.Collections;
 public abstract class PlayObject : BeatObject {
 
 	//Variables
-	protected bool flashVar = false;
+	public bool invincible = false;
+	public bool flashVar = false;
 	protected int repeatStart = 2;
 	protected int repeatTemp = 0;
 	protected Color defaultColor;
@@ -32,7 +33,7 @@ public abstract class PlayObject : BeatObject {
 	}
 
 	protected void Update(){
-		if(damageOverTime != 0) takeDamage(damageOverTime);
+		if(damageOverTime != 0 && !invincible) takeDamage(damageOverTime);
 		
 		if(mSpriteRenderer != null) flash ();
 	}
@@ -43,7 +44,8 @@ public abstract class PlayObject : BeatObject {
 	
 		hitpoints -= dmg;
 		
-		if(gameObject.tag.Equals("Enemy")) GameManager.score += dmg;
+		if(gameObject.tag.Equals("Enemy"))
+			GameManager.score += dmg;
 		
 		if(hitpoints <= 0)
 		{
