@@ -9,9 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 404650}
   - 212: {fileID: 21204650}
+  - 60: {fileID: 6011394}
+  - 114: {fileID: 11411394}
   m_Layer: 0
   m_Name: Minion
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22,12 +24,82 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104650}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: -4.37113883e-08}
+  m_LocalPosition: {x: 0, y: 9.81999969, z: 7.5999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!60 &6011394
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104650}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Poly:
+    m_Paths:
+    - - {x: .649277627, y: -1.05421019}
+      - {x: 1.09272039, y: -.905608654}
+      - {x: 1.12771285, y: -3.10910416}
+      - {x: 1.24268687, y: -3.10909176}
+      - {x: 1.51594281, y: -2.13304186}
+      - {x: 1.82822442, y: -1.89166641}
+      - {x: 2.06490588, y: -2.44910192}
+      - {x: 2.51838827, y: -1.36782455}
+      - {x: 2.47004318, y: .0911612511}
+      - {x: 2.85380912, y: .282032967}
+      - {x: 2.84390688, y: .50756216}
+      - {x: 1.04910135, y: 1.34323478}
+      - {x: .998752356, y: 2.54499173}
+      - {x: .477444172, y: 3.98648643}
+      - {x: .33575654, y: 3.98071957}
+      - {x: .370951772, y: 1.97763681}
+      - {x: -.0824166238, y: 1.37619829}
+      - {x: -.46948269, y: 1.99602604}
+      - {x: -.485131502, y: 4.00806999}
+      - {x: -.593951046, y: 4.00036144}
+      - {x: -1.02982092, y: 2.96713734}
+      - {x: -1.30206823, y: 1.35295963}
+      - {x: -3.00688028, y: .481267452}
+      - {x: -2.97205257, y: .33436203}
+      - {x: -2.62059116, y: .0910859108}
+      - {x: -2.62162161, y: -1.4231596}
+      - {x: -2.18515754, y: -2.39836931}
+      - {x: -1.99651146, y: -1.91773796}
+      - {x: -1.53722847, y: -2.31346416}
+      - {x: -1.37417531, y: -3.12528133}
+      - {x: -1.27078903, y: -3.12986183}
+      - {x: -1.26313424, y: -.963369846}
+      - {x: -.762197912, y: -1.02620745}
+      - {x: -.410642445, y: -3.30202007}
+      - {x: -.0418467522, y: -4.03167343}
+      - {x: .269805431, y: -3.30656528}
+    - - {x: -.110784501, y: 3.09142351}
+      - {x: -.125, y: 3.125}
+      - {x: -.130810082, y: 3.0881753}
+--- !u!114 &11411394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a1b8b9143b98d4d9501cbcfc9742d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invincible: 0
+  flashVar: 0
+  hitpoints: 50000
+  strength: 1000
+  speed: 5
+  scoreOnKill: 30000
+  deathAnimation: {fileID: 172264, guid: a01fd0774372d3641af6953d83946b22, type: 2}
+  targetPosition: {x: 0, y: 0, z: 0}
+  zergling: {fileID: 174914, guid: 625173a433c03344287d11b244039a6f, type: 2}
 --- !u!212 &21204650
 SpriteRenderer:
   m_ObjectHideFlags: 1
