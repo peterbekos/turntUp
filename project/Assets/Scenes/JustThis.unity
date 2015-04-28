@@ -2144,6 +2144,8 @@ GameObject:
   - 82: {fileID: 726071816}
   - 95: {fileID: 726071817}
   - 60: {fileID: 726071818}
+  - 82: {fileID: 726071819}
+  - 82: {fileID: 726071820}
   m_Layer: 0
   m_Name: InfinityBoss
   m_TagString: Enemy
@@ -2200,7 +2202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invincible: 0
   flashVar: 0
-  hitpoints: 500000
+  hitpoints: 10000
   strength: 1000
   speed: 1
   scoreOnKill: 9999999
@@ -2211,6 +2213,8 @@ MonoBehaviour:
   mainBossStartingPoint: {x: 0, y: 30, z: 4}
   mainBossEndingPoint: {x: 0, y: 10, z: 4}
   growlSound: {fileID: 726071816}
+  murmurSound: {fileID: 726071819}
+  dieSound: {fileID: 726071820}
 --- !u!82 &726071816
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2320,6 +2324,122 @@ PolygonCollider2D:
       - {x: .152050316, y: -.138196543}
       - {x: .189193547, y: -.301493078}
       - {x: .211429611, y: -.298074305}
+--- !u!82 &726071819
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726071812}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: f84e2ea882abe7046bd82c269b230fd5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &726071820
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726071812}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: e30ed40ab962b7845b7000de03db8401, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &746590286
 GameObject:
   m_ObjectHideFlags: 0
@@ -7235,6 +7355,22 @@ Prefab:
     - target: {fileID: 489142, guid: 9e3ee14eb4fc3f749bc3b796afadc924, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289142, guid: 9e3ee14eb4fc3f749bc3b796afadc924, type: 2}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489142, guid: 9e3ee14eb4fc3f749bc3b796afadc924, type: 2}
+      propertyPath: murmurSound
+      value: 
+      objectReference: {fileID: 726071819}
+    - target: {fileID: 11489142, guid: 9e3ee14eb4fc3f749bc3b796afadc924, type: 2}
+      propertyPath: dieSound
+      value: 
+      objectReference: {fileID: 726071820}
+    - target: {fileID: 11489142, guid: 9e3ee14eb4fc3f749bc3b796afadc924, type: 2}
+      propertyPath: hitpoints
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e3ee14eb4fc3f749bc3b796afadc924, type: 2}

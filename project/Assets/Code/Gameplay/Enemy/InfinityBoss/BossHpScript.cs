@@ -37,6 +37,7 @@ public class BossHpScript : MonoBehaviour {
                     lastHitPoints = infinityBoss.hitpoints;
                 }
             }
+            lastHitPoints = infinityBoss.hitpoints;
         }
         else
         {
@@ -45,6 +46,13 @@ public class BossHpScript : MonoBehaviour {
                 infinityBoss = GameManager.infinityBoss;
                 hitPointsAtFull = infinityBoss.hitpoints;
                 lastHitPoints = hitPointsAtFull;
+            }
+            else if(lastHitPoints != 0)
+            {
+                lastHitPoints = 0;
+                hpBarImage.fillAmount = infinityBoss.hitpoints / hitPointsAtFull;
+                hpBarText.text = "REKT";
+
             }
         }
 	}

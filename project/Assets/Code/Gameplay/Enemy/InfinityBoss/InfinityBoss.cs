@@ -15,6 +15,8 @@ public class InfinityBoss : EnemyObject {
     public Vector3 mainBossEndingPoint;
 
     public AudioSource growlSound;
+    public AudioSource murmurSound;
+    public AudioSource dieSound;
     
     private Vector3[] orbPoints = new Vector3[] { new Vector3(-9f, -3.5f, 0), new Vector3(-8, -6, 0), new Vector3(-6f, -8.5f, 0), new Vector3(0, -9, 0), new Vector3(6f, -8.5f, 0), new Vector3(8, -6, 0), new Vector3(9f, -3.5f, 0)};
 	private Vector2[] minionPoints = new Vector2[] { new Vector2(0, -5), new Vector2(-29, 6), new Vector2(29, 6), new Vector2(-14,0), new Vector2(11, 0), new Vector2(-18, 13), new Vector2(18,13) };
@@ -85,12 +87,14 @@ public class InfinityBoss : EnemyObject {
 	}
 	
 	void startPhase2(){
-		
+        mAnimator.Play("InfinityBossTwist", -1, 0);
+        murmurSound.Play();
+
 		for( ; numMinionsSpawned < 3; numMinionsSpawned++){
 			spawnMinion ();
 			
 		}
-		
+        
 		invincible = true;
 		
 		phase = BossPhase.TWO;
@@ -278,5 +282,17 @@ public class InfinityBoss : EnemyObject {
                 treble = true;
                 break;
         }
+    }
+
+    new public void takeDamage(int dmg)
+    {
+        Debug.Log("Took sum dmg broski");
+        if (hitpoints - dmg <= 0)
+        {
+            mAnimator.Play("InfinityBossDie", -1, 0);
+            dieSound.Play();
+        }
+        base.takeDamage(dmg);
+        
     }
 }
