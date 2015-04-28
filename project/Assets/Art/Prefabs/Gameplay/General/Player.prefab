@@ -11,7 +11,7 @@ GameObject:
   - 50: {fileID: 5034870}
   - 114: {fileID: 11434870}
   - 60: {fileID: 6091244}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 434870}
   - 212: {fileID: 21234870}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: blue_ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8070c1fd70ab49668fff9bdcd177944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
+  flashVar: 0
   hitpoints: 5000
   strength: 0
   speed: 15

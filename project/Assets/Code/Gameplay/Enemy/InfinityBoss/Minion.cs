@@ -5,6 +5,7 @@ public class Minion : EnemyObject {
 
 	public Vector3 targetPosition;
 	public GameObject zergling;
+	public GameObject laser;
 	
 	bool arrived;
 
@@ -21,7 +22,8 @@ public class Minion : EnemyObject {
 			if(transform.position == targetPosition) arrived = true;
 		}
 		else {
-			rotateToward(GameManager.player.gameObject);
+			if(GameManager.player != null)
+				rotateToward(GameManager.player.gameObject);
 		}
 	}
 	
@@ -32,5 +34,10 @@ public class Minion : EnemyObject {
 	
 	public void spawnZergling(){
 		Instantiate (zergling, transform.position + transform.up * 2, transform.rotation);
+	}
+	
+	public void fireLaser(){
+		GameObject newlaser = (GameObject)Instantiate (laser, transform.position + transform.up * 2, transform.rotation);
+		newlaser.transform.SetParent(gameObject.transform);
 	}
 }

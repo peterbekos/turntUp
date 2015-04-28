@@ -10,13 +10,14 @@ public class InfinityBoss : EnemyObject {
     List<GameObject> allOfTheOrbs;
     public GameObject orbInstance;
     public GameObject minionInstance;
+    public GameObject chainInstance;
     public Vector3 mainBossStartingPoint;
     public Vector3 mainBossEndingPoint;
 
     public AudioSource growlSound;
     
     private Vector3[] orbPoints = new Vector3[] { new Vector3(-9f, -3.5f, 0), new Vector3(-8, -6, 0), new Vector3(-6f, -8.5f, 0), new Vector3(0, -9, 0), new Vector3(6f, -8.5f, 0), new Vector3(8, -6, 0), new Vector3(9f, -3.5f, 0)};
-	private Vector2[] minionPoints = new Vector2[] { new Vector2(0, -5), new Vector2(-29, 6), new Vector2(29, 6), new Vector2(-14,0), new Vector2(14, 0), new Vector2(-18, 13), new Vector2(18,13) };
+	private Vector2[] minionPoints = new Vector2[] { new Vector2(0, -5), new Vector2(-29, 6), new Vector2(29, 6), new Vector2(-14,0), new Vector2(11, 0), new Vector2(-18, 13), new Vector2(18,13) };
 	private int numMinionsSpawned = 0;
 	List<GameObject> minions;
 	
@@ -39,11 +40,6 @@ public class InfinityBoss : EnemyObject {
 	// Update is called once per frame
 	new void Update () {
 		base.Update ();
-		
-		foreach(GameObject minion in minions){
-			if(minion == null) minions.Remove(minion);
-		}
-		
         
 	    switch(phase){
 		case BossPhase.ZERO:
@@ -91,14 +87,22 @@ public class InfinityBoss : EnemyObject {
 	void startPhase2(){
 		
 		for( ; numMinionsSpawned < 3; numMinionsSpawned++){
-			GameObject temp = (GameObject)Instantiate(minionInstance);
-			temp.SendMessage("setTargetPos", minionPoints[numMinionsSpawned]);
-			minions.Add(temp);
+			spawnMinion ();
+			
 		}
 		
 		invincible = true;
 		
 		phase = BossPhase.TWO;
+	}
+	
+	void spawnMinion(){
+		GameObject temp = (GameObject)Instantiate(minionInstance);
+		temp.SendMessage("setTargetPos", minionPoints[numMinionsSpawned]);
+		minions.Add(temp);
+		
+		GameObject newChain = (GameObject)Instantiate(chainInstance);
+		newChain.GetComponentInChildren<ChainAttacher>().setTarget(temp);
 	}
 	
 	void startPhase3(){
@@ -111,8 +115,7 @@ public class InfinityBoss : EnemyObject {
 		invincible = true;
 	
 		for( ; numMinionsSpawned < 7; numMinionsSpawned++){
-			GameObject temp = (GameObject)Instantiate(minionInstance);
-			temp.SendMessage("setTargetPos", minionPoints[numMinionsSpawned]);
+			spawnMinion ();
 		}
 		
 		phase = BossPhase.FOUR;
@@ -190,7 +193,9 @@ public class InfinityBoss : EnemyObject {
 		
 		if(treble){
 			foreach(GameObject minion in minions){
-				minion.SendMessage ("spawnZergling");
+				if(minion != null){
+					minion.SendMessage ("spawnZergling");
+				}
 			}
 		}
     }
@@ -207,7 +212,9 @@ public class InfinityBoss : EnemyObject {
 		}
 		if(kick){
 			foreach(GameObject minion in minions){
-				minion.SendMessage ("fireLaser");
+				if(minion != null){
+					minion.SendMessage ("fireLaser");
+				}
 			}
 		}
     }
@@ -220,7 +227,9 @@ public class InfinityBoss : EnemyObject {
 		}
 		if(treble){
 			foreach(GameObject minion in minions){
-				minion.SendMessage ("spawnZergling");
+				if(minion != null){
+					minion.SendMessage ("spawnZergling");
+				}
 			}
 		}
     }

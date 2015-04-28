@@ -12,7 +12,7 @@ GameObject:
   - 50: {fileID: 5007472}
   - 58: {fileID: 5807472}
   - 212: {fileID: 21207472}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Asteroid(Medium)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -68,6 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e951b92e0a5184ca3182078f37c0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
+  flashVar: 0
   hitpoints: 10000
   strength: 500
   speed: 6

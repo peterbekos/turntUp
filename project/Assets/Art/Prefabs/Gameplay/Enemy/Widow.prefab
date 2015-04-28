@@ -12,7 +12,7 @@ GameObject:
   - 60: {fileID: 6002930}
   - 50: {fileID: 5074246}
   - 212: {fileID: 21221054}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Widow
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -76,6 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0626667f6d70344a86084092e89111f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
+  flashVar: 0
   hitpoints: 1000
   strength: 1000
   speed: 7
