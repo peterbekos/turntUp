@@ -20,6 +20,8 @@ public class UIResponder : MonoBehaviour
     {
         musicVolumePercentText.text = "100%";
         soundVolumePercentText.text = "100%";
+        Debug.Log("Should play the infinitybosspass animation!");
+        mAnimator.Play("infinityBossPass", -1, 0);
     }
 
     void Update()
@@ -27,6 +29,7 @@ public class UIResponder : MonoBehaviour
         if(!(levelSelection.CompareTo("") == 0) && playButtonVisible == false)
         {
             fadeInPlayButton();
+            
         }
         
         if(state == states.MAIN){
@@ -78,6 +81,11 @@ public class UIResponder : MonoBehaviour
     public void sandstormLevelClicked()
     {
         levelSelection = "Sandstorm";
+    }
+
+    public void infinityLevelClicked()
+    {
+        levelSelection = "JustThis";
     }
 
     private void fadeInPlayButton()

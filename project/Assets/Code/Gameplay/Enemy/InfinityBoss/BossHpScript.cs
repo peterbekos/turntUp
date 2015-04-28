@@ -20,6 +20,7 @@ public class BossHpScript : MonoBehaviour {
 	void Start () {
         bossHP = 1;
         hpBarImage = bossHpBar.GetComponent<Image>();
+        
 	}
 	
 	// Update is called once per frame
