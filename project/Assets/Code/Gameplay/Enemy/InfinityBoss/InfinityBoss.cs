@@ -81,7 +81,7 @@ public class InfinityBoss : EnemyObject {
 	    }
 	    
 	    //Reset all beat variables
-		melody = harmony = treble = bass = kick = hat = snare = false;
+		melody = harmony = treble = bass = kick = hat = snare = false; //Holy shit nice code Trevor
 	}
 	
 	void startPhase2(){
