@@ -3782,6 +3782,7 @@ GameObject:
   - 114: {fileID: 869883109}
   - 114: {fileID: 869883108}
   - 222: {fileID: 869883112}
+  - 95: {fileID: 869883113}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3903,6 +3904,21 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 175604245}
   m_GameObject: {fileID: 869883106}
+--- !u!95 &869883113
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 869883106}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0b6a832af4b362247868d429667076b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &951387845
 Prefab:
   m_ObjectHideFlags: 0
@@ -9351,7 +9367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossHpBar: {fileID: 505836339}
-  HpBarText: {fileID: 2005770506}
+  hpBarText: {fileID: 2005770506}
+  mAnimator: {fileID: 869883113}
 --- !u!4 &1878881724
 Transform:
   m_ObjectHideFlags: 0
@@ -10628,11 +10645,11 @@ MonoBehaviour:
   m_Color: {r: .406896591, g: 0, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3023cd3d01fbe81458d57e44c4b76d82, type: 3}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 30
     m_Alignment: 4
     m_RichText: 1
     m_HorizontalOverflow: 0

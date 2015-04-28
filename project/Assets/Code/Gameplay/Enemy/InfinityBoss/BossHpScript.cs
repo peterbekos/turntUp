@@ -5,12 +5,15 @@ using UnityEngine.UI;
 public class BossHpScript : MonoBehaviour {
 
     private float bossHP; //1 indicates 100% HP, and 0 = 0%
-    private float HitPointsAtFull;
+    private float hitPointsAtFull;
     private EnemyObject infinityBoss = null;
 
     public GameObject bossHpBar;
-    public Text HpBarText;
+    public Text hpBarText;
     private Image hpBarImage;
+
+    public Animator mAnimator;
+    private float lastHitPoints;
 
 
 	// Use this for initialization
@@ -23,10 +26,15 @@ public class BossHpScript : MonoBehaviour {
 	void Update () {
 	    if(infinityBoss != null)
         {
-            if(bossHpBar != null && HpBarText != null)
+            if(bossHpBar != null && hpBarText != null)
             {
-                hpBarImage.fillAmount = infinityBoss.hitpoints / HitPointsAtFull;
-                HpBarText.text = infinityBoss.hitpoints + "/" + HitPointsAtFull;
+                hpBarImage.fillAmount = infinityBoss.hitpoints / hitPointsAtFull;
+                hpBarText.text = infinityBoss.hitpoints + "/" + hitPointsAtFull;
+                if(lastHitPoints > infinityBoss.hitpoints)
+                {
+                    mAnimator.Play("HpBarFlash", -1, 0);
+                    lastHitPoints = infinityBoss.hitpoints;
+                }
             }
         }
         else
@@ -34,7 +42,8 @@ public class BossHpScript : MonoBehaviour {
             if (GameManager.infinityBoss != null)
             {
                 infinityBoss = GameManager.infinityBoss;
-                HitPointsAtFull = infinityBoss.hitpoints;
+                hitPointsAtFull = infinityBoss.hitpoints;
+                lastHitPoints = hitPointsAtFull;
             }
         }
 	}
