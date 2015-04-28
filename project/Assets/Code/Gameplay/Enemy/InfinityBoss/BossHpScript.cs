@@ -8,26 +8,26 @@ public class BossHpScript : MonoBehaviour {
     private float hitPointsAtFull;
     private EnemyObject infinityBoss = null;
 
-    public GameObject bossHpBar;
+    //public GameObject bossHpBar;
     public Text hpBarText;
     private Image hpBarImage;
 
-    public Animator mAnimator;
+    private Animator mAnimator;
     private float lastHitPoints;
 
 
 	// Use this for initialization
 	void Start () {
         bossHP = 1;
-        hpBarImage = bossHpBar.GetComponent<Image>();
-        
+        hpBarImage = this.GetComponent<Image>();
+        mAnimator = this.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	    if(infinityBoss != null)
         {
-            if(bossHpBar != null && hpBarText != null)
+            if( hpBarText != null)
             {
                 hpBarImage.fillAmount = infinityBoss.hitpoints / hitPointsAtFull;
                 hpBarText.text = infinityBoss.hitpoints + "/" + hitPointsAtFull;
