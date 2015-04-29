@@ -34,6 +34,7 @@ public class Minion : EnemyObject {
 	
 	public void spawnZergling(){
 		Instantiate (zergling, transform.position + transform.up * 2, transform.rotation);
+		Debug.Log ("Minion Spawned");
 	}
 	
 	public void fireLaser(){

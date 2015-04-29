@@ -50,7 +50,7 @@ public class BossHpScript : MonoBehaviour {
             else if(lastHitPoints != 0)
             {
                 lastHitPoints = 0;
-                hpBarImage.fillAmount = infinityBoss.hitpoints / hitPointsAtFull;
+                hpBarImage.fillAmount = 0;
                 hpBarText.text = "REKT";
 
             }

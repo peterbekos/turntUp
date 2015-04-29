@@ -10,7 +10,7 @@ public abstract class PlayObject : BeatObject {
 	protected int repeatTemp = 0;
 	protected Color defaultColor;
 	
-	protected SpriteRenderer mSpriteRenderer;
+	public SpriteRenderer mSpriteRenderer;
 	
 	//note: they have to be public so we can tweak them in the editor, 
 	// or at least protected so we can see them at all in sub-classes
@@ -40,6 +40,10 @@ public abstract class PlayObject : BeatObject {
 	
 	//reduce health, and if <= 0 die
 	public void takeDamage(int dmg){
+		if(invincible){
+			return;
+		}
+	
 		flashVar = true;
 	
 		hitpoints -= dmg;

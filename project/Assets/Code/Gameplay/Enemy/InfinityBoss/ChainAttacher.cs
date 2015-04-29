@@ -14,13 +14,13 @@ public class ChainAttacher : MonoBehaviour{
 	void Update(){
 		if(target != null && targetHinge.connectedBody == null){
 			targetHinge.connectedBody = target.rigidbody2D;
-			Debug.Log ("WTF");
+			//Debug.Log ("WTF");
 		}
 	}
 	
 	public void setTarget(GameObject target){
 		this.target = target;
 		targetHinge.connectedBody = target.rigidbody2D;
-		Debug.Log ("Target Set");
+		//Debug.Log ("Target Set");
 	}
 }

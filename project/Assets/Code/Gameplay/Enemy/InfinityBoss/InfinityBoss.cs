@@ -23,8 +23,8 @@ public class InfinityBoss : EnemyObject {
 	private int numMinionsSpawned = 0;
 	List<GameObject> minions;
 	
-	private enum BossPhase { ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN };
-	private BossPhase phase = BossPhase.ZERO;
+	public enum BossPhase { ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN };
+	public BossPhase phase = BossPhase.ZERO;
 	
 	private bool melody, harmony, treble, bass, kick, snare, hat;
 	
@@ -36,12 +36,35 @@ public class InfinityBoss : EnemyObject {
         phase = BossPhase.ZERO;
         transform.localPosition = mainBossStartingPoint;
         mAnimator = GetComponent<Animator>();
+        mAnimator.enabled = false;
         GameManager.infinityBoss = this;
 	}
 	
 	// Update is called once per frame
 	new void Update () {
 		base.Update ();
+        
+		if(mAnimator.enabled){
+			if(mAnimator.GetCurrentAnimatorStateInfo(0).IsName("EmptyStateDONOTDELETE") && phase != BossPhase.SEVEN){
+				mAnimator.StopPlayback();
+				mAnimator.enabled = false;
+				Debug.Log ("Animation Stopped");
+			}
+			else if(mAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Rekt")){
+				Destroy (gameObject);
+			}
+		}
+		
+		if(minions.Count > 0){
+			bool minionsDead = true;
+			foreach(GameObject minion in minions){
+				if(minion != null) {
+					minionsDead = false;
+					break;
+				}
+			}
+			if(minionsDead) minions.Clear();
+		}
         
 	    switch(phase){
 		case BossPhase.ZERO:
@@ -66,13 +89,17 @@ public class InfinityBoss : EnemyObject {
 				phase3 ();
 			break;
 		case BossPhase.FOUR:
-			if(GameManager.gameTimer.getTime() > 122500)
+			if(minions.Count == 0)
 				startPhase5();
 			else
 				phase4 ();
 			break;
 		case BossPhase.FIVE:
-			phase5 ();
+			if(GameManager.gameTimer.getTime() > 203000){
+				startPhase6 ();
+			}
+			else
+				phase5 ();
 			break;
 		case BossPhase.SIX:
 			phase6 ();
@@ -83,10 +110,11 @@ public class InfinityBoss : EnemyObject {
 	    }
 	    
 	    //Reset all beat variables
-		melody = harmony = treble = bass = kick = hat = snare = false; //Holy shit nice code Trevor
+		melody = harmony = treble = bass = kick = hat = snare = false; //Holy shit nice code Trevor //lol
 	}
 	
 	void startPhase2(){
+		mAnimator.enabled = true;
         mAnimator.Play("InfinityBossTwist", -1, 0);
         murmurSound.Play();
 
@@ -111,7 +139,7 @@ public class InfinityBoss : EnemyObject {
 	
 	void startPhase3(){
 		invincible = false;
-		
+		growl ();
 		phase = BossPhase.THREE;
 	}
 	
@@ -127,8 +155,28 @@ public class InfinityBoss : EnemyObject {
 	
 	void startPhase5(){
 		invincible = false;
-		
+		growl ();
 		phase = BossPhase.FIVE;
+	}
+	
+	void startPhase6(){
+		phase = BossPhase.SIX;
+	}
+	
+	void startPhase7(){
+		phase = BossPhase.SEVEN;
+		foreach(GameObject orb in allOfTheOrbs){
+			Destroy (orb);
+		}
+		foreach(GameObject chain in GameObject.FindGameObjectsWithTag("Chain")){
+			//SendMessage("DestroyChain");
+			Destroy (chain);
+		}
+		mAnimator.enabled = true;
+		mAnimator.Play("InfinityBossDie", -1, 0);
+		dieSound.Play();
+		collider2D.enabled = false;
+		GameObject.Find("Random Enemy Spawner").GetComponent<EnemySpawner>().timeBetweenSpawns = .25f;
 	}
 	
 	void spawnOrb(){
@@ -164,13 +212,17 @@ public class InfinityBoss : EnemyObject {
         if (transform.position.y < mainBossEndingPoint.y)
         {
             phase = BossPhase.ONE;
-            mAnimator.Play("InfinityBossShake", -1, 0);
-            growlSound.Play();
+            growl ();
         }
         
         
     }
     
+    void growl(){
+		mAnimator.enabled = true;
+		mAnimator.Play("InfinityBossShake", -1, 0);
+		growlSound.Play();
+    }
 
     /* Orb Spawning on every kick
      * Asteroid spawning on melody
@@ -196,6 +248,7 @@ public class InfinityBoss : EnemyObject {
 		}
 		
 		if(treble){
+			Debug.Log ("Spawn Zerglings!");
 			foreach(GameObject minion in minions){
 				if(minion != null){
 					minion.SendMessage ("spawnZergling");
@@ -227,7 +280,6 @@ public class InfinityBoss : EnemyObject {
     {
 		if(bass){
 			spawnOrb ();
-			bass = false;
 		}
 		if(treble){
 			foreach(GameObject minion in minions){
@@ -240,15 +292,16 @@ public class InfinityBoss : EnemyObject {
 
     void phase5()
     {
+    	Debug.Log ("phase5");
 		if(bass){
 			spawnOrb ();
-			bass = false;
+			Debug.Log ("Spawn Orb");
 		}
     }
 
     void phase6()
     {
-
+		
     }
 
     void phase7()
@@ -286,13 +339,21 @@ public class InfinityBoss : EnemyObject {
 
     new public void takeDamage(int dmg)
     {
-        Debug.Log("Took sum dmg broski");
+        //Debug.Log("Took sum dmg broski");
         if (hitpoints - dmg <= 0)
         {
-            mAnimator.Play("InfinityBossDie", -1, 0);
-            dieSound.Play();
+        	
+            startPhase7();
+            
+            hitpoints = 0;
+            
+			//play the death sound and kill the object
+			if(deathAnimation != null) Instantiate(deathAnimation, transform.position, Quaternion.identity);
+			GameManager.score += scoreOnKill;
+		}
+		else {
+        	base.takeDamage(dmg);
         }
-        base.takeDamage(dmg);
         
     }
 }

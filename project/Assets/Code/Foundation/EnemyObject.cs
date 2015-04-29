@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class EnemyObject : PlayObject {
-
-	
 	
 	// Update is called once per frame
 	public new void Update () {
