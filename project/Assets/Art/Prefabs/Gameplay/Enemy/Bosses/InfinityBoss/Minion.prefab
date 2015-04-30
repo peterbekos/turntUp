@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invincible: 0
   flashVar: 0
+  mSpriteRenderer: {fileID: 0}
   hitpoints: 50000
   strength: 1000
   speed: 5
@@ -116,6 +117,7 @@ MonoBehaviour:
   deathAnimation: {fileID: 172264, guid: a01fd0774372d3641af6953d83946b22, type: 2}
   targetPosition: {x: 0, y: 0, z: 0}
   zergling: {fileID: 174914, guid: 625173a433c03344287d11b244039a6f, type: 2}
+  laser: {fileID: 172702, guid: 8b5c784d3dfd5814a9f302c9f7857aa3, type: 2}
 --- !u!212 &21204650
 SpriteRenderer:
   m_ObjectHideFlags: 1

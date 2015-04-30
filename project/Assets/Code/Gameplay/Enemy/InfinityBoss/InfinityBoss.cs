@@ -11,6 +11,7 @@ public class InfinityBoss : EnemyObject {
     public GameObject orbInstance;
     public GameObject minionInstance;
     public GameObject chainInstance;
+    public GameObject laserInstance;
     public Vector3 mainBossStartingPoint;
     public Vector3 mainBossEndingPoint;
 
@@ -20,13 +21,17 @@ public class InfinityBoss : EnemyObject {
     
     private Vector3[] orbPoints = new Vector3[] { new Vector3(-9f, -3.5f, 0), new Vector3(-8, -6, 0), new Vector3(-6f, -8.5f, 0), new Vector3(0, -9, 0), new Vector3(6f, -8.5f, 0), new Vector3(8, -6, 0), new Vector3(9f, -3.5f, 0)};
 	private Vector2[] minionPoints = new Vector2[] { new Vector2(0, -5), new Vector2(-29, 6), new Vector2(29, 6), new Vector2(-14,0), new Vector2(11, 0), new Vector2(-18, 13), new Vector2(18,13) };
+	public SpriteRenderer[] lights = new SpriteRenderer[7];
 	private int numMinionsSpawned = 0;
+	private int numLaserCharges = 0;
 	List<GameObject> minions;
 	
 	public enum BossPhase { ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN };
 	public BossPhase phase = BossPhase.ZERO;
 	
 	private bool melody, harmony, treble, bass, kick, snare, hat;
+	
+	private float phase6Cooldown = 0; //cooldown between lasers to reduce performance demand
 	
 	// Use this for initialization
 	new void Start () {
@@ -48,7 +53,8 @@ public class InfinityBoss : EnemyObject {
 			if(mAnimator.GetCurrentAnimatorStateInfo(0).IsName("EmptyStateDONOTDELETE") && phase != BossPhase.SEVEN){
 				mAnimator.StopPlayback();
 				mAnimator.enabled = false;
-				Debug.Log ("Animation Stopped");
+				//Debug.Log ("Animation Stopped");
+				transform.rotation = Quaternion.identity;
 			}
 			else if(mAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Rekt")){
 				Destroy (gameObject);
@@ -83,7 +89,7 @@ public class InfinityBoss : EnemyObject {
 				phase2 ();
 			break;
 		case BossPhase.THREE:
-			if(GameManager.gameTimer.getTime () >= 98250)
+			if(GameManager.gameTimer.getTime () >= 118250)
 				startPhase4();
 			else
 				phase3 ();
@@ -229,6 +235,7 @@ public class InfinityBoss : EnemyObject {
      */
     void phase1()
     {
+    	transform.rotation = Quaternion.identity;
         if(bass){
 			spawnOrb();
         }
@@ -281,7 +288,7 @@ public class InfinityBoss : EnemyObject {
 		if(bass){
 			spawnOrb ();
 		}
-		if(treble){
+		if(treble || bass || harmony){
 			foreach(GameObject minion in minions){
 				if(minion != null){
 					minion.SendMessage ("spawnZergling");
@@ -292,16 +299,57 @@ public class InfinityBoss : EnemyObject {
 
     void phase5()
     {
-    	Debug.Log ("phase5");
 		if(bass){
 			spawnOrb ();
 			Debug.Log ("Spawn Orb");
 		}
+		if(kick){
+			numLaserCharges++;
+			
+			switch(numLaserCharges){
+			case 0:
+				for(int i = 0; i < lights.Length; i++){
+					lights[i].enabled = false;
+				}
+				break;
+			case 32:
+				lights[6].enabled = true;
+				Instantiate(laserInstance, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0,0,180)));
+				Instantiate(laserInstance, new Vector3(-3, 0, 1), Quaternion.Euler(new Vector3(0,0,135)));
+				Instantiate(laserInstance, new Vector3(3, 0, 1), Quaternion.Euler(new Vector3(0,0,225)));
+				Instantiate(laserInstance, new Vector3(-10, 10, 1), Quaternion.Euler(new Vector3(0,0,90)));
+				Instantiate(laserInstance, new Vector3(10, 10, 1), Quaternion.Euler(new Vector3(0,0,270)));
+				numLaserCharges = 0;
+				for(int i = 0; i < lights.Length; i++){
+					lights[i].enabled = false;
+				}
+				break;
+			case 24:
+				lights[5].enabled = lights[4].enabled = true;
+				break;
+			case 16:
+				lights[3].enabled = lights[2].enabled = true;
+				break;
+			case 8:
+				lights[0].enabled = lights[1].enabled = true;
+				break;
+			}
+		}
     }
 
-    void phase6()
-    {
-		
+    void phase6(){
+		if(GameManager.gameTimer.getTime() < 212000){
+			if(phase6Cooldown <= 0)
+			{
+				//spawn a random laser at a random location every frame
+				float curveLocation = Random.Range (Mathf.PI,2* Mathf.PI);
+				Instantiate(laserInstance, new Vector3(10* Mathf.Cos(curveLocation), 10 * Mathf.Sin(curveLocation) + 10, 1), Quaternion.Euler(new Vector3(0,0, curveLocation * Mathf.Rad2Deg - 90)));
+				phase6Cooldown = .05f;
+			}
+			else {
+				phase6Cooldown -= Time.deltaTime;
+			}
+		}
     }
 
     void phase7()

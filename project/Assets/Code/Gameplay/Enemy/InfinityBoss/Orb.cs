@@ -9,6 +9,8 @@ public class Orb : ShotObject {
 
 	// Use this for initialization
 	new void Start () {
+		base.Start ();
+		
         moveTowardsPlayer = false;
         foundPlayer = false;
 
@@ -16,6 +18,10 @@ public class Orb : ShotObject {
 	
 	// Update is called once per frame
 	new void Update () {
+		base.Update ();
+		
+		if(Vector3.Distance(transform.position, Camera.main.transform.position) > 40f) Destroy (gameObject);
+		
         float step = speed * Time.deltaTime;
 	    if(moveTowardsPlayer)
         {

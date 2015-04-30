@@ -33,7 +33,7 @@ public abstract class PlayObject : BeatObject {
 	}
 
 	protected void Update(){
-		if(damageOverTime != 0 && !invincible) takeDamage(damageOverTime);
+		if(damageOverTime != 0 && !invincible) takeDamage((int)(damageOverTime * Time.deltaTime));
 		
 		if(mSpriteRenderer != null) flash ();
 	}

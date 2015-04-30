@@ -14,7 +14,7 @@ public class FollowPlayerBullet : ShotObject {
 	new void Start(){
 		base.Start();
 		
-		player = GameManager.player.gameObject;
+		if(GameManager.player != null) player = GameManager.player.gameObject;
 	}
 	
 	// Update is called once per frame

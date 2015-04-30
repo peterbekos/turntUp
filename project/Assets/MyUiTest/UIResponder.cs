@@ -68,6 +68,9 @@ public class UIResponder : MonoBehaviour
         	}	
         }
     }
+    public void quitGame(){
+    	Application.Quit();
+    }
     public void colorsLevelClicked()
     {
         levelSelection = "Colors";

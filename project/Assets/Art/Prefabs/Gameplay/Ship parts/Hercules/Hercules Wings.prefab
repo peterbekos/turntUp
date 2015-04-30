@@ -226,7 +226,7 @@ MonoBehaviour:
   snareShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
   hatShot: {fileID: 128522, guid: 0035f89376fe4d447b18b88272871595, type: 2}
   bassShot: {fileID: 0}
-  trebleShot: {fileID: 196818, guid: 5555104446edd19428f63fa62c5fcdac, type: 2}
+  trebleShot: {fileID: 0}
   melodyAngle: 0
   harmonyAngle: 0
   kickAngle: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   snareShot: {fileID: 184388, guid: 770a485751f3a4147b21890459c9f08b, type: 2}
   hatShot: {fileID: 128522, guid: 0035f89376fe4d447b18b88272871595, type: 2}
   bassShot: {fileID: 0}
-  trebleShot: {fileID: 196818, guid: 5555104446edd19428f63fa62c5fcdac, type: 2}
+  trebleShot: {fileID: 0}
   melodyAngle: 0
   harmonyAngle: 0
   kickAngle: 0

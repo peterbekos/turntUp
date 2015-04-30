@@ -87,6 +87,11 @@ public class GameTimer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	
+		if(Input.GetKeyDown(KeyCode.Escape)){
+			Application.LoadLevel("SplashScreen");
+		}
+	
 		if (respawnTimer != -99) {
 			respawnTimer -= Time.deltaTime;
 			if (respawnTimer <= 0) {
