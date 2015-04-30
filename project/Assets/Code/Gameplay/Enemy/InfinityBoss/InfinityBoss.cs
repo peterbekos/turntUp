@@ -12,6 +12,8 @@ public class InfinityBoss : EnemyObject {
     public GameObject minionInstance;
     public GameObject chainInstance;
     public GameObject laserInstance;
+    public GameObject shieldInstance;
+    public GameObject activeShield;
     public Vector3 mainBossStartingPoint;
     public Vector3 mainBossEndingPoint;
 
@@ -97,6 +99,9 @@ public class InfinityBoss : EnemyObject {
 		case BossPhase.FOUR:
 			if(minions.Count == 0)
 				startPhase5();
+			else if(GameManager.gameTimer.getTime() > 203000){
+				startPhase6 ();
+			}
 			else
 				phase4 ();
 			break;
@@ -130,6 +135,8 @@ public class InfinityBoss : EnemyObject {
 		}
         
 		invincible = true;
+		activeShield = (GameObject)Instantiate(shieldInstance, transform.position, Quaternion.identity);
+		Debug.Log ("Shield set: " + activeShield.ToString());
 		
 		phase = BossPhase.TWO;
 	}
@@ -145,12 +152,15 @@ public class InfinityBoss : EnemyObject {
 	
 	void startPhase3(){
 		invincible = false;
+		activeShield.GetComponent<EnemyObject>().invincible = false;
+		activeShield.SendMessage("takeDamage", 1);
 		growl ();
 		phase = BossPhase.THREE;
 	}
 	
 	void startPhase4(){
 		invincible = true;
+		activeShield = (GameObject)Instantiate(shieldInstance, transform.position, Quaternion.identity);
 	
 		for( ; numMinionsSpawned < 7; numMinionsSpawned++){
 			spawnMinion ();
@@ -161,6 +171,8 @@ public class InfinityBoss : EnemyObject {
 	
 	void startPhase5(){
 		invincible = false;
+		activeShield.GetComponent<EnemyObject>().invincible = false;
+		activeShield.SendMessage("takeDamage", 1);
 		growl ();
 		phase = BossPhase.FIVE;
 	}
@@ -253,7 +265,9 @@ public class InfinityBoss : EnemyObject {
 		if(bass){
 			spawnOrb ();
 		}
-		
+		if(kick && activeShield != null){
+			activeShield.SendMessage("spawnPulse");
+		}
 		if(treble){
 			Debug.Log ("Spawn Zerglings!");
 			foreach(GameObject minion in minions){
@@ -287,6 +301,9 @@ public class InfinityBoss : EnemyObject {
     {
 		if(bass){
 			spawnOrb ();
+		}
+		if(kick && activeShield != null){
+			activeShield.SendMessage("spawnPulse");
 		}
 		if(treble || bass || harmony){
 			foreach(GameObject minion in minions){

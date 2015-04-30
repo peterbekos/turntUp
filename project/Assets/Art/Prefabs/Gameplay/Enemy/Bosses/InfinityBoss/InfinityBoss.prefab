@@ -482,6 +482,8 @@ MonoBehaviour:
   minionInstance: {fileID: 104650, guid: b2a2577166419d7409bd967903266665, type: 2}
   chainInstance: {fileID: 149730, guid: 1b70a4c8420a5434cbe8029e141686ab, type: 2}
   laserInstance: {fileID: 172702, guid: 8b5c784d3dfd5814a9f302c9f7857aa3, type: 2}
+  shieldInstance: {fileID: 152482, guid: 901c54b07f80f874bae8c7e22b000e27, type: 2}
+  activeShield: {fileID: 0}
   mainBossStartingPoint: {x: 0, y: 30, z: 4}
   mainBossEndingPoint: {x: 0, y: 10, z: 4}
   growlSound: {fileID: 8289142}
