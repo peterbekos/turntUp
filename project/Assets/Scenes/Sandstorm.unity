@@ -1293,7 +1293,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 69610900}
   - 212: {fileID: 69610901}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: star_spawner_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1612,7 +1612,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 311223400}
   m_GameObject: {fileID: 145198991}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c04698ec7b2e664cb52ae43a87e0874, type: 3}
   m_Name: 
@@ -1678,9 +1678,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9cc7f578df46f458c0d42f9847c0d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenSpawns: .25
+  timeBetweenSpawns: -99
+  spawnOnBeat: 1
   enemiesToSpawn:
-  - {fileID: 102928, guid: fd53fa7e82ec7b942a0e778b1091bdb7, type: 2}
+  - {fileID: 157342, guid: db2ff11c50f78214ba620a0406c0a700, type: 2}
+  - {fileID: 187632, guid: 6d5c97387b051f243b80a5a768741f63, type: 2}
 --- !u!4 &145198994
 Transform:
   m_ObjectHideFlags: 0
@@ -3156,7 +3158,8 @@ Prefab:
       propertyPath: levelName
       value: Sandstorm
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11486194, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 831f084b01835e84988fc929ffd68c78, type: 2}
   m_RootGameObject: {fileID: 798725493}
   m_IsPrefabParent: 0
@@ -3589,6 +3592,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1599d4c59c6ec354b81bba1a95c8eea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
+  flashVar: 0
+  mSpriteRenderer: {fileID: 0}
   hitpoints: 0
   strength: 0
   speed: 0
@@ -3806,9 +3812,7 @@ GameObject:
   - 81: {fileID: 798725499}
   - 61: {fileID: 798725498}
   - 114: {fileID: 798725497}
-  - 114: {fileID: 798725496}
   - 114: {fileID: 798725495}
-  - 114: {fileID: 798725504}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3855,19 +3859,6 @@ MonoBehaviour:
   vertShakeTime: 0
   zoomShakeTime: 0
   maxZoom: 2.5
---- !u!114 &798725496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11429010, guid: 831f084b01835e84988fc929ffd68c78,
-    type: 2}
-  m_PrefabInternal: {fileID: 457516580}
-  m_GameObject: {fileID: 798725493}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 619d7b8e76de46a41a670ed26d8290f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
 --- !u!114 &798725497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4000,7 +3991,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294965247
+    m_Bits: 4294964735
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -4008,21 +3999,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
---- !u!114 &798725504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 798725493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40289c0b751e9634f8041a9bbc40c670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asource: {fileID: 798725502}
-  spectrumParticle: {fileID: 146214, guid: 2f1e8ee6e3b0f184a89d0fa196bb73d4, type: 2}
-  channel: 0
-  numSamples: 2048
 --- !u!1 &846703311
 GameObject:
   m_ObjectHideFlags: 0
@@ -7774,7 +7750,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1344193496}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Star Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9027,7 +9003,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 547849227
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6e3e21b762c7ff34d8839eff6016ce02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9432,7 +9408,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1949705854}
   - 212: {fileID: 1949705855}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: enemy_spawner_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
