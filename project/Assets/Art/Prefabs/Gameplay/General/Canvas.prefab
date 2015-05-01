@@ -1510,10 +1510,6 @@ Transform:
   m_LocalPosition: {x: 296.343781, y: -26.5362396, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-<<<<<<< HEAD
-  m_Father: {fileID: 22485226}
-  m_RootOrder: 2
-=======
   m_Father: {fileID: 22485232}
   m_RootOrder: 0
 --- !u!4 &485228
@@ -1528,7 +1524,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 22485226}
   m_RootOrder: 3
->>>>>>> d21500fc6a65f2b0f5cba1fdb9f26380c75beb4e
 --- !u!4 &496166
 Transform:
   m_ObjectHideFlags: 1
@@ -3087,15 +3082,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-<<<<<<< HEAD
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: cf506f7469fdd4a18ad50572f293cf24, type: 3}
-  m_Type: 0
-=======
   m_Color: {r: 1, g: 1, b: 1, a: .486274511}
   m_Sprite: {fileID: 21300000, guid: c52b0ea9d915ec243879f2597164a56c, type: 3}
   m_Type: 1
->>>>>>> d21500fc6a65f2b0f5cba1fdb9f26380c75beb4e
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5538,8 +5527,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1e9d3438bea3ef347ad40c80ae28e5f3, type: 3}
   m_Color: {r: 1, g: .282352954, b: 0, a: 1}
-<<<<<<< HEAD
-=======
 --- !u!212 &21275128
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -5650,7 +5637,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 61f9fff3b1b8ba14ba5bfabdfd8a3669, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
->>>>>>> d21500fc6a65f2b0f5cba1fdb9f26380c75beb4e
 --- !u!212 &21296174
 SpriteRenderer:
   m_ObjectHideFlags: 1
