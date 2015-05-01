@@ -27,10 +27,10 @@ public class EnemySpawner : MonoBehaviour {
 		timeSinceSpawn += Time.deltaTime;
 		
 		//if it's time to spawn an enemy, spawn an enemy and reset the timer
-		if(timeSinceSpawn > timeBetweenSpawns && timeBetweenSpawns != -99){
-			spawnEnemy ();
-			timeSinceSpawn = 0;
-		}
+//		if(timeSinceSpawn > timeBetweenSpawns && timeBetweenSpawns != -99){
+//			spawnEnemy ();
+//			timeSinceSpawn = 0;
+//		}
 	}
 	
 	public void onBeat(GD type){ //TODO: Make this more involved

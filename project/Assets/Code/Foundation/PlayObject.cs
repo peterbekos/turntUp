@@ -24,11 +24,15 @@ public abstract class PlayObject : BeatObject {
 	//plays a sound and animation when the unit dies
 	public GameObject deathAnimation; 
 
+	private Color originalColor;
+
 	// Use this for initialization
 	public void Start () {
 		if(gameObject.GetComponent<SpriteRenderer>() != null){
 			mSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 			defaultColor = mSpriteRenderer.color;
+
+			if (mSpriteRenderer != null) originalColor = mSpriteRenderer.color;
 		}
 	}
 
@@ -69,19 +73,19 @@ public abstract class PlayObject : BeatObject {
 	{
 		if(flashVar)
 		{
-			mSpriteRenderer.color = new Color(1.0f, 0.0f, 0.0f);
+			mSpriteRenderer.color = new Color(0.0f, 0.0f, 0.0f, 0.5f);
 			flashVar = false;
 			repeatTemp = repeatStart;
 		}
 		else if(repeatTemp > 0)
 		{
-			mSpriteRenderer.color = new Color(1.0f, 0.0f, 0.0f);
+			mSpriteRenderer.color = new Color(0.0f, 0.0f, 0.0f, 0.5f);
 			repeatTemp--;
 			flashVar = false;
 		}
 		else
 		{
-			mSpriteRenderer.color = new Color(1.0f, 1.0f, 1.0f);
+			mSpriteRenderer.color = originalColor;
 		}
 	}
 	
