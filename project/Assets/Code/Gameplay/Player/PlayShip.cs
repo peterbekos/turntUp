@@ -5,6 +5,14 @@ public class PlayShip : PlayObject {
 	
 	//Default ship parts
 	public GameObject defaultBody, defaultWing, defaultBooster;
+
+    //Damage text
+    public GameObject damageText;
+    public Vector3 damageTextScaling = new Vector3(0,0,0);
+    public int damageTextMovingSpeed = 90;
+    public int destroyTime = 5;
+
+
 	
 	//max rotations on x, y, and z axes, respectively
 	public int maxPitch = 15;
@@ -146,10 +154,23 @@ public class PlayShip : PlayObject {
 	new public void takeDamage(int dmg){
 		base.takeDamage(dmg);
 		GameManager.gameTimer.startZoomShake();
-		if (hitpoints <= 0 ){
-			GameManager.score = (int)(GameManager.score * .5);
-		}
+        if (hitpoints <= 0)
+        {
+            GameManager.score = (int)(GameManager.score * .5);
+        }
+
+        // optional damage text
+        spawnDamageText(dmg);
 	}
+
+    public void spawnDamageText(int dmg)
+    {
+        Instantiate(damageText, gameObject.transform.position + damageTextScaling, gameObject.transform.rotation);
+        //yield return new WaitForSeconds(destroyTime);
+        //// Destroy(gameObject.guiText);
+        //Destroy(damageText);
+        //yield break; 
+    }
 
     new public void onBeat(GD type, float interp){
         //base.onBeat();
