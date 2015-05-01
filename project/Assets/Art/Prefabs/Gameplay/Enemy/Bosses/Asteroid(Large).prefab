@@ -71,7 +71,7 @@ MonoBehaviour:
   invincible: 0
   flashVar: 0
   mSpriteRenderer: {fileID: 0}
-  hitpoints: 750000
+  hitpoints: 500000
   strength: 500
   speed: 10
   scoreOnKill: 500000
