@@ -126,6 +126,10 @@ public static class BeatManager {
         	GameManager.spawner.onBeat(type);
         }
         
+        if(GameManager.infinityBoss != null){
+        	GameManager.infinityBoss.onBeat(type, interp);
+        }
+        
 		handleShake(type);
 	}
 	

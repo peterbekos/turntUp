@@ -105,6 +105,11 @@ public class GameTimer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	
+		if(Input.GetKeyDown(KeyCode.Escape)){
+			Application.LoadLevel("SplashScreen");
+		}
+	
 		if (respawnTimer != -99) {
 			respawnTimer -= Time.deltaTime;
 			if (respawnTimer <= 0) {
@@ -123,7 +128,8 @@ public class GameTimer : MonoBehaviour {
 			}
 			//Debug.Log (gameTime);
 			BeatManager.checkBeats (gameTime);
-			GameManager.spawnController.checkChanges (gameTime / 1000);
+            if(!object.ReferenceEquals(GameManager.spawnController, null))
+			    GameManager.spawnController.checkChanges (gameTime / 1000);
 
 			//Handle shaking the camera
 			if (horizShakeTime > 0 || vertShakeTime > 0 || zoomShakeTime > 0) {

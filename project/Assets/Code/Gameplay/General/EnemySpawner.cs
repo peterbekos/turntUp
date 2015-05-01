@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour {
 	public float timeBetweenSpawns = 1; //seconds in between spawning a new enemy
 	private float timeSinceSpawn = 0;
 	
+	public bool spawnOnBeat = true;
 	public GameObject[] enemiesToSpawn = new GameObject[5]; //possible enemy types to spawn in the level
 	
 	// Get the camera's bounds on creation
@@ -26,14 +27,14 @@ public class EnemySpawner : MonoBehaviour {
 		timeSinceSpawn += Time.deltaTime;
 		
 		//if it's time to spawn an enemy, spawn an enemy and reset the timer
-		if(timeSinceSpawn > timeBetweenSpawns){
+		if(timeSinceSpawn > timeBetweenSpawns && timeBetweenSpawns != -99){
 			spawnEnemy ();
 			timeSinceSpawn = 0;
 		}
 	}
 	
 	public void onBeat(GD type){ //TODO: Make this more involved
-		spawnEnemy();
+		if(spawnOnBeat) spawnEnemy();
 	}
 	
 	//spawn a random enemy at a random point outside the camera

@@ -3,11 +3,10 @@
 --- !u!78 &1
 TagManager:
   tags:
-  - 
   - Bullet
   - Enemy
-  - 
   - UIText
+  - Chain
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -17,8 +16,8 @@ TagManager:
   Builtin Layer 5: UI
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: 
-  User Layer 9: 
+  User Layer 8: Chain
+  User Layer 9: EditorOnly
   User Layer 10: 
   User Layer 11: 
   User Layer 12: 
@@ -45,6 +44,10 @@ TagManager:
   - name: BackgroundLayer
     userID: 2
     uniqueID: 547849227
+    locked: 0
+  - name: ChainLayer
+    userID: 4
+    uniqueID: 3048752903
     locked: 0
   - name: Default
     userID: 0

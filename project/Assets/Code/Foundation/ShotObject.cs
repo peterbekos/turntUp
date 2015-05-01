@@ -43,6 +43,7 @@ public class ShotObject : PlayObject {
 	
 		//check that it's colliding with something it's supposed to damage, and if so damage it
 		if( target == hit.enemy && coll.tag.Equals("Enemy") || target == hit.player && coll.tag == "Player"){
+			//Debug.Log (coll.gameObject.name);
 			coll.gameObject.SendMessage("takeDamage", strength);
 			takeDamage(1);
 		}

@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 462124}
   - 212: {fileID: 21262124}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: enemy_spawner_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162126}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c04698ec7b2e664cb52ae43a87e0874, type: 3}
   m_Name: 
@@ -129,9 +129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9cc7f578df46f458c0d42f9847c0d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenSpawns: .25
+  timeBetweenSpawns: -99
   enemiesToSpawn:
-  - {fileID: 102928, guid: fd53fa7e82ec7b942a0e778b1091bdb7, type: 2}
+  - {fileID: 157342, guid: db2ff11c50f78214ba620a0406c0a700, type: 2}
+  - {fileID: 187632, guid: 6d5c97387b051f243b80a5a768741f63, type: 2}
 --- !u!212 &21262124
 SpriteRenderer:
   m_ObjectHideFlags: 1

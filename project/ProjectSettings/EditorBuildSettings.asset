@@ -7,9 +7,9 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/SplashScreen.unity
-  - enabled: 0
-    path: Assets/Scenes/MainMenu.unity
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+  - enabled: 0
     path: Assets/Scenes/OldMainMenu.unity
   - enabled: 1
     path: Assets/Scenes/Colors.unity
@@ -21,3 +21,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Test.unity
   - enabled: 1
     path: Assets/Scenes/LoadingScreen.unity
+  - enabled: 1
+    path: Assets/Scenes/JustThis.unity

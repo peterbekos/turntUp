@@ -83,8 +83,8 @@ GameObject:
   - 81: {fileID: 8102938}
   - 61: {fileID: 6102946}
   - 114: {fileID: 11402946}
-  - 114: {fileID: 11429010}
   - 114: {fileID: 11432668}
+  - 114: {fileID: 11486194}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -240,7 +240,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294965247
+    m_Bits: 4294964735
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -458,18 +458,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDeath: 60
---- !u!114 &11429010
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 102946}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 619d7b8e76de46a41a670ed26d8290f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
 --- !u!114 &11432668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -490,6 +478,21 @@ MonoBehaviour:
   vertShakeTime: 0
   zoomShakeTime: 0
   maxZoom: 2.5
+--- !u!114 &11486194
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102946}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40289c0b751e9634f8041a9bbc40c670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asource: {fileID: 8232668}
+  spectrumParticle: {fileID: 146214, guid: 2f1e8ee6e3b0f184a89d0fa196bb73d4, type: 2}
+  channel: 0
+  numSamples: 2048
 --- !u!124 &12402938
 Behaviour:
   m_ObjectHideFlags: 1
@@ -537,7 +540,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 547849227
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6e3e21b762c7ff34d8839eff6016ce02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

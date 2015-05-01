@@ -12,7 +12,7 @@ GameObject:
   - 50: {fileID: 5057342}
   - 58: {fileID: 5857342}
   - 212: {fileID: 21257342}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Asteroid(Tiny)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: .25
+  m_Radius: .0599999987
   m_Center: {x: 0, y: 0}
 --- !u!114 &11457342
 MonoBehaviour:
@@ -68,6 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e951b92e0a5184ca3182078f37c0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
+  flashVar: 0
   hitpoints: 100
   strength: 50
   speed: 15

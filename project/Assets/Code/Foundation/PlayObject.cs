@@ -4,12 +4,13 @@ using System.Collections;
 public abstract class PlayObject : BeatObject {
 
 	//Variables
-	protected bool flashVar = false;
+	public bool invincible = false;
+	public bool flashVar = false;
 	protected int repeatStart = 2;
 	protected int repeatTemp = 0;
 	protected Color defaultColor;
 	
-	protected SpriteRenderer mSpriteRenderer;
+	public SpriteRenderer mSpriteRenderer;
 	
 	//note: they have to be public so we can tweak them in the editor, 
 	// or at least protected so we can see them at all in sub-classes
@@ -32,18 +33,23 @@ public abstract class PlayObject : BeatObject {
 	}
 
 	protected void Update(){
-		if(damageOverTime != 0) takeDamage(damageOverTime);
+		if(damageOverTime != 0 && !invincible) takeDamage((int)(damageOverTime * Time.deltaTime));
 		
 		if(mSpriteRenderer != null) flash ();
 	}
 	
 	//reduce health, and if <= 0 die
 	public void takeDamage(int dmg){
+		if(invincible){
+			return;
+		}
+	
 		flashVar = true;
 	
 		hitpoints -= dmg;
 		
-		if(gameObject.tag.Equals("Enemy")) GameManager.score += dmg;
+		if(gameObject.tag.Equals("Enemy"))
+			GameManager.score += dmg;
 		
 		if(hitpoints <= 0)
 		{

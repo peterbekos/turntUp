@@ -12,11 +12,16 @@ public class UIResponder : MonoBehaviour
     public Button playLevelButton;
     private string levelSelection = "";
     private bool playButtonVisible = false;
+    
+    private enum states { MAIN, LEVELS, UPGRADES, SETTINGS, HIGHSCORES };
+    private states state = states.MAIN;
 
     void Setup()
     {
         musicVolumePercentText.text = "100%";
         soundVolumePercentText.text = "100%";
+        Debug.Log("Should play the infinitybosspass animation!");
+        mAnimator.Play("infinityBossPass", -1, 0);
     }
 
     void Update()
@@ -24,7 +29,47 @@ public class UIResponder : MonoBehaviour
         if(!(levelSelection.CompareTo("") == 0) && playButtonVisible == false)
         {
             fadeInPlayButton();
+            
         }
+        
+        if(state == states.MAIN){
+        	if(Input.GetAxis("Horizontal") < 0){ //if left, open Upgrades panel
+        		state = states.UPGRADES;
+        		upgradesRollIn();
+        	}
+        	else if( Input.GetAxis("Horizontal") > 0){ //if right, open settings
+        		state = states.SETTINGS;
+        		settingsRollIn();
+        	}
+        	else if( Input.GetAxis("Vertical") > 0){ //if up, open level select
+        		state = states.LEVELS;
+        		levelListRollIn();
+        	}
+        	else if (Input.GetAxis("Vertical") < 0 ){ //if down, do nothing *cough*
+        		//state = states.HIGHSCORES;
+        		//highscoresRollIn();
+        	}
+        }
+        else if (Input.GetAxis("Cancel") > 0){
+        	state = states.MAIN;
+        	switch( state){
+        	case states.HIGHSCORES:
+        		//highScoresRollOut();
+        		break;
+        	case states.LEVELS:
+        		levelListRollOut();
+        		break;
+        	case states.UPGRADES:
+        		upgradesRollOut();
+        		break;
+        	case states.SETTINGS:
+        		settingsRollOut();
+        		break;
+        	}	
+        }
+    }
+    public void quitGame(){
+    	Application.Quit();
     }
     public void colorsLevelClicked()
     {
@@ -39,6 +84,11 @@ public class UIResponder : MonoBehaviour
     public void sandstormLevelClicked()
     {
         levelSelection = "Sandstorm";
+    }
+
+    public void infinityLevelClicked()
+    {
+        levelSelection = "JustThis";
     }
 
     private void fadeInPlayButton()
