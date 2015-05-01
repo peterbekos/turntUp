@@ -109,7 +109,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &121496
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -146,7 +146,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 421496}
   m_Father: {fileID: 421488}
   m_RootOrder: 1
 --- !u!4 &421488
@@ -164,7 +165,6 @@ Transform:
   - {fileID: 421492}
   - {fileID: 421484}
   - {fileID: 421490}
-  - {fileID: 421496}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &421490
@@ -213,8 +213,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 421488}
-  m_RootOrder: 5
+  m_Father: {fileID: 421486}
+  m_RootOrder: 0
 --- !u!50 &5021488
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -760,6 +760,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51cc9475ad161734e947305685e0d3e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
+  flashVar: 0
+  mSpriteRenderer: {fileID: 0}
   hitpoints: 50000
   strength: 5000
   speed: 0
@@ -777,6 +780,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a0ba4109c3edb4793153f0c8ddb675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
+  flashVar: 0
+  mSpriteRenderer: {fileID: 0}
   hitpoints: 100000
   strength: 4000
   speed: 0
@@ -793,6 +799,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0ee4244980f2248a85781e2d9f4413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
+  flashVar: 0
+  mSpriteRenderer: {fileID: 0}
   hitpoints: 0
   strength: 0
   speed: 1
@@ -811,6 +820,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a0ba4109c3edb4793153f0c8ddb675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincible: 0
+  flashVar: 0
+  mSpriteRenderer: {fileID: 0}
   hitpoints: 20000
   strength: 5000
   speed: 0
