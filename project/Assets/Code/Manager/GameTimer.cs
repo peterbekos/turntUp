@@ -48,35 +48,53 @@ public class GameTimer : MonoBehaviour {
 	}
 	//Key pressing stuff
 	void OnGUI() {
+		float acc = 0; 
 		if (Input.GetKey (KeyCode.Z)) {
-			checkAccuracy(GD.KICK);
+			acc = checkAccuracy(GD.KICK);
 		} else if (Input.GetKey (KeyCode.X)) {
-			checkAccuracy(GD.BASS);
+			acc = checkAccuracy(GD.BASS);
 		} else if (Input.GetKey (KeyCode.C)) {
-			checkAccuracy(GD.MELODY);
+			acc = checkAccuracy(GD.MELODY);
 		} else if (Input.GetKey (KeyCode.V)) {
-			checkAccuracy(GD.SNARE);
+			acc = checkAccuracy(GD.SNARE);
+		}
+		if (acc > 0) {
+			Debug.Log (acc);
 		}
 
 	}
 
-	void checkAccuracy(GD input) {
+	private float mapValue(float input, float inMin, float inMax, float outMin, float outMax) {
+		float inFloored = input - inMin;
+		float diffRatio = (outMin - outMax) / (inMin - inMax);
+		float result = inFloored * diffRatio + outMin;
+		return result;
+	}
+
+	float checkAccuracy(GD input) {
 		float pressTime = Time.realtimeSinceStartup - GameManager.realTimeStageStarted;
 		
-		Note thisNote = BeatManager.getCurrentNote();
+		Note thisNote = BeatManager.getCurrentNote(input);
 
 		//if (GDMethods.getBeatType (thisNote.instrumentName) == ) {
 
-				
+		if (thisNote == null) {
+			return 0;
+		}
+
+
 
 		float thisNoteTime = (float) thisNote.startTime / 1000;
-		
-		Debug.Log("Acc = " + (thisNoteTime - pressTime) );
+
+		float offset = (thisNoteTime - pressTime - (songStartBuffer / 1000));
+
+		return mapValue(offset, 0.4f, 0, 0, 100);
+
 	}
 
-
+	public float songStartBuffer = -2000;
 	public void initTime(){
-		gameTime = -2000;
+		gameTime = songStartBuffer;
 		started = true;
 		spawnPlayer();
 	}
