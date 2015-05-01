@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public class BossHpScript : MonoBehaviour {
 
-    private float bossHP; //1 indicates 100% HP, and 0 = 0%
+    //private float bossHP; //1 indicates 100% HP, and 0 = 0%
     private float hitPointsAtFull;
-    private EnemyObject infinityBoss = null;
+    public EnemyObject boss = null;
 
     //public GameObject bossHpBar;
     public Text hpBarText;
@@ -18,33 +18,36 @@ public class BossHpScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        bossHP = 1;
+        //bossHP = 1;
         hpBarImage = this.GetComponent<Image>();
         mAnimator = this.GetComponent<Animator>();
+        hitPointsAtFull = boss.GetComponent<EnemyObject>().hitpoints;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	    if(infinityBoss != null)
+	    if(boss != null)
         {
             if( hpBarText != null)
             {
-                hpBarImage.fillAmount = infinityBoss.hitpoints / hitPointsAtFull;
-                hpBarText.text = infinityBoss.hitpoints + "/" + hitPointsAtFull;
-                if(lastHitPoints > infinityBoss.hitpoints)
+                hpBarImage.fillAmount = boss.hitpoints / hitPointsAtFull;
+                hpBarText.text = boss.hitpoints + "/" + hitPointsAtFull;
+                if(lastHitPoints > boss.hitpoints)
                 {
                     mAnimator.Play("HpBarFlash", -1, 0);
-                    lastHitPoints = infinityBoss.hitpoints;
                 }
             }
-            lastHitPoints = infinityBoss.hitpoints;
+            lastHitPoints = boss.hitpoints;
+            if(boss.hitpoints == 0){
+            	hpBarText.text = "REKT";
+            }
         }
         else
         {
             if (GameManager.infinityBoss != null)
             {
-                infinityBoss = GameManager.infinityBoss;
-                hitPointsAtFull = infinityBoss.hitpoints;
+                boss = GameManager.infinityBoss;
+                hitPointsAtFull = boss.hitpoints;
                 lastHitPoints = hitPointsAtFull;
             }
             else if(lastHitPoints != 0)

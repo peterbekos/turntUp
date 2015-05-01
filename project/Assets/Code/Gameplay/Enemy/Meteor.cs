@@ -39,6 +39,10 @@ public class Meteor : EnemyObject {
 		}
 	}
 	
+	new void OnTriggerExit2D(Collider2D coll){ //don't kill it for leaving the scene - allows pushing them off the top and strafing them off the sides without losing potential kill points
+		return;
+	}
+	
 	new void takeDamage(int dmg){
 		base.takeDamage(dmg);
 		

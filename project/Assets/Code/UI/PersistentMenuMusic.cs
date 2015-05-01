@@ -9,6 +9,9 @@ public class PersistentMenuMusic : MonoBehaviour {
 			Destroy (gameObject);
 			return;
 		}
+		else {
+			gameObject.audio.Play();
+		}
 		GameManager.menuMusic = gameObject;
 		DontDestroyOnLoad(transform.gameObject);
 	}
